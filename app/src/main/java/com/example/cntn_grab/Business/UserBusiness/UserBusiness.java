@@ -22,6 +22,7 @@ public class UserBusiness {
 
     private SignUpWithPhoneListener mSignUpWithPhoneListener;
     private SignUpWithEmailPasswordListener mSignUpWithEmailPasswordListener;
+    private LogInWithEmailListener mLogInWithEmailListener;
 
     private User mUser;
     private String verificationId;
@@ -88,12 +89,33 @@ public class UserBusiness {
         PhoneAuthProvider.getInstance().verifyPhoneNumber(phoneNumber, 60, TimeUnit.SECONDS, TaskExecutors.MAIN_THREAD, mCallbacks);
     }
 
+    public void logInWithEmail(Activity activity, String email, String password) {
+        mLogInWithEmailListener.logInWithEmailDidStart();
+
+        final FirebaseAuth mAuth = FirebaseAuth.getInstance();
+        mAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener(activity, new OnCompleteListener<AuthResult>() {
+            @Override
+            public void onComplete(@NonNull Task<AuthResult> task) {
+                if (task.isSuccessful()) {
+                    FirebaseUser user = mAuth.getCurrentUser();
+                    mLogInWithEmailListener.logInWithEmailDidEnd(true, user);
+                } else {
+                    mLogInWithEmailListener.logInWithEmailDidEnd(false, null);
+                }
+            }
+        });
+    }
+
     public void setSignUpWithPhoneListener(SignUpWithPhoneListener listener) {
         mSignUpWithPhoneListener = listener;
     }
 
     public void setSignUpWithEmailPasswordListener(SignUpWithEmailPasswordListener listener) {
         mSignUpWithEmailPasswordListener = listener;
+    }
+
+    public void setLogInWithEmailListener(LogInWithEmailListener listener) {
+        mLogInWithEmailListener = listener;
     }
 
     public void setUser(User user) {

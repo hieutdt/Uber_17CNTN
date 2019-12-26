@@ -17,8 +17,11 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
+import com.example.cntn_grab.Business.UserBusiness.LogInWithEmailListener;
 import com.example.cntn_grab.Business.UserBusiness.SignUpWithPhoneListener;
 import com.example.cntn_grab.Business.UserBusiness.UserBusiness;
+import com.example.cntn_grab.Data.Type;
+import com.example.cntn_grab.Data.User;
 import com.example.cntn_grab.Helpers.AppConst;
 import com.example.cntn_grab.Helpers.AppContext;
 import com.example.cntn_grab.Helpers.LoadingHelper;
@@ -31,7 +34,8 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
 public class LogInFragment extends Fragment {
-    private EditText mPhoneNumberEditText;
+    private EditText mEmailEditText;
+    private EditText mPasswordEditText;
     private FirebaseAuth mAuth;
     private FirebaseUser mUser;
 
@@ -47,7 +51,8 @@ public class LogInFragment extends Fragment {
 
         mAuth = FirebaseAuth.getInstance();
 
-        mPhoneNumberEditText = view.findViewById(R.id.login_id);
+        mEmailEditText = view.findViewById(R.id.login_email);
+        mPasswordEditText = view.findViewById(R.id.login_password);
 
         Button logInButton = view.findViewById(R.id.login_button_login);
         logInButton.setOnClickListener(new View.OnClickListener() {
@@ -55,7 +60,37 @@ public class LogInFragment extends Fragment {
             public void onClick(View view) {
                 Log.i("TON HIEU", "Button login onClickListener");
 
-                String phone = mPhoneNumberEditText.getText().toString();
+                String email = mEmailEditText.getText().toString();
+                String password = mPasswordEditText.getText().toString();
+                UserBusiness.getInstance().setLogInWithEmailListener(new LogInWithEmailListener() {
+                    @Override
+                    public void logInWithEmailDidStart() {
+                        LoadingHelper.getInstance().showLoading(getActivity());
+                    }
+
+                    @Override
+                    public void logInWithEmailDidEnd(Boolean isOk, FirebaseUser firebaseUser) {
+                        LoadingHelper.getInstance().hideLoading(getActivity());
+
+                        String uid = firebaseUser.getUid();
+                        // Fetch data by UID
+
+
+
+//                        UserBusiness.getInstance().setUser(newUser);
+                    }
+                });
+
+                UserBusiness.getInstance().logInWithEmail(getActivity(), email, password);
+            }
+        });
+
+        Button signUpButton = view.findViewById(R.id.login_button_register);
+        signUpButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), SignUpActivity.class);
+                startActivity(intent);
             }
         });
 
