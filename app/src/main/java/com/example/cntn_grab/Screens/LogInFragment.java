@@ -31,7 +31,8 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
 public class LogInFragment extends Fragment {
-    private EditText mPhoneNumberEditText;
+    private EditText mEmailEditText;
+    private EditText mPasswordEditText;
     private FirebaseAuth mAuth;
     private FirebaseUser mUser;
 
@@ -47,7 +48,8 @@ public class LogInFragment extends Fragment {
 
         mAuth = FirebaseAuth.getInstance();
 
-        mPhoneNumberEditText = view.findViewById(R.id.login_id);
+        mEmailEditText = view.findViewById(R.id.login_email);
+        mPasswordEditText = view.findViewById(R.id.login_password);
 
         Button logInButton = view.findViewById(R.id.login_button_login);
         logInButton.setOnClickListener(new View.OnClickListener() {
@@ -55,7 +57,17 @@ public class LogInFragment extends Fragment {
             public void onClick(View view) {
                 Log.i("TON HIEU", "Button login onClickListener");
 
-                String phone = mPhoneNumberEditText.getText().toString();
+                String email = mEmailEditText.getText().toString();
+                String password = mPasswordEditText.getText().toString();
+            }
+        });
+
+        Button signUpButton = view.findViewById(R.id.login_button_register);
+        signUpButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), SignUpActivity.class);
+                startActivity(intent);
             }
         });
 

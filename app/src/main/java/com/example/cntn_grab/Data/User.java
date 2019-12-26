@@ -8,9 +8,13 @@ public class User {
     protected boolean isVerified;
     protected Type type;
 
+    public User() {
+        this.type = Type.PASSENGER;
+    }
+
     public User(String id, String email, String name, String phoneNumber, Boolean isVerified, Type type) {
         this.id = id;
-        this.email;
+        this.email = email;
         this.name = name;
         this.phoneNumber = phoneNumber;
         this.isVerified = isVerified;

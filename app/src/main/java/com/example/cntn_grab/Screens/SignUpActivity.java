@@ -21,11 +21,13 @@ import com.google.firebase.auth.FirebaseUser;
 public class SignUpActivity extends AppCompatActivity implements DialogHelperListener {
     private EditText mEmailEditText;
     private EditText mPasswordEditText;
+    private EditText mNameEditText;
     private EditText mRetypePasswordEditText;
     private EditText mPhoneNumberEditText;
     private Button mSignUpButton;
 
     private String mEmail;
+    private String mName;
     private String mPassword;
     private String mRetypePassword;
     private String mPhoneNumber;
@@ -35,6 +37,7 @@ public class SignUpActivity extends AppCompatActivity implements DialogHelperLis
         super.onCreate(savedInstanceState, persistentState);
 
         mEmailEditText = findViewById(R.id.sign_up_email);
+        mNameEditText = findViewById(R.id.sign_up_name);
         mPasswordEditText = findViewById(R.id.sign_up_password);
         mRetypePasswordEditText = findViewById(R.id.sign_up_password_retype);
         mPhoneNumberEditText = findViewById(R.id.sign_up_phone);
@@ -43,16 +46,17 @@ public class SignUpActivity extends AppCompatActivity implements DialogHelperLis
             @Override
             public void onClick(View v) {
                 mEmail = mEmailEditText.getText().toString();
+                mName = mNameEditText.getText().toString();
                 mPassword = mEmailEditText.getText().toString();
                 mRetypePassword = mRetypePasswordEditText.getText().toString();
                 mPhoneNumber = mPhoneNumberEditText.getText().toString();
 
-                signUp(mEmail, mPassword, mRetypePassword, mPhoneNumber);
+                signUp(mEmail, mName, mPassword, mRetypePassword, mPhoneNumber);
             }
         });
     }
 
-    void signUp(String email, String password, String rePassword, final String phoneNumber) {
+    void signUp(String email, final String name, String password, String rePassword, final String phoneNumber) {
         UserBusiness.getInstance().setSignUpWithEmailPasswordListener(new SignUpWithEmailPasswordListener() {
             @Override
             public void signUpWithEmailPasswordDidStart() {
@@ -66,13 +70,13 @@ public class SignUpActivity extends AppCompatActivity implements DialogHelperLis
 
                 if (isOk) {
                     String uid = user.getUid();
-                    String name = "Hieu";
+                    String name = mName;
                     String email = user.getEmail();
-                    String phone = phoneNumber;
+                    String phone = mPhoneNumber;
                     Type type = Type.PASSENGER;
 
+                    // Set current user is this User
                     User newUser = new User(uid, email, name, phone, true, type);
-
                     UserBusiness.getInstance().setUser(newUser);
 
                     DialogHelper.getInstance().showSuccessDialog(SignUpActivity.this);
