@@ -17,8 +17,11 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
+import com.example.cntn_grab.Business.UserBusiness.LogInWithEmailListener;
 import com.example.cntn_grab.Business.UserBusiness.SignUpWithPhoneListener;
 import com.example.cntn_grab.Business.UserBusiness.UserBusiness;
+import com.example.cntn_grab.Data.Type;
+import com.example.cntn_grab.Data.User;
 import com.example.cntn_grab.Helpers.AppConst;
 import com.example.cntn_grab.Helpers.AppContext;
 import com.example.cntn_grab.Helpers.LoadingHelper;
@@ -59,6 +62,26 @@ public class LogInFragment extends Fragment {
 
                 String email = mEmailEditText.getText().toString();
                 String password = mPasswordEditText.getText().toString();
+                UserBusiness.getInstance().setLogInWithEmailListener(new LogInWithEmailListener() {
+                    @Override
+                    public void logInWithEmailDidStart() {
+                        LoadingHelper.getInstance().showLoading(getActivity());
+                    }
+
+                    @Override
+                    public void logInWithEmailDidEnd(Boolean isOk, FirebaseUser firebaseUser) {
+                        LoadingHelper.getInstance().hideLoading(getActivity());
+
+                        String uid = firebaseUser.getUid();
+                        // Fetch data by UID
+
+
+
+//                        UserBusiness.getInstance().setUser(newUser);
+                    }
+                });
+
+                UserBusiness.getInstance().logInWithEmail(getActivity(), email, password);
             }
         });
 
