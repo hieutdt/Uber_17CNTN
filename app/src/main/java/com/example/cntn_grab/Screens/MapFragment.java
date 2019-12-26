@@ -17,6 +17,7 @@ import com.example.cntn_grab.Helpers.DirectionsJSONParser;
 import com.example.cntn_grab.R;
 import com.example.cntn_grab.Services.GetDirectionService;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -60,6 +61,7 @@ public class MapFragment extends Fragment implements OnMapReadyCallback{
     private class ReceiveJSON extends BroadcastReceiver {
         @Override
         public void onReceive(Context context, Intent intent) {
+            Log.i("DRAW", "receive ne");
             String json = intent.getStringExtra("JSON");
 
             ParserTask parserTask = new ParserTask();

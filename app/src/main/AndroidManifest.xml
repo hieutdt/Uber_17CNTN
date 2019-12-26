@@ -30,6 +30,11 @@
 
         <activity android:name=".Screens.SignUpActivity"></activity>
 
+        <service
+            android:name="com.example.cntn_grab.Services.GetDirectionService"
+            android:enabled="true"
+            android:exported="false"/>
+
     </application>
 
 </manifest>
