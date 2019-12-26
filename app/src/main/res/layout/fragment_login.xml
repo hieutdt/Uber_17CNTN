@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    android:background="#4CB944">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="80dp"
+        android:layout_marginBottom="50dp"
+        android:text="Đăng nhập"
+        android:textSize="40dp"
+        android:textStyle="bold"
+        android:fontFamily="@font/segoe_ui_regular"
+        android:textColor="@color/white_transparent"
+        android:textAlignment="center" />
+
+    <EditText
+        android:id="@+id/login_phone_number"
+        android:layout_width="280dp"
+        android:layout_height="45dp"
+        android:textSize="14dp"
+        android:textColor="@android:color/white"
+        android:textAlignment="center"
+        android:layout_marginTop="5dp"
+        android:fontFamily="@font/segoe_ui_regular"
+        android:background="@drawable/edit_text_shape"
+        android:alpha="0.34"
+        android:textColorHint="#4CB944"
+        android:hint="Số điện thoại"
+        android:layout_marginBottom="13dp" />
+
+    <Button
+        android:id="@+id/login_button_login"
+        android:layout_width="146dp"
+        android:layout_height="36dp"
+        android:background="@drawable/edit_text_shape"
+        android:alpha="0.7"
+
+        android:fontFamily="@font/segoe_ui_regular"
+        android:text="Đăng nhập"
+        android:textAllCaps="false"
+        android:textColor="@color/green"
+        android:layout_marginBottom="25dp"/>
+
+</LinearLayout>

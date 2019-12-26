@@ -1,0 +1,738 @@
+-- Merging decision tree log ---
+manifest
+ADDED from /Users/trandinhtonhieu/Desktop/Android_17CNTN/CNTN_Grab/app/src/main/AndroidManifest.xml:2:1-33:12
+INJECTED from /Users/trandinhtonhieu/Desktop/Android_17CNTN/CNTN_Grab/app/src/main/AndroidManifest.xml:2:1-33:12
+INJECTED from /Users/trandinhtonhieu/Desktop/Android_17CNTN/CNTN_Grab/app/src/main/AndroidManifest.xml:2:1-33:12
+INJECTED from /Users/trandinhtonhieu/Desktop/Android_17CNTN/CNTN_Grab/app/src/main/AndroidManifest.xml:2:1-33:12
+MERGED from [com.shreyaspatil:MaterialDialog:2.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/1d11c5fe9eccbef442be1011313e4459/AndroidManifest.xml:2:1-11:12
+MERGED from [com.google.android.material:material:1.0.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/f716a22d7949bcd6b184ebee3e072715/AndroidManifest.xml:17:1-24:12
+MERGED from [com.facebook.android:facebook-login:5.13.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/77e7b4be45c2e7d27b0633ff8c52983e/AndroidManifest.xml:21:1-31:12
+MERGED from [com.airbnb.android:lottie:3.3.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/75751a574dd6b8f9e31a6fe626d30079/AndroidManifest.xml:2:1-11:12
+MERGED from [com.facebook.android:facebook-common:5.13.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/7dc36174963485188757b24b523f7e6b/AndroidManifest.xml:21:1-37:12
+MERGED from [com.google.android.gms:play-services:8.4.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/608ab620fd508067902de00e9e7dde81/AndroidManifest.xml:16:1-20:12
+MERGED from [com.google.android.gms:play-services-cast:8.4.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/8091b3700436feddfef5d5201cb1e1f9/AndroidManifest.xml:16:1-20:12
+MERGED from [androidx.mediarouter:mediarouter:1.0.0-alpha5] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/f79ccd02f10880778c603a468971fa80/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.appcompat:appcompat:1.1.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/49d737ca00fcb2d48aa31ee22948645f/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.constraintlayout:constraintlayout:1.1.3] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/48c3ab682e8fea641e1eea41d0c028b9/AndroidManifest.xml:2:1-11:12
+MERGED from [com.google.firebase:firebase-auth:19.1.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/5890223a1b2fb504c8d7aa1b3724f8ac/AndroidManifest.xml:17:1-42:12
+MERGED from [androidx.legacy:legacy-support-v4:1.0.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/7bf0cb191df925a4c34e904e629d0b45/AndroidManifest.xml:17:1-22:12
+MERGED from [com.google.android.gms:play-services-wallet:8.4.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/6b5a9b78943e1ff279ab822816174a03/AndroidManifest.xml:16:1-21:12
+MERGED from [com.google.android.gms:play-services-maps:17.0.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/b317e240ebbbb467adb51677d8aba802/AndroidManifest.xml:17:1-38:12
+MERGED from [com.google.android.gms:play-services-fitness:8.4.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/2a1144c2d948cbce90132e09080ea262/AndroidManifest.xml:16:1-20:12
+MERGED from [com.google.android.gms:play-services-location:17.0.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/00ef3b2032224c3110333206aa3b120d/AndroidManifest.xml:2:1-9:12
+MERGED from [com.google.firebase:firebase-analytics:17.2.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/5dbb6b5369f71190242cc801f0fa2478/AndroidManifest.xml:2:1-9:12
+MERGED from [com.github.ybq:Android-SpinKit:1.4.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/0fe6ba9e79ecda4480d931072c385615/AndroidManifest.xml:2:1-9:12
+MERGED from [com.google.android.gms:play-services-appindexing:8.4.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/8bde6500dd7bd94b3d1ec6d4ff83bb72/AndroidManifest.xml:16:1-20:12
+MERGED from [com.google.android.gms:play-services-appinvite:8.4.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/84f206cdf5d48f1b824fb2af7fc5c301/AndroidManifest.xml:16:1-31:12
+MERGED from [com.google.android.gms:play-services-appstate:8.4.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/d235a7d4ce4234902b41b1e53b6c13e2/AndroidManifest.xml:16:1-20:12
+MERGED from [com.google.android.gms:play-services-auth:8.4.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/a3ad6af686375d28722e488d432d6756/AndroidManifest.xml:16:1-33:12
+MERGED from [com.google.android.gms:play-services-games:8.4.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/3d13881a72fa83ffc224bfbdda9d4f16/AndroidManifest.xml:16:1-20:12
+MERGED from [com.google.android.gms:play-services-drive:8.4.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/4699113b88404eb6a1c6787952c96eac/AndroidManifest.xml:16:1-20:12
+MERGED from [com.google.android.gms:play-services-gcm:8.4.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/9dec353a623215839c4226ecc8b0e529/AndroidManifest.xml:16:1-25:12
+MERGED from [com.google.android.gms:play-services-identity:8.4.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/498dc4970613fc757d08d4d13d2a6538/AndroidManifest.xml:16:1-20:12
+MERGED from [com.google.android.gms:play-services-nearby:8.4.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/6f6c4ecf09b0adeefaea17f07f1e4340/AndroidManifest.xml:16:1-21:12
+MERGED from [com.google.android.gms:play-services-panorama:8.4.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/ad502830f5d36448914a730747a11785/AndroidManifest.xml:16:1-20:12
+MERGED from [com.google.android.gms:play-services-plus:8.4.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/ef74e8aa80d72f3a577ed2c6a1b042f5/AndroidManifest.xml:16:1-20:12
+MERGED from [com.google.android.gms:play-services-safetynet:8.4.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/dbd70c4508e4214d26de5d197daebc61/AndroidManifest.xml:16:1-20:12
+MERGED from [com.google.android.gms:play-services-vision:8.4.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/09eacfbabcb43017328a401c1ec6accd/AndroidManifest.xml:2:1-6:12
+MERGED from [com.google.android.gms:play-services-wearable:8.4.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/932902fa3fb8c7bbf8327c8892061cc8/AndroidManifest.xml:16:1-20:12
+MERGED from [com.google.firebase:firebase-auth-interop:18.0.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/7ee1d48d878ad1ea8ec70fb39927980b/AndroidManifest.xml:2:1-10:12
+MERGED from [com.google.android.gms:play-services-measurement-api:17.2.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/f9adb112e8e935c5622d3fb2b48e925b/AndroidManifest.xml:17:1-36:12
+MERGED from [com.google.firebase:firebase-iid:19.0.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/f636cbfbf7fbe1d933181a76f1773068/AndroidManifest.xml:17:1-47:12
+MERGED from [com.google.firebase:firebase-iid-interop:17.0.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/fafca8f323f3b1728845b4d78b36d5c4/AndroidManifest.xml:2:1-10:12
+MERGED from [com.google.android.gms:play-services-base:17.1.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/1bea578868a0f2c55b50085b1a7b94ae/AndroidManifest.xml:17:1-29:12
+MERGED from [com.google.android.gms:play-services-ads:8.4.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/0d832eb4beea453d0f31b85260abef1d/AndroidManifest.xml:16:1-33:12
+MERGED from [com.google.android.gms:play-services-analytics:8.4.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/fad638a91feb3378f24ce16fe94e41a4/AndroidManifest.xml:16:1-25:12
+MERGED from [com.google.firebase:firebase-common:19.0.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/23034e89a96c74a70d2114886539cb2d/AndroidManifest.xml:2:1-19:12
+MERGED from [com.google.android.gms:play-services-tasks:17.0.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/90eb2614da4898fbffaf71ccc3662594/AndroidManifest.xml:2:1-9:12
+MERGED from [com.google.android.gms:play-services-places-placereport:17.0.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/ccdd16c3021c3184bf5d002c8332afa2/AndroidManifest.xml:17:1-24:12
+MERGED from [com.google.android.gms:play-services-measurement:17.2.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/b8a3712e408451ab5bf0f18fae432fcd/AndroidManifest.xml:17:1-55:12
+MERGED from [com.google.android.gms:play-services-measurement-sdk:17.2.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/2a065b8549e55466a9f8cdaa9069f6e8/AndroidManifest.xml:17:1-25:12
+MERGED from [com.google.android.gms:play-services-measurement-impl:17.2.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/9073ec630f2e53cc347064878b6da359/AndroidManifest.xml:17:1-40:12
+MERGED from [com.google.android.gms:play-services-measurement-sdk-api:17.2.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/b680143591b0d8971c282a40bd949b35/AndroidManifest.xml:17:1-27:12
+MERGED from [com.google.android.gms:play-services-measurement-base:17.2.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/b660e94fe9424b45a9e890d6afe0183d/AndroidManifest.xml:2:1-9:12
+MERGED from [com.google.android.gms:play-services-stats:17.0.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/ebfb535052462e48f12acb39d12eb04c/AndroidManifest.xml:2:1-9:12
+MERGED from [com.google.firebase:firebase-measurement-connector:18.0.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/5a75afda27bf07e4faa4584307722188/AndroidManifest.xml:17:1-25:12
+MERGED from [com.google.android.gms:play-services-ads-identifier:17.0.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/bddedcdca1e654406ca5b8da4a54ceb0/AndroidManifest.xml:17:1-24:12
+MERGED from [com.google.android.gms:play-services-basement:17.0.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/b16c5f868a2f52d22b9ef4dca64403e6/AndroidManifest.xml:17:1-28:12
+MERGED from [androidx.fragment:fragment:1.1.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/59ad3c52dda8e125e3047def6931e04e/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.appcompat:appcompat-resources:1.1.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/81bff62e18968ec05b17550306498ae6/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.recyclerview:recyclerview:1.0.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/6ba0a908e58f6a14cb7e23226d4a0729/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.browser:browser:1.0.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/a65b8bcb7cdf0e94d268ee47339a9a81/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.legacy:legacy-support-core-ui:1.0.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/8478b1d908f7c63306f052f14aeb1fbe/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/25467bcebd13b9bcc73b49e60c1d2419/AndroidManifest.xml:17:1-22:12
+MERGED from [com.facebook.android:facebook-core:5.13.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/8d31e9671e4eb0ec8576ac8f2038a6da/AndroidManifest.xml:21:1-61:12
+MERGED from [androidx.palette:palette:1.0.0-rc01] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/adb08bf57af9df0b1e46f94492ba2806/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/5ea7201439f7f9618f37d5203b1e0cf1/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.transition:transition:1.0.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/a6c4ffcb04e6e67e045f898e43b0b4b8/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.media2:media2:1.0.0-alpha02] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/35866efbb14401aaedfe64027cec0d5f/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.media:media:1.0.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/5261a013aa1fb08992c2efdeaba8d1b6/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.viewpager:viewpager:1.0.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/db4180e8710eb28d199264a507eece3a/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.loader:loader:1.0.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/fa45a4d32852c9d66cbd6b43ef91a4ae/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.activity:activity:1.0.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/7e6b8704dadbd77bef1e65213088d8ff/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/ca3c6504024558657854b0460ee2838e/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/aaec2dde44947d32427de77f6bad5fac/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.0.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/8c7e6143b63373cca075df04e8f6d250/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.slidingpanelayout:slidingpanelayout:1.0.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/31a233a7c7fc4a3772a2619c1af7fd9a/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.customview:customview:1.0.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/76750fcee82232e3f856a5d24f6b3d42/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.swiperefreshlayout:swiperefreshlayout:1.0.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/6474b997df730c625af1256e23a6b0a6/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.asynclayoutinflater:asynclayoutinflater:1.0.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/337ddacd3b4ea52b8480135d339d5796/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.core:core:1.1.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/d8558c33e194d471b347fa6231cf6b99/AndroidManifest.xml:17:1-26:12
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/e351f32b1009b589e620452b10b12805/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.cardview:cardview:1.0.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/45cae76caacb03482c9df84e96859ff2/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/65aaf43a67cbdf5af4fdd0ee7e135aa7/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/e2306a1ce97fce88bdd5fbe232028cf3/AndroidManifest.xml:17:1-27:12
+MERGED from [androidx.interpolator:interpolator:1.0.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/e9fd978e5791a10b164ec5bb553e71bc/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.documentfile:documentfile:1.0.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/0b02b6542e0555a8ede9b4b65f6f092e/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.print:print:1.0.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/433f0dc9ba282e864c2ac4086945b4f2/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.1.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/9adabe4030c12cd4461fe19b6dd34fd9/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.1.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/d2533bb6f18e084dc0de499fbceb805b/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.savedstate:savedstate:1.0.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/9c9721a0f4bfe6940aa03a19d2ed483f/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/96cb1ac738f8b33ed027d1ca38d61815/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/6b187787f0aea8182bcde0d0041defdf/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.arch.core:core-runtime:2.0.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/a471d1e8422734416a97b446a9271c67/AndroidManifest.xml:17:1-22:12
+INJECTED from /Users/trandinhtonhieu/Desktop/Android_17CNTN/CNTN_Grab/app/src/main/AndroidManifest.xml:2:1-33:12
+INJECTED from /Users/trandinhtonhieu/Desktop/Android_17CNTN/CNTN_Grab/app/src/main/AndroidManifest.xml:2:1-33:12
+INJECTED from /Users/trandinhtonhieu/Desktop/Android_17CNTN/CNTN_Grab/app/src/main/AndroidManifest.xml:2:1-33:12
+	package
+		ADDED from /Users/trandinhtonhieu/Desktop/Android_17CNTN/CNTN_Grab/app/src/main/AndroidManifest.xml:3:5-36
+		INJECTED from /Users/trandinhtonhieu/Desktop/Android_17CNTN/CNTN_Grab/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/trandinhtonhieu/Desktop/Android_17CNTN/CNTN_Grab/app/src/main/AndroidManifest.xml
+	android:versionName
+		INJECTED from /Users/trandinhtonhieu/Desktop/Android_17CNTN/CNTN_Grab/app/src/main/AndroidManifest.xml
+		ADDED from /Users/trandinhtonhieu/Desktop/Android_17CNTN/CNTN_Grab/app/src/main/AndroidManifest.xml:2:1-33:12
+		INJECTED from /Users/trandinhtonhieu/Desktop/Android_17CNTN/CNTN_Grab/app/src/main/AndroidManifest.xml
+	android:versionCode
+		INJECTED from /Users/trandinhtonhieu/Desktop/Android_17CNTN/CNTN_Grab/app/src/main/AndroidManifest.xml
+		ADDED from /Users/trandinhtonhieu/Desktop/Android_17CNTN/CNTN_Grab/app/src/main/AndroidManifest.xml:2:1-33:12
+		INJECTED from /Users/trandinhtonhieu/Desktop/Android_17CNTN/CNTN_Grab/app/src/main/AndroidManifest.xml
+	xmlns:android
+		ADDED from /Users/trandinhtonhieu/Desktop/Android_17CNTN/CNTN_Grab/app/src/main/AndroidManifest.xml:2:11-69
+uses-permission#android.permission.INTERNET
+ADDED from /Users/trandinhtonhieu/Desktop/Android_17CNTN/CNTN_Grab/app/src/main/AndroidManifest.xml:5:5-67
+MERGED from [com.google.android.gms:play-services-maps:17.0.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/b317e240ebbbb467adb51677d8aba802/AndroidManifest.xml:24:5-67
+MERGED from [com.google.android.gms:play-services-maps:17.0.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/b317e240ebbbb467adb51677d8aba802/AndroidManifest.xml:24:5-67
+MERGED from [com.google.android.gms:play-services-appinvite:8.4.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/84f206cdf5d48f1b824fb2af7fc5c301/AndroidManifest.xml:19:5-67
+MERGED from [com.google.android.gms:play-services-appinvite:8.4.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/84f206cdf5d48f1b824fb2af7fc5c301/AndroidManifest.xml:19:5-67
+MERGED from [com.google.android.gms:play-services-gcm:8.4.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/9dec353a623215839c4226ecc8b0e529/AndroidManifest.xml:22:5-67
+MERGED from [com.google.android.gms:play-services-gcm:8.4.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/9dec353a623215839c4226ecc8b0e529/AndroidManifest.xml:22:5-67
+MERGED from [com.google.android.gms:play-services-measurement-api:17.2.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/f9adb112e8e935c5622d3fb2b48e925b/AndroidManifest.xml:22:5-67
+MERGED from [com.google.android.gms:play-services-measurement-api:17.2.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/f9adb112e8e935c5622d3fb2b48e925b/AndroidManifest.xml:22:5-67
+MERGED from [com.google.firebase:firebase-iid:19.0.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/f636cbfbf7fbe1d933181a76f1773068/AndroidManifest.xml:23:5-67
+MERGED from [com.google.firebase:firebase-iid:19.0.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/f636cbfbf7fbe1d933181a76f1773068/AndroidManifest.xml:23:5-67
+MERGED from [com.google.android.gms:play-services-ads:8.4.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/0d832eb4beea453d0f31b85260abef1d/AndroidManifest.xml:20:5-66
+MERGED from [com.google.android.gms:play-services-ads:8.4.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/0d832eb4beea453d0f31b85260abef1d/AndroidManifest.xml:20:5-66
+MERGED from [com.google.android.gms:play-services-analytics:8.4.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/fad638a91feb3378f24ce16fe94e41a4/AndroidManifest.xml:21:5-67
+MERGED from [com.google.android.gms:play-services-analytics:8.4.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/fad638a91feb3378f24ce16fe94e41a4/AndroidManifest.xml:21:5-67
+MERGED from [com.google.android.gms:play-services-measurement:17.2.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/b8a3712e408451ab5bf0f18fae432fcd/AndroidManifest.xml:23:5-67
+MERGED from [com.google.android.gms:play-services-measurement:17.2.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/b8a3712e408451ab5bf0f18fae432fcd/AndroidManifest.xml:23:5-67
+MERGED from [com.google.android.gms:play-services-measurement-impl:17.2.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/9073ec630f2e53cc347064878b6da359/AndroidManifest.xml:23:5-67
+MERGED from [com.google.android.gms:play-services-measurement-impl:17.2.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/9073ec630f2e53cc347064878b6da359/AndroidManifest.xml:23:5-67
+MERGED from [com.google.android.gms:play-services-measurement-sdk-api:17.2.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/b680143591b0d8971c282a40bd949b35/AndroidManifest.xml:23:5-67
+MERGED from [com.google.android.gms:play-services-measurement-sdk-api:17.2.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/b680143591b0d8971c282a40bd949b35/AndroidManifest.xml:23:5-67
+	android:name
+		ADDED from /Users/trandinhtonhieu/Desktop/Android_17CNTN/CNTN_Grab/app/src/main/AndroidManifest.xml:5:22-64
+uses-permission#android.permission.ACCESS_FINE_LOCATION
+ADDED from /Users/trandinhtonhieu/Desktop/Android_17CNTN/CNTN_Grab/app/src/main/AndroidManifest.xml:6:5-79
+	android:name
+		ADDED from /Users/trandinhtonhieu/Desktop/Android_17CNTN/CNTN_Grab/app/src/main/AndroidManifest.xml:6:22-76
+application
+ADDED from /Users/trandinhtonhieu/Desktop/Android_17CNTN/CNTN_Grab/app/src/main/AndroidManifest.xml:8:5-31:19
+MERGED from [com.google.android.material:material:1.0.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/f716a22d7949bcd6b184ebee3e072715/AndroidManifest.xml:22:5-20
+MERGED from [com.google.android.material:material:1.0.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/f716a22d7949bcd6b184ebee3e072715/AndroidManifest.xml:22:5-20
+MERGED from [com.facebook.android:facebook-login:5.13.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/77e7b4be45c2e7d27b0633ff8c52983e/AndroidManifest.xml:28:5-29:19
+MERGED from [com.facebook.android:facebook-login:5.13.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/77e7b4be45c2e7d27b0633ff8c52983e/AndroidManifest.xml:28:5-29:19
+MERGED from [com.airbnb.android:lottie:3.3.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/75751a574dd6b8f9e31a6fe626d30079/AndroidManifest.xml:9:5-20
+MERGED from [com.airbnb.android:lottie:3.3.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/75751a574dd6b8f9e31a6fe626d30079/AndroidManifest.xml:9:5-20
+MERGED from [com.facebook.android:facebook-common:5.13.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/7dc36174963485188757b24b523f7e6b/AndroidManifest.xml:28:5-35:19
+MERGED from [com.facebook.android:facebook-common:5.13.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/7dc36174963485188757b24b523f7e6b/AndroidManifest.xml:28:5-35:19
+MERGED from [com.google.android.gms:play-services:8.4.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/608ab620fd508067902de00e9e7dde81/AndroidManifest.xml:19:5-20
+MERGED from [com.google.android.gms:play-services:8.4.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/608ab620fd508067902de00e9e7dde81/AndroidManifest.xml:19:5-20
+MERGED from [com.google.android.gms:play-services-cast:8.4.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/8091b3700436feddfef5d5201cb1e1f9/AndroidManifest.xml:19:5-20
+MERGED from [com.google.android.gms:play-services-cast:8.4.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/8091b3700436feddfef5d5201cb1e1f9/AndroidManifest.xml:19:5-20
+MERGED from [androidx.constraintlayout:constraintlayout:1.1.3] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/48c3ab682e8fea641e1eea41d0c028b9/AndroidManifest.xml:9:5-20
+MERGED from [androidx.constraintlayout:constraintlayout:1.1.3] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/48c3ab682e8fea641e1eea41d0c028b9/AndroidManifest.xml:9:5-20
+MERGED from [com.google.firebase:firebase-auth:19.1.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/5890223a1b2fb504c8d7aa1b3724f8ac/AndroidManifest.xml:23:5-40:19
+MERGED from [com.google.firebase:firebase-auth:19.1.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/5890223a1b2fb504c8d7aa1b3724f8ac/AndroidManifest.xml:23:5-40:19
+MERGED from [com.google.android.gms:play-services-maps:17.0.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/b317e240ebbbb467adb51677d8aba802/AndroidManifest.xml:30:5-36:19
+MERGED from [com.google.android.gms:play-services-maps:17.0.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/b317e240ebbbb467adb51677d8aba802/AndroidManifest.xml:30:5-36:19
+MERGED from [com.google.android.gms:play-services-fitness:8.4.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/2a1144c2d948cbce90132e09080ea262/AndroidManifest.xml:19:5-20
+MERGED from [com.google.android.gms:play-services-fitness:8.4.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/2a1144c2d948cbce90132e09080ea262/AndroidManifest.xml:19:5-20
+MERGED from [com.google.android.gms:play-services-location:17.0.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/00ef3b2032224c3110333206aa3b120d/AndroidManifest.xml:7:5-20
+MERGED from [com.google.android.gms:play-services-location:17.0.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/00ef3b2032224c3110333206aa3b120d/AndroidManifest.xml:7:5-20
+MERGED from [com.google.firebase:firebase-analytics:17.2.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/5dbb6b5369f71190242cc801f0fa2478/AndroidManifest.xml:7:5-20
+MERGED from [com.google.firebase:firebase-analytics:17.2.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/5dbb6b5369f71190242cc801f0fa2478/AndroidManifest.xml:7:5-20
+MERGED from [com.google.android.gms:play-services-appindexing:8.4.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/8bde6500dd7bd94b3d1ec6d4ff83bb72/AndroidManifest.xml:19:5-20
+MERGED from [com.google.android.gms:play-services-appindexing:8.4.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/8bde6500dd7bd94b3d1ec6d4ff83bb72/AndroidManifest.xml:19:5-20
+MERGED from [com.google.android.gms:play-services-appinvite:8.4.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/84f206cdf5d48f1b824fb2af7fc5c301/AndroidManifest.xml:20:5-30:19
+MERGED from [com.google.android.gms:play-services-appinvite:8.4.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/84f206cdf5d48f1b824fb2af7fc5c301/AndroidManifest.xml:20:5-30:19
+MERGED from [com.google.android.gms:play-services-appstate:8.4.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/d235a7d4ce4234902b41b1e53b6c13e2/AndroidManifest.xml:19:5-20
+MERGED from [com.google.android.gms:play-services-appstate:8.4.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/d235a7d4ce4234902b41b1e53b6c13e2/AndroidManifest.xml:19:5-20
+MERGED from [com.google.android.gms:play-services-auth:8.4.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/a3ad6af686375d28722e488d432d6756/AndroidManifest.xml:20:5-32:19
+MERGED from [com.google.android.gms:play-services-auth:8.4.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/a3ad6af686375d28722e488d432d6756/AndroidManifest.xml:20:5-32:19
+MERGED from [com.google.android.gms:play-services-games:8.4.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/3d13881a72fa83ffc224bfbdda9d4f16/AndroidManifest.xml:19:5-20
+MERGED from [com.google.android.gms:play-services-games:8.4.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/3d13881a72fa83ffc224bfbdda9d4f16/AndroidManifest.xml:19:5-20
+MERGED from [com.google.android.gms:play-services-drive:8.4.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/4699113b88404eb6a1c6787952c96eac/AndroidManifest.xml:19:5-20
+MERGED from [com.google.android.gms:play-services-drive:8.4.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/4699113b88404eb6a1c6787952c96eac/AndroidManifest.xml:19:5-20
+MERGED from [com.google.android.gms:play-services-gcm:8.4.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/9dec353a623215839c4226ecc8b0e529/AndroidManifest.xml:24:5-20
+MERGED from [com.google.android.gms:play-services-gcm:8.4.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/9dec353a623215839c4226ecc8b0e529/AndroidManifest.xml:24:5-20
+MERGED from [com.google.android.gms:play-services-identity:8.4.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/498dc4970613fc757d08d4d13d2a6538/AndroidManifest.xml:19:5-20
+MERGED from [com.google.android.gms:play-services-identity:8.4.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/498dc4970613fc757d08d4d13d2a6538/AndroidManifest.xml:19:5-20
+MERGED from [com.google.android.gms:play-services-nearby:8.4.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/6f6c4ecf09b0adeefaea17f07f1e4340/AndroidManifest.xml:20:5-20
+MERGED from [com.google.android.gms:play-services-nearby:8.4.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/6f6c4ecf09b0adeefaea17f07f1e4340/AndroidManifest.xml:20:5-20
+MERGED from [com.google.android.gms:play-services-panorama:8.4.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/ad502830f5d36448914a730747a11785/AndroidManifest.xml:19:5-20
+MERGED from [com.google.android.gms:play-services-panorama:8.4.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/ad502830f5d36448914a730747a11785/AndroidManifest.xml:19:5-20
+MERGED from [com.google.android.gms:play-services-plus:8.4.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/ef74e8aa80d72f3a577ed2c6a1b042f5/AndroidManifest.xml:19:5-20
+MERGED from [com.google.android.gms:play-services-plus:8.4.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/ef74e8aa80d72f3a577ed2c6a1b042f5/AndroidManifest.xml:19:5-20
+MERGED from [com.google.android.gms:play-services-safetynet:8.4.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/dbd70c4508e4214d26de5d197daebc61/AndroidManifest.xml:19:5-20
+MERGED from [com.google.android.gms:play-services-safetynet:8.4.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/dbd70c4508e4214d26de5d197daebc61/AndroidManifest.xml:19:5-20
+MERGED from [com.google.android.gms:play-services-vision:8.4.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/09eacfbabcb43017328a401c1ec6accd/AndroidManifest.xml:5:5-20
+MERGED from [com.google.android.gms:play-services-vision:8.4.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/09eacfbabcb43017328a401c1ec6accd/AndroidManifest.xml:5:5-20
+MERGED from [com.google.android.gms:play-services-wearable:8.4.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/932902fa3fb8c7bbf8327c8892061cc8/AndroidManifest.xml:19:5-20
+MERGED from [com.google.android.gms:play-services-wearable:8.4.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/932902fa3fb8c7bbf8327c8892061cc8/AndroidManifest.xml:19:5-20
+MERGED from [com.google.firebase:firebase-auth-interop:18.0.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/7ee1d48d878ad1ea8ec70fb39927980b/AndroidManifest.xml:7:5-8:19
+MERGED from [com.google.firebase:firebase-auth-interop:18.0.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/7ee1d48d878ad1ea8ec70fb39927980b/AndroidManifest.xml:7:5-8:19
+MERGED from [com.google.android.gms:play-services-measurement-api:17.2.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/f9adb112e8e935c5622d3fb2b48e925b/AndroidManifest.xml:26:5-34:19
+MERGED from [com.google.android.gms:play-services-measurement-api:17.2.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/f9adb112e8e935c5622d3fb2b48e925b/AndroidManifest.xml:26:5-34:19
+MERGED from [com.google.firebase:firebase-iid:19.0.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/f636cbfbf7fbe1d933181a76f1773068/AndroidManifest.xml:28:5-45:19
+MERGED from [com.google.firebase:firebase-iid:19.0.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/f636cbfbf7fbe1d933181a76f1773068/AndroidManifest.xml:28:5-45:19
+MERGED from [com.google.firebase:firebase-iid-interop:17.0.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/fafca8f323f3b1728845b4d78b36d5c4/AndroidManifest.xml:7:5-8:19
+MERGED from [com.google.firebase:firebase-iid-interop:17.0.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/fafca8f323f3b1728845b4d78b36d5c4/AndroidManifest.xml:7:5-8:19
+MERGED from [com.google.android.gms:play-services-base:17.1.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/1bea578868a0f2c55b50085b1a7b94ae/AndroidManifest.xml:22:5-27:19
+MERGED from [com.google.android.gms:play-services-base:17.1.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/1bea578868a0f2c55b50085b1a7b94ae/AndroidManifest.xml:22:5-27:19
+MERGED from [com.google.android.gms:play-services-ads:8.4.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/0d832eb4beea453d0f31b85260abef1d/AndroidManifest.xml:24:5-32:19
+MERGED from [com.google.android.gms:play-services-ads:8.4.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/0d832eb4beea453d0f31b85260abef1d/AndroidManifest.xml:24:5-32:19
+MERGED from [com.google.android.gms:play-services-analytics:8.4.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/fad638a91feb3378f24ce16fe94e41a4/AndroidManifest.xml:24:5-20
+MERGED from [com.google.android.gms:play-services-analytics:8.4.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/fad638a91feb3378f24ce16fe94e41a4/AndroidManifest.xml:24:5-20
+MERGED from [com.google.firebase:firebase-common:19.0.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/23034e89a96c74a70d2114886539cb2d/AndroidManifest.xml:11:5-17:19
+MERGED from [com.google.firebase:firebase-common:19.0.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/23034e89a96c74a70d2114886539cb2d/AndroidManifest.xml:11:5-17:19
+MERGED from [com.google.android.gms:play-services-tasks:17.0.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/90eb2614da4898fbffaf71ccc3662594/AndroidManifest.xml:7:5-20
+MERGED from [com.google.android.gms:play-services-tasks:17.0.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/90eb2614da4898fbffaf71ccc3662594/AndroidManifest.xml:7:5-20
+MERGED from [com.google.android.gms:play-services-places-placereport:17.0.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/ccdd16c3021c3184bf5d002c8332afa2/AndroidManifest.xml:22:5-20
+MERGED from [com.google.android.gms:play-services-places-placereport:17.0.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/ccdd16c3021c3184bf5d002c8332afa2/AndroidManifest.xml:22:5-20
+MERGED from [com.google.android.gms:play-services-measurement:17.2.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/b8a3712e408451ab5bf0f18fae432fcd/AndroidManifest.xml:28:5-53:19
+MERGED from [com.google.android.gms:play-services-measurement:17.2.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/b8a3712e408451ab5bf0f18fae432fcd/AndroidManifest.xml:28:5-53:19
+MERGED from [com.google.android.gms:play-services-measurement-sdk:17.2.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/2a065b8549e55466a9f8cdaa9069f6e8/AndroidManifest.xml:22:5-23:19
+MERGED from [com.google.android.gms:play-services-measurement-sdk:17.2.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/2a065b8549e55466a9f8cdaa9069f6e8/AndroidManifest.xml:22:5-23:19
+MERGED from [com.google.android.gms:play-services-measurement-impl:17.2.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/9073ec630f2e53cc347064878b6da359/AndroidManifest.xml:28:5-38:19
+MERGED from [com.google.android.gms:play-services-measurement-impl:17.2.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/9073ec630f2e53cc347064878b6da359/AndroidManifest.xml:28:5-38:19
+MERGED from [com.google.android.gms:play-services-measurement-base:17.2.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/b660e94fe9424b45a9e890d6afe0183d/AndroidManifest.xml:7:5-20
+MERGED from [com.google.android.gms:play-services-measurement-base:17.2.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/b660e94fe9424b45a9e890d6afe0183d/AndroidManifest.xml:7:5-20
+MERGED from [com.google.android.gms:play-services-stats:17.0.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/ebfb535052462e48f12acb39d12eb04c/AndroidManifest.xml:7:5-20
+MERGED from [com.google.android.gms:play-services-stats:17.0.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/ebfb535052462e48f12acb39d12eb04c/AndroidManifest.xml:7:5-20
+MERGED from [com.google.firebase:firebase-measurement-connector:18.0.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/5a75afda27bf07e4faa4584307722188/AndroidManifest.xml:22:5-23:19
+MERGED from [com.google.firebase:firebase-measurement-connector:18.0.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/5a75afda27bf07e4faa4584307722188/AndroidManifest.xml:22:5-23:19
+MERGED from [com.google.android.gms:play-services-ads-identifier:17.0.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/bddedcdca1e654406ca5b8da4a54ceb0/AndroidManifest.xml:22:5-20
+MERGED from [com.google.android.gms:play-services-ads-identifier:17.0.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/bddedcdca1e654406ca5b8da4a54ceb0/AndroidManifest.xml:22:5-20
+MERGED from [com.google.android.gms:play-services-basement:17.0.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/b16c5f868a2f52d22b9ef4dca64403e6/AndroidManifest.xml:22:5-26:19
+MERGED from [com.google.android.gms:play-services-basement:17.0.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/b16c5f868a2f52d22b9ef4dca64403e6/AndroidManifest.xml:22:5-26:19
+MERGED from [com.facebook.android:facebook-core:5.13.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/8d31e9671e4eb0ec8576ac8f2038a6da/AndroidManifest.xml:28:5-59:19
+MERGED from [com.facebook.android:facebook-core:5.13.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/8d31e9671e4eb0ec8576ac8f2038a6da/AndroidManifest.xml:28:5-59:19
+MERGED from [androidx.core:core:1.1.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/d8558c33e194d471b347fa6231cf6b99/AndroidManifest.xml:24:5-89
+MERGED from [androidx.core:core:1.1.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/d8558c33e194d471b347fa6231cf6b99/AndroidManifest.xml:24:5-89
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/e2306a1ce97fce88bdd5fbe232028cf3/AndroidManifest.xml:24:5-25:19
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/e2306a1ce97fce88bdd5fbe232028cf3/AndroidManifest.xml:24:5-25:19
+	android:appComponentFactory
+		ADDED from [androidx.core:core:1.1.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/d8558c33e194d471b347fa6231cf6b99/AndroidManifest.xml:24:18-86
+	android:supportsRtl
+		ADDED from /Users/trandinhtonhieu/Desktop/Android_17CNTN/CNTN_Grab/app/src/main/AndroidManifest.xml:13:9-35
+	android:label
+		ADDED from /Users/trandinhtonhieu/Desktop/Android_17CNTN/CNTN_Grab/app/src/main/AndroidManifest.xml:11:9-41
+	android:roundIcon
+		ADDED from /Users/trandinhtonhieu/Desktop/Android_17CNTN/CNTN_Grab/app/src/main/AndroidManifest.xml:12:9-54
+	android:icon
+		ADDED from /Users/trandinhtonhieu/Desktop/Android_17CNTN/CNTN_Grab/app/src/main/AndroidManifest.xml:10:9-43
+	android:allowBackup
+		ADDED from /Users/trandinhtonhieu/Desktop/Android_17CNTN/CNTN_Grab/app/src/main/AndroidManifest.xml:9:9-35
+	android:theme
+		ADDED from /Users/trandinhtonhieu/Desktop/Android_17CNTN/CNTN_Grab/app/src/main/AndroidManifest.xml:14:9-40
+meta-data#com.google.android.geo.API_KEY
+ADDED from /Users/trandinhtonhieu/Desktop/Android_17CNTN/CNTN_Grab/app/src/main/AndroidManifest.xml:16:9-18:54
+	android:value
+		ADDED from /Users/trandinhtonhieu/Desktop/Android_17CNTN/CNTN_Grab/app/src/main/AndroidManifest.xml:18:13-51
+	android:name
+		ADDED from /Users/trandinhtonhieu/Desktop/Android_17CNTN/CNTN_Grab/app/src/main/AndroidManifest.xml:17:13-58
+meta-data#com.facebook.sdk.ApplicationId
+ADDED from /Users/trandinhtonhieu/Desktop/Android_17CNTN/CNTN_Grab/app/src/main/AndroidManifest.xml:19:9-21:55
+	android:value
+		ADDED from /Users/trandinhtonhieu/Desktop/Android_17CNTN/CNTN_Grab/app/src/main/AndroidManifest.xml:21:13-52
+	android:name
+		ADDED from /Users/trandinhtonhieu/Desktop/Android_17CNTN/CNTN_Grab/app/src/main/AndroidManifest.xml:20:13-58
+activity#com.example.cntn_grab.Screens.MainActivity
+ADDED from /Users/trandinhtonhieu/Desktop/Android_17CNTN/CNTN_Grab/app/src/main/AndroidManifest.xml:23:9-29:20
+	android:name
+		ADDED from /Users/trandinhtonhieu/Desktop/Android_17CNTN/CNTN_Grab/app/src/main/AndroidManifest.xml:23:19-55
+intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
+ADDED from /Users/trandinhtonhieu/Desktop/Android_17CNTN/CNTN_Grab/app/src/main/AndroidManifest.xml:24:13-28:29
+action#android.intent.action.MAIN
+ADDED from /Users/trandinhtonhieu/Desktop/Android_17CNTN/CNTN_Grab/app/src/main/AndroidManifest.xml:25:17-69
+	android:name
+		ADDED from /Users/trandinhtonhieu/Desktop/Android_17CNTN/CNTN_Grab/app/src/main/AndroidManifest.xml:25:25-66
+category#android.intent.category.LAUNCHER
+ADDED from /Users/trandinhtonhieu/Desktop/Android_17CNTN/CNTN_Grab/app/src/main/AndroidManifest.xml:27:17-77
+	android:name
+		ADDED from /Users/trandinhtonhieu/Desktop/Android_17CNTN/CNTN_Grab/app/src/main/AndroidManifest.xml:27:27-74
+uses-sdk
+INJECTED from /Users/trandinhtonhieu/Desktop/Android_17CNTN/CNTN_Grab/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from /Users/trandinhtonhieu/Desktop/Android_17CNTN/CNTN_Grab/app/src/main/AndroidManifest.xml
+INJECTED from /Users/trandinhtonhieu/Desktop/Android_17CNTN/CNTN_Grab/app/src/main/AndroidManifest.xml
+MERGED from [com.shreyaspatil:MaterialDialog:2.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/1d11c5fe9eccbef442be1011313e4459/AndroidManifest.xml:7:5-9:41
+MERGED from [com.shreyaspatil:MaterialDialog:2.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/1d11c5fe9eccbef442be1011313e4459/AndroidManifest.xml:7:5-9:41
+MERGED from [com.google.android.material:material:1.0.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/f716a22d7949bcd6b184ebee3e072715/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.material:material:1.0.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/f716a22d7949bcd6b184ebee3e072715/AndroidManifest.xml:20:5-44
+MERGED from [com.facebook.android:facebook-login:5.13.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/77e7b4be45c2e7d27b0633ff8c52983e/AndroidManifest.xml:24:5-26:41
+MERGED from [com.facebook.android:facebook-login:5.13.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/77e7b4be45c2e7d27b0633ff8c52983e/AndroidManifest.xml:24:5-26:41
+MERGED from [com.airbnb.android:lottie:3.3.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/75751a574dd6b8f9e31a6fe626d30079/AndroidManifest.xml:5:5-7:41
+MERGED from [com.airbnb.android:lottie:3.3.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/75751a574dd6b8f9e31a6fe626d30079/AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.android:facebook-common:5.13.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/7dc36174963485188757b24b523f7e6b/AndroidManifest.xml:24:5-26:41
+MERGED from [com.facebook.android:facebook-common:5.13.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/7dc36174963485188757b24b523f7e6b/AndroidManifest.xml:24:5-26:41
+MERGED from [com.google.android.gms:play-services:8.4.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/608ab620fd508067902de00e9e7dde81/AndroidManifest.xml:18:5-42
+MERGED from [com.google.android.gms:play-services:8.4.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/608ab620fd508067902de00e9e7dde81/AndroidManifest.xml:18:5-42
+MERGED from [com.google.android.gms:play-services-cast:8.4.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/8091b3700436feddfef5d5201cb1e1f9/AndroidManifest.xml:18:5-42
+MERGED from [com.google.android.gms:play-services-cast:8.4.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/8091b3700436feddfef5d5201cb1e1f9/AndroidManifest.xml:18:5-42
+MERGED from [androidx.mediarouter:mediarouter:1.0.0-alpha5] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/f79ccd02f10880778c603a468971fa80/AndroidManifest.xml:20:5-44
+MERGED from [androidx.mediarouter:mediarouter:1.0.0-alpha5] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/f79ccd02f10880778c603a468971fa80/AndroidManifest.xml:20:5-44
+MERGED from [androidx.appcompat:appcompat:1.1.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/49d737ca00fcb2d48aa31ee22948645f/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.appcompat:appcompat:1.1.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/49d737ca00fcb2d48aa31ee22948645f/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.constraintlayout:constraintlayout:1.1.3] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/48c3ab682e8fea641e1eea41d0c028b9/AndroidManifest.xml:5:5-7:41
+MERGED from [androidx.constraintlayout:constraintlayout:1.1.3] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/48c3ab682e8fea641e1eea41d0c028b9/AndroidManifest.xml:5:5-7:41
+MERGED from [com.google.firebase:firebase-auth:19.1.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/5890223a1b2fb504c8d7aa1b3724f8ac/AndroidManifest.xml:21:5-44
+MERGED from [com.google.firebase:firebase-auth:19.1.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/5890223a1b2fb504c8d7aa1b3724f8ac/AndroidManifest.xml:21:5-44
+MERGED from [androidx.legacy:legacy-support-v4:1.0.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/7bf0cb191df925a4c34e904e629d0b45/AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-v4:1.0.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/7bf0cb191df925a4c34e904e629d0b45/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-wallet:8.4.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/6b5a9b78943e1ff279ab822816174a03/AndroidManifest.xml:19:5-42
+MERGED from [com.google.android.gms:play-services-wallet:8.4.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/6b5a9b78943e1ff279ab822816174a03/AndroidManifest.xml:19:5-42
+MERGED from [com.google.android.gms:play-services-maps:17.0.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/b317e240ebbbb467adb51677d8aba802/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-maps:17.0.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/b317e240ebbbb467adb51677d8aba802/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-fitness:8.4.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/2a1144c2d948cbce90132e09080ea262/AndroidManifest.xml:18:5-42
+MERGED from [com.google.android.gms:play-services-fitness:8.4.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/2a1144c2d948cbce90132e09080ea262/AndroidManifest.xml:18:5-42
+MERGED from [com.google.android.gms:play-services-location:17.0.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/00ef3b2032224c3110333206aa3b120d/AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-location:17.0.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/00ef3b2032224c3110333206aa3b120d/AndroidManifest.xml:5:5-44
+MERGED from [com.google.firebase:firebase-analytics:17.2.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/5dbb6b5369f71190242cc801f0fa2478/AndroidManifest.xml:5:5-44
+MERGED from [com.google.firebase:firebase-analytics:17.2.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/5dbb6b5369f71190242cc801f0fa2478/AndroidManifest.xml:5:5-44
+MERGED from [com.github.ybq:Android-SpinKit:1.4.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/0fe6ba9e79ecda4480d931072c385615/AndroidManifest.xml:5:5-7:41
+MERGED from [com.github.ybq:Android-SpinKit:1.4.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/0fe6ba9e79ecda4480d931072c385615/AndroidManifest.xml:5:5-7:41
+MERGED from [com.google.android.gms:play-services-appindexing:8.4.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/8bde6500dd7bd94b3d1ec6d4ff83bb72/AndroidManifest.xml:18:5-42
+MERGED from [com.google.android.gms:play-services-appindexing:8.4.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/8bde6500dd7bd94b3d1ec6d4ff83bb72/AndroidManifest.xml:18:5-42
+MERGED from [com.google.android.gms:play-services-appinvite:8.4.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/84f206cdf5d48f1b824fb2af7fc5c301/AndroidManifest.xml:18:5-42
+MERGED from [com.google.android.gms:play-services-appinvite:8.4.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/84f206cdf5d48f1b824fb2af7fc5c301/AndroidManifest.xml:18:5-42
+MERGED from [com.google.android.gms:play-services-appstate:8.4.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/d235a7d4ce4234902b41b1e53b6c13e2/AndroidManifest.xml:18:5-42
+MERGED from [com.google.android.gms:play-services-appstate:8.4.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/d235a7d4ce4234902b41b1e53b6c13e2/AndroidManifest.xml:18:5-42
+MERGED from [com.google.android.gms:play-services-auth:8.4.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/a3ad6af686375d28722e488d432d6756/AndroidManifest.xml:18:5-43
+MERGED from [com.google.android.gms:play-services-auth:8.4.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/a3ad6af686375d28722e488d432d6756/AndroidManifest.xml:18:5-43
+MERGED from [com.google.android.gms:play-services-games:8.4.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/3d13881a72fa83ffc224bfbdda9d4f16/AndroidManifest.xml:18:5-42
+MERGED from [com.google.android.gms:play-services-games:8.4.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/3d13881a72fa83ffc224bfbdda9d4f16/AndroidManifest.xml:18:5-42
+MERGED from [com.google.android.gms:play-services-drive:8.4.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/4699113b88404eb6a1c6787952c96eac/AndroidManifest.xml:18:5-42
+MERGED from [com.google.android.gms:play-services-drive:8.4.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/4699113b88404eb6a1c6787952c96eac/AndroidManifest.xml:18:5-42
+MERGED from [com.google.android.gms:play-services-gcm:8.4.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/9dec353a623215839c4226ecc8b0e529/AndroidManifest.xml:18:5-42
+MERGED from [com.google.android.gms:play-services-gcm:8.4.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/9dec353a623215839c4226ecc8b0e529/AndroidManifest.xml:18:5-42
+MERGED from [com.google.android.gms:play-services-identity:8.4.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/498dc4970613fc757d08d4d13d2a6538/AndroidManifest.xml:18:5-42
+MERGED from [com.google.android.gms:play-services-identity:8.4.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/498dc4970613fc757d08d4d13d2a6538/AndroidManifest.xml:18:5-42
+MERGED from [com.google.android.gms:play-services-nearby:8.4.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/6f6c4ecf09b0adeefaea17f07f1e4340/AndroidManifest.xml:18:5-42
+MERGED from [com.google.android.gms:play-services-nearby:8.4.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/6f6c4ecf09b0adeefaea17f07f1e4340/AndroidManifest.xml:18:5-42
+MERGED from [com.google.android.gms:play-services-panorama:8.4.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/ad502830f5d36448914a730747a11785/AndroidManifest.xml:18:5-42
+MERGED from [com.google.android.gms:play-services-panorama:8.4.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/ad502830f5d36448914a730747a11785/AndroidManifest.xml:18:5-42
+MERGED from [com.google.android.gms:play-services-plus:8.4.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/ef74e8aa80d72f3a577ed2c6a1b042f5/AndroidManifest.xml:18:5-42
+MERGED from [com.google.android.gms:play-services-plus:8.4.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/ef74e8aa80d72f3a577ed2c6a1b042f5/AndroidManifest.xml:18:5-42
+MERGED from [com.google.android.gms:play-services-safetynet:8.4.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/dbd70c4508e4214d26de5d197daebc61/AndroidManifest.xml:18:5-42
+MERGED from [com.google.android.gms:play-services-safetynet:8.4.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/dbd70c4508e4214d26de5d197daebc61/AndroidManifest.xml:18:5-42
+MERGED from [com.google.android.gms:play-services-vision:8.4.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/09eacfbabcb43017328a401c1ec6accd/AndroidManifest.xml:4:5-42
+MERGED from [com.google.android.gms:play-services-vision:8.4.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/09eacfbabcb43017328a401c1ec6accd/AndroidManifest.xml:4:5-42
+MERGED from [com.google.android.gms:play-services-wearable:8.4.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/932902fa3fb8c7bbf8327c8892061cc8/AndroidManifest.xml:18:5-42
+MERGED from [com.google.android.gms:play-services-wearable:8.4.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/932902fa3fb8c7bbf8327c8892061cc8/AndroidManifest.xml:18:5-42
+MERGED from [com.google.firebase:firebase-auth-interop:18.0.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/7ee1d48d878ad1ea8ec70fb39927980b/AndroidManifest.xml:5:5-44
+MERGED from [com.google.firebase:firebase-auth-interop:18.0.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/7ee1d48d878ad1ea8ec70fb39927980b/AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-measurement-api:17.2.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/f9adb112e8e935c5622d3fb2b48e925b/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-measurement-api:17.2.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/f9adb112e8e935c5622d3fb2b48e925b/AndroidManifest.xml:20:5-44
+MERGED from [com.google.firebase:firebase-iid:19.0.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/f636cbfbf7fbe1d933181a76f1773068/AndroidManifest.xml:20:5-44
+MERGED from [com.google.firebase:firebase-iid:19.0.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/f636cbfbf7fbe1d933181a76f1773068/AndroidManifest.xml:20:5-44
+MERGED from [com.google.firebase:firebase-iid-interop:17.0.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/fafca8f323f3b1728845b4d78b36d5c4/AndroidManifest.xml:5:5-44
+MERGED from [com.google.firebase:firebase-iid-interop:17.0.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/fafca8f323f3b1728845b4d78b36d5c4/AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-base:17.1.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/1bea578868a0f2c55b50085b1a7b94ae/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-base:17.1.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/1bea578868a0f2c55b50085b1a7b94ae/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-ads:8.4.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/0d832eb4beea453d0f31b85260abef1d/AndroidManifest.xml:23:5-42
+MERGED from [com.google.android.gms:play-services-ads:8.4.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/0d832eb4beea453d0f31b85260abef1d/AndroidManifest.xml:23:5-42
+MERGED from [com.google.android.gms:play-services-analytics:8.4.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/fad638a91feb3378f24ce16fe94e41a4/AndroidManifest.xml:18:5-42
+MERGED from [com.google.android.gms:play-services-analytics:8.4.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/fad638a91feb3378f24ce16fe94e41a4/AndroidManifest.xml:18:5-42
+MERGED from [com.google.firebase:firebase-common:19.0.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/23034e89a96c74a70d2114886539cb2d/AndroidManifest.xml:6:5-8:41
+MERGED from [com.google.firebase:firebase-common:19.0.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/23034e89a96c74a70d2114886539cb2d/AndroidManifest.xml:6:5-8:41
+MERGED from [com.google.android.gms:play-services-tasks:17.0.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/90eb2614da4898fbffaf71ccc3662594/AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-tasks:17.0.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/90eb2614da4898fbffaf71ccc3662594/AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-places-placereport:17.0.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/ccdd16c3021c3184bf5d002c8332afa2/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-places-placereport:17.0.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/ccdd16c3021c3184bf5d002c8332afa2/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-measurement:17.2.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/b8a3712e408451ab5bf0f18fae432fcd/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-measurement:17.2.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/b8a3712e408451ab5bf0f18fae432fcd/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-measurement-sdk:17.2.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/2a065b8549e55466a9f8cdaa9069f6e8/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-measurement-sdk:17.2.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/2a065b8549e55466a9f8cdaa9069f6e8/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-measurement-impl:17.2.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/9073ec630f2e53cc347064878b6da359/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-measurement-impl:17.2.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/9073ec630f2e53cc347064878b6da359/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-measurement-sdk-api:17.2.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/b680143591b0d8971c282a40bd949b35/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-measurement-sdk-api:17.2.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/b680143591b0d8971c282a40bd949b35/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-measurement-base:17.2.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/b660e94fe9424b45a9e890d6afe0183d/AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-measurement-base:17.2.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/b660e94fe9424b45a9e890d6afe0183d/AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-stats:17.0.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/ebfb535052462e48f12acb39d12eb04c/AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-stats:17.0.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/ebfb535052462e48f12acb39d12eb04c/AndroidManifest.xml:5:5-44
+MERGED from [com.google.firebase:firebase-measurement-connector:18.0.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/5a75afda27bf07e4faa4584307722188/AndroidManifest.xml:20:5-44
+MERGED from [com.google.firebase:firebase-measurement-connector:18.0.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/5a75afda27bf07e4faa4584307722188/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-ads-identifier:17.0.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/bddedcdca1e654406ca5b8da4a54ceb0/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-ads-identifier:17.0.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/bddedcdca1e654406ca5b8da4a54ceb0/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-basement:17.0.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/b16c5f868a2f52d22b9ef4dca64403e6/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-basement:17.0.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/b16c5f868a2f52d22b9ef4dca64403e6/AndroidManifest.xml:20:5-44
+MERGED from [androidx.fragment:fragment:1.1.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/59ad3c52dda8e125e3047def6931e04e/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.fragment:fragment:1.1.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/59ad3c52dda8e125e3047def6931e04e/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.appcompat:appcompat-resources:1.1.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/81bff62e18968ec05b17550306498ae6/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.appcompat:appcompat-resources:1.1.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/81bff62e18968ec05b17550306498ae6/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.recyclerview:recyclerview:1.0.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/6ba0a908e58f6a14cb7e23226d4a0729/AndroidManifest.xml:20:5-44
+MERGED from [androidx.recyclerview:recyclerview:1.0.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/6ba0a908e58f6a14cb7e23226d4a0729/AndroidManifest.xml:20:5-44
+MERGED from [androidx.browser:browser:1.0.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/a65b8bcb7cdf0e94d268ee47339a9a81/AndroidManifest.xml:20:5-44
+MERGED from [androidx.browser:browser:1.0.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/a65b8bcb7cdf0e94d268ee47339a9a81/AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-core-ui:1.0.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/8478b1d908f7c63306f052f14aeb1fbe/AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-core-ui:1.0.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/8478b1d908f7c63306f052f14aeb1fbe/AndroidManifest.xml:20:5-44
+MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/25467bcebd13b9bcc73b49e60c1d2419/AndroidManifest.xml:20:5-44
+MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/25467bcebd13b9bcc73b49e60c1d2419/AndroidManifest.xml:20:5-44
+MERGED from [com.facebook.android:facebook-core:5.13.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/8d31e9671e4eb0ec8576ac8f2038a6da/AndroidManifest.xml:24:5-26:41
+MERGED from [com.facebook.android:facebook-core:5.13.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/8d31e9671e4eb0ec8576ac8f2038a6da/AndroidManifest.xml:24:5-26:41
+MERGED from [androidx.palette:palette:1.0.0-rc01] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/adb08bf57af9df0b1e46f94492ba2806/AndroidManifest.xml:20:5-44
+MERGED from [androidx.palette:palette:1.0.0-rc01] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/adb08bf57af9df0b1e46f94492ba2806/AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/5ea7201439f7f9618f37d5203b1e0cf1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/5ea7201439f7f9618f37d5203b1e0cf1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.transition:transition:1.0.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/a6c4ffcb04e6e67e045f898e43b0b4b8/AndroidManifest.xml:20:5-44
+MERGED from [androidx.transition:transition:1.0.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/a6c4ffcb04e6e67e045f898e43b0b4b8/AndroidManifest.xml:20:5-44
+MERGED from [androidx.media2:media2:1.0.0-alpha02] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/35866efbb14401aaedfe64027cec0d5f/AndroidManifest.xml:20:5-44
+MERGED from [androidx.media2:media2:1.0.0-alpha02] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/35866efbb14401aaedfe64027cec0d5f/AndroidManifest.xml:20:5-44
+MERGED from [androidx.media:media:1.0.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/5261a013aa1fb08992c2efdeaba8d1b6/AndroidManifest.xml:20:5-44
+MERGED from [androidx.media:media:1.0.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/5261a013aa1fb08992c2efdeaba8d1b6/AndroidManifest.xml:20:5-44
+MERGED from [androidx.viewpager:viewpager:1.0.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/db4180e8710eb28d199264a507eece3a/AndroidManifest.xml:20:5-44
+MERGED from [androidx.viewpager:viewpager:1.0.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/db4180e8710eb28d199264a507eece3a/AndroidManifest.xml:20:5-44
+MERGED from [androidx.loader:loader:1.0.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/fa45a4d32852c9d66cbd6b43ef91a4ae/AndroidManifest.xml:20:5-44
+MERGED from [androidx.loader:loader:1.0.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/fa45a4d32852c9d66cbd6b43ef91a4ae/AndroidManifest.xml:20:5-44
+MERGED from [androidx.activity:activity:1.0.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/7e6b8704dadbd77bef1e65213088d8ff/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.activity:activity:1.0.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/7e6b8704dadbd77bef1e65213088d8ff/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/ca3c6504024558657854b0460ee2838e/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/ca3c6504024558657854b0460ee2838e/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/aaec2dde44947d32427de77f6bad5fac/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/aaec2dde44947d32427de77f6bad5fac/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.0.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/8c7e6143b63373cca075df04e8f6d250/AndroidManifest.xml:20:5-44
+MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.0.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/8c7e6143b63373cca075df04e8f6d250/AndroidManifest.xml:20:5-44
+MERGED from [androidx.slidingpanelayout:slidingpanelayout:1.0.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/31a233a7c7fc4a3772a2619c1af7fd9a/AndroidManifest.xml:20:5-44
+MERGED from [androidx.slidingpanelayout:slidingpanelayout:1.0.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/31a233a7c7fc4a3772a2619c1af7fd9a/AndroidManifest.xml:20:5-44
+MERGED from [androidx.customview:customview:1.0.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/76750fcee82232e3f856a5d24f6b3d42/AndroidManifest.xml:20:5-44
+MERGED from [androidx.customview:customview:1.0.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/76750fcee82232e3f856a5d24f6b3d42/AndroidManifest.xml:20:5-44
+MERGED from [androidx.swiperefreshlayout:swiperefreshlayout:1.0.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/6474b997df730c625af1256e23a6b0a6/AndroidManifest.xml:20:5-44
+MERGED from [androidx.swiperefreshlayout:swiperefreshlayout:1.0.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/6474b997df730c625af1256e23a6b0a6/AndroidManifest.xml:20:5-44
+MERGED from [androidx.asynclayoutinflater:asynclayoutinflater:1.0.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/337ddacd3b4ea52b8480135d339d5796/AndroidManifest.xml:20:5-44
+MERGED from [androidx.asynclayoutinflater:asynclayoutinflater:1.0.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/337ddacd3b4ea52b8480135d339d5796/AndroidManifest.xml:20:5-44
+MERGED from [androidx.core:core:1.1.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/d8558c33e194d471b347fa6231cf6b99/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.core:core:1.1.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/d8558c33e194d471b347fa6231cf6b99/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/e351f32b1009b589e620452b10b12805/AndroidManifest.xml:20:5-44
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/e351f32b1009b589e620452b10b12805/AndroidManifest.xml:20:5-44
+MERGED from [androidx.cardview:cardview:1.0.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/45cae76caacb03482c9df84e96859ff2/AndroidManifest.xml:20:5-44
+MERGED from [androidx.cardview:cardview:1.0.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/45cae76caacb03482c9df84e96859ff2/AndroidManifest.xml:20:5-44
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/65aaf43a67cbdf5af4fdd0ee7e135aa7/AndroidManifest.xml:20:5-44
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/65aaf43a67cbdf5af4fdd0ee7e135aa7/AndroidManifest.xml:20:5-44
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/e2306a1ce97fce88bdd5fbe232028cf3/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/e2306a1ce97fce88bdd5fbe232028cf3/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.interpolator:interpolator:1.0.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/e9fd978e5791a10b164ec5bb553e71bc/AndroidManifest.xml:20:5-44
+MERGED from [androidx.interpolator:interpolator:1.0.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/e9fd978e5791a10b164ec5bb553e71bc/AndroidManifest.xml:20:5-44
+MERGED from [androidx.documentfile:documentfile:1.0.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/0b02b6542e0555a8ede9b4b65f6f092e/AndroidManifest.xml:20:5-44
+MERGED from [androidx.documentfile:documentfile:1.0.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/0b02b6542e0555a8ede9b4b65f6f092e/AndroidManifest.xml:20:5-44
+MERGED from [androidx.print:print:1.0.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/433f0dc9ba282e864c2ac4086945b4f2/AndroidManifest.xml:20:5-44
+MERGED from [androidx.print:print:1.0.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/433f0dc9ba282e864c2ac4086945b4f2/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.1.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/9adabe4030c12cd4461fe19b6dd34fd9/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.1.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/9adabe4030c12cd4461fe19b6dd34fd9/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.1.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/d2533bb6f18e084dc0de499fbceb805b/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.1.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/d2533bb6f18e084dc0de499fbceb805b/AndroidManifest.xml:20:5-44
+MERGED from [androidx.savedstate:savedstate:1.0.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/9c9721a0f4bfe6940aa03a19d2ed483f/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.savedstate:savedstate:1.0.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/9c9721a0f4bfe6940aa03a19d2ed483f/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/96cb1ac738f8b33ed027d1ca38d61815/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/96cb1ac738f8b33ed027d1ca38d61815/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/6b187787f0aea8182bcde0d0041defdf/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/6b187787f0aea8182bcde0d0041defdf/AndroidManifest.xml:20:5-44
+MERGED from [androidx.arch.core:core-runtime:2.0.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/a471d1e8422734416a97b446a9271c67/AndroidManifest.xml:20:5-44
+MERGED from [androidx.arch.core:core-runtime:2.0.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/a471d1e8422734416a97b446a9271c67/AndroidManifest.xml:20:5-44
+INJECTED from /Users/trandinhtonhieu/Desktop/Android_17CNTN/CNTN_Grab/app/src/main/AndroidManifest.xml
+INJECTED from /Users/trandinhtonhieu/Desktop/Android_17CNTN/CNTN_Grab/app/src/main/AndroidManifest.xml
+	android:targetSdkVersion
+		INJECTED from /Users/trandinhtonhieu/Desktop/Android_17CNTN/CNTN_Grab/app/src/main/AndroidManifest.xml
+		ADDED from /Users/trandinhtonhieu/Desktop/Android_17CNTN/CNTN_Grab/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/trandinhtonhieu/Desktop/Android_17CNTN/CNTN_Grab/app/src/main/AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from /Users/trandinhtonhieu/Desktop/Android_17CNTN/CNTN_Grab/app/src/main/AndroidManifest.xml
+		ADDED from /Users/trandinhtonhieu/Desktop/Android_17CNTN/CNTN_Grab/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/trandinhtonhieu/Desktop/Android_17CNTN/CNTN_Grab/app/src/main/AndroidManifest.xml
+activity#com.facebook.FacebookActivity
+ADDED from [com.facebook.android:facebook-common:5.13.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/7dc36174963485188757b24b523f7e6b/AndroidManifest.xml:29:9-32:66
+	android:configChanges
+		ADDED from [com.facebook.android:facebook-common:5.13.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/7dc36174963485188757b24b523f7e6b/AndroidManifest.xml:31:13-96
+	android:theme
+		ADDED from [com.facebook.android:facebook-common:5.13.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/7dc36174963485188757b24b523f7e6b/AndroidManifest.xml:32:13-63
+	android:name
+		ADDED from [com.facebook.android:facebook-common:5.13.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/7dc36174963485188757b24b523f7e6b/AndroidManifest.xml:30:13-57
+activity#com.facebook.CustomTabMainActivity
+ADDED from [com.facebook.android:facebook-common:5.13.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/7dc36174963485188757b24b523f7e6b/AndroidManifest.xml:33:9-71
+	android:name
+		ADDED from [com.facebook.android:facebook-common:5.13.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/7dc36174963485188757b24b523f7e6b/AndroidManifest.xml:33:19-68
+activity#com.facebook.CustomTabActivity
+ADDED from [com.facebook.android:facebook-common:5.13.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/7dc36174963485188757b24b523f7e6b/AndroidManifest.xml:34:9-67
+	android:name
+		ADDED from [com.facebook.android:facebook-common:5.13.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/7dc36174963485188757b24b523f7e6b/AndroidManifest.xml:34:19-64
+activity#com.google.firebase.auth.internal.FederatedSignInActivity
+ADDED from [com.google.firebase:firebase-auth:19.1.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/5890223a1b2fb504c8d7aa1b3724f8ac/AndroidManifest.xml:24:9-31:50
+	android:excludeFromRecents
+		ADDED from [com.google.firebase:firebase-auth:19.1.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/5890223a1b2fb504c8d7aa1b3724f8ac/AndroidManifest.xml:26:13-46
+	android:launchMode
+		ADDED from [com.google.firebase:firebase-auth:19.1.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/5890223a1b2fb504c8d7aa1b3724f8ac/AndroidManifest.xml:28:13-44
+	android:exported
+		ADDED from [com.google.firebase:firebase-auth:19.1.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/5890223a1b2fb504c8d7aa1b3724f8ac/AndroidManifest.xml:27:13-36
+	android:permission
+		ADDED from [com.google.firebase:firebase-auth:19.1.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/5890223a1b2fb504c8d7aa1b3724f8ac/AndroidManifest.xml:29:13-102
+	android:theme
+		ADDED from [com.google.firebase:firebase-auth:19.1.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/5890223a1b2fb504c8d7aa1b3724f8ac/AndroidManifest.xml:30:13-72
+	tools:replace
+		ADDED from [com.google.firebase:firebase-auth:19.1.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/5890223a1b2fb504c8d7aa1b3724f8ac/AndroidManifest.xml:31:13-47
+	android:name
+		ADDED from [com.google.firebase:firebase-auth:19.1.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/5890223a1b2fb504c8d7aa1b3724f8ac/AndroidManifest.xml:25:13-85
+service#com.google.firebase.components.ComponentDiscoveryService
+ADDED from [com.google.firebase:firebase-auth:19.1.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/5890223a1b2fb504c8d7aa1b3724f8ac/AndroidManifest.xml:33:9-39:19
+MERGED from [com.google.android.gms:play-services-measurement-api:17.2.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/f9adb112e8e935c5622d3fb2b48e925b/AndroidManifest.xml:27:9-33:19
+MERGED from [com.google.android.gms:play-services-measurement-api:17.2.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/f9adb112e8e935c5622d3fb2b48e925b/AndroidManifest.xml:27:9-33:19
+MERGED from [com.google.firebase:firebase-iid:19.0.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/f636cbfbf7fbe1d933181a76f1773068/AndroidManifest.xml:29:9-35:19
+MERGED from [com.google.firebase:firebase-iid:19.0.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/f636cbfbf7fbe1d933181a76f1773068/AndroidManifest.xml:29:9-35:19
+	android:exported
+		ADDED from [com.google.firebase:firebase-auth:19.1.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/5890223a1b2fb504c8d7aa1b3724f8ac/AndroidManifest.xml:35:13-37
+	android:name
+		ADDED from [com.google.firebase:firebase-auth:19.1.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/5890223a1b2fb504c8d7aa1b3724f8ac/AndroidManifest.xml:34:13-84
+meta-data#com.google.firebase.components:com.google.firebase.auth.FirebaseAuthRegistrar
+ADDED from [com.google.firebase:firebase-auth:19.1.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/5890223a1b2fb504c8d7aa1b3724f8ac/AndroidManifest.xml:36:13-38:85
+	android:value
+		ADDED from [com.google.firebase:firebase-auth:19.1.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/5890223a1b2fb504c8d7aa1b3724f8ac/AndroidManifest.xml:38:17-82
+	android:name
+		ADDED from [com.google.firebase:firebase-auth:19.1.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/5890223a1b2fb504c8d7aa1b3724f8ac/AndroidManifest.xml:37:17-109
+uses-permission#android.permission.ACCESS_NETWORK_STATE
+ADDED from [com.google.android.gms:play-services-maps:17.0.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/b317e240ebbbb467adb51677d8aba802/AndroidManifest.xml:23:5-79
+MERGED from [com.google.android.gms:play-services-nearby:8.4.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/6f6c4ecf09b0adeefaea17f07f1e4340/AndroidManifest.xml:19:5-79
+MERGED from [com.google.android.gms:play-services-nearby:8.4.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/6f6c4ecf09b0adeefaea17f07f1e4340/AndroidManifest.xml:19:5-79
+MERGED from [com.google.android.gms:play-services-measurement-api:17.2.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/f9adb112e8e935c5622d3fb2b48e925b/AndroidManifest.xml:23:5-79
+MERGED from [com.google.android.gms:play-services-measurement-api:17.2.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/f9adb112e8e935c5622d3fb2b48e925b/AndroidManifest.xml:23:5-79
+MERGED from [com.google.firebase:firebase-iid:19.0.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/f636cbfbf7fbe1d933181a76f1773068/AndroidManifest.xml:22:5-79
+MERGED from [com.google.firebase:firebase-iid:19.0.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/f636cbfbf7fbe1d933181a76f1773068/AndroidManifest.xml:22:5-79
+MERGED from [com.google.android.gms:play-services-ads:8.4.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/0d832eb4beea453d0f31b85260abef1d/AndroidManifest.xml:21:5-78
+MERGED from [com.google.android.gms:play-services-ads:8.4.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/0d832eb4beea453d0f31b85260abef1d/AndroidManifest.xml:21:5-78
+MERGED from [com.google.android.gms:play-services-analytics:8.4.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/fad638a91feb3378f24ce16fe94e41a4/AndroidManifest.xml:22:5-79
+MERGED from [com.google.android.gms:play-services-analytics:8.4.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/fad638a91feb3378f24ce16fe94e41a4/AndroidManifest.xml:22:5-79
+MERGED from [com.google.android.gms:play-services-measurement:17.2.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/b8a3712e408451ab5bf0f18fae432fcd/AndroidManifest.xml:24:5-79
+MERGED from [com.google.android.gms:play-services-measurement:17.2.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/b8a3712e408451ab5bf0f18fae432fcd/AndroidManifest.xml:24:5-79
+MERGED from [com.google.android.gms:play-services-measurement-impl:17.2.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/9073ec630f2e53cc347064878b6da359/AndroidManifest.xml:24:5-79
+MERGED from [com.google.android.gms:play-services-measurement-impl:17.2.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/9073ec630f2e53cc347064878b6da359/AndroidManifest.xml:24:5-79
+MERGED from [com.google.android.gms:play-services-measurement-sdk-api:17.2.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/b680143591b0d8971c282a40bd949b35/AndroidManifest.xml:24:5-79
+MERGED from [com.google.android.gms:play-services-measurement-sdk-api:17.2.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/b680143591b0d8971c282a40bd949b35/AndroidManifest.xml:24:5-79
+	android:name
+		ADDED from [com.google.android.gms:play-services-maps:17.0.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/b317e240ebbbb467adb51677d8aba802/AndroidManifest.xml:23:22-76
+uses-feature#0x00020000
+ADDED from [com.google.android.gms:play-services-maps:17.0.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/b317e240ebbbb467adb51677d8aba802/AndroidManifest.xml:26:5-28:35
+	android:glEsVersion
+		ADDED from [com.google.android.gms:play-services-maps:17.0.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/b317e240ebbbb467adb51677d8aba802/AndroidManifest.xml:27:9-41
+	android:required
+		ADDED from [com.google.android.gms:play-services-maps:17.0.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/b317e240ebbbb467adb51677d8aba802/AndroidManifest.xml:28:9-32
+uses-library#org.apache.http.legacy
+ADDED from [com.google.android.gms:play-services-maps:17.0.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/b317e240ebbbb467adb51677d8aba802/AndroidManifest.xml:33:9-35:40
+	android:required
+		ADDED from [com.google.android.gms:play-services-maps:17.0.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/b317e240ebbbb467adb51677d8aba802/AndroidManifest.xml:35:13-37
+	android:name
+		ADDED from [com.google.android.gms:play-services-maps:17.0.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/b317e240ebbbb467adb51677d8aba802/AndroidManifest.xml:34:13-50
+activity#com.google.android.gms.appinvite.PreviewActivity
+ADDED from [com.google.android.gms:play-services-appinvite:8.4.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/84f206cdf5d48f1b824fb2af7fc5c301/AndroidManifest.xml:21:9-29:20
+	android:exported
+		ADDED from [com.google.android.gms:play-services-appinvite:8.4.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/84f206cdf5d48f1b824fb2af7fc5c301/AndroidManifest.xml:23:17-40
+	android:theme
+		ADDED from [com.google.android.gms:play-services-appinvite:8.4.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/84f206cdf5d48f1b824fb2af7fc5c301/AndroidManifest.xml:24:17-63
+	android:name
+		ADDED from [com.google.android.gms:play-services-appinvite:8.4.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/84f206cdf5d48f1b824fb2af7fc5c301/AndroidManifest.xml:22:17-48
+intent-filter#action:name:com.google.android.gms.appinvite.ACTION_PREVIEW+category:name:android.intent.category.DEFAULT
+ADDED from [com.google.android.gms:play-services-appinvite:8.4.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/84f206cdf5d48f1b824fb2af7fc5c301/AndroidManifest.xml:25:13-28:29
+action#com.google.android.gms.appinvite.ACTION_PREVIEW
+ADDED from [com.google.android.gms:play-services-appinvite:8.4.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/84f206cdf5d48f1b824fb2af7fc5c301/AndroidManifest.xml:26:17-89
+	android:name
+		ADDED from [com.google.android.gms:play-services-appinvite:8.4.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/84f206cdf5d48f1b824fb2af7fc5c301/AndroidManifest.xml:26:25-87
+category#android.intent.category.DEFAULT
+ADDED from [com.google.android.gms:play-services-appinvite:8.4.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/84f206cdf5d48f1b824fb2af7fc5c301/AndroidManifest.xml:27:17-75
+	android:name
+		ADDED from [com.google.android.gms:play-services-appinvite:8.4.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/84f206cdf5d48f1b824fb2af7fc5c301/AndroidManifest.xml:27:27-73
+activity#com.google.android.gms.auth.api.signin.internal.SignInHubActivity
+ADDED from [com.google.android.gms:play-services-auth:8.4.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/a3ad6af686375d28722e488d432d6756/AndroidManifest.xml:21:9-24:46
+	android:excludeFromRecents
+		ADDED from [com.google.android.gms:play-services-auth:8.4.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/a3ad6af686375d28722e488d432d6756/AndroidManifest.xml:23:19-52
+	android:exported
+		ADDED from [com.google.android.gms:play-services-auth:8.4.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/a3ad6af686375d28722e488d432d6756/AndroidManifest.xml:24:19-43
+	android:theme
+		ADDED from [com.google.android.gms:play-services-auth:8.4.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/a3ad6af686375d28722e488d432d6756/AndroidManifest.xml:22:19-78
+	android:name
+		ADDED from [com.google.android.gms:play-services-auth:8.4.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/a3ad6af686375d28722e488d432d6756/AndroidManifest.xml:21:19-72
+service#com.google.android.gms.auth.api.signin.RevocationBoundService
+ADDED from [com.google.android.gms:play-services-auth:8.4.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/a3ad6af686375d28722e488d432d6756/AndroidManifest.xml:28:9-31:110
+	android:exported
+		ADDED from [com.google.android.gms:play-services-auth:8.4.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/a3ad6af686375d28722e488d432d6756/AndroidManifest.xml:30:13-36
+	android:permission
+		ADDED from [com.google.android.gms:play-services-auth:8.4.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/a3ad6af686375d28722e488d432d6756/AndroidManifest.xml:31:13-107
+	android:name
+		ADDED from [com.google.android.gms:play-services-auth:8.4.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/a3ad6af686375d28722e488d432d6756/AndroidManifest.xml:29:13-62
+uses-permission#com.google.android.c2dm.permission.RECEIVE
+ADDED from [com.google.android.gms:play-services-gcm:8.4.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/9dec353a623215839c4226ecc8b0e529/AndroidManifest.xml:21:5-82
+MERGED from [com.google.firebase:firebase-iid:19.0.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/f636cbfbf7fbe1d933181a76f1773068/AndroidManifest.xml:26:5-82
+MERGED from [com.google.firebase:firebase-iid:19.0.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/f636cbfbf7fbe1d933181a76f1773068/AndroidManifest.xml:26:5-82
+	android:name
+		ADDED from [com.google.android.gms:play-services-gcm:8.4.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/9dec353a623215839c4226ecc8b0e529/AndroidManifest.xml:21:22-79
+uses-permission#android.permission.WAKE_LOCK
+ADDED from [com.google.android.gms:play-services-measurement-api:17.2.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/f9adb112e8e935c5622d3fb2b48e925b/AndroidManifest.xml:24:5-68
+MERGED from [com.google.firebase:firebase-iid:19.0.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/f636cbfbf7fbe1d933181a76f1773068/AndroidManifest.xml:24:5-68
+MERGED from [com.google.firebase:firebase-iid:19.0.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/f636cbfbf7fbe1d933181a76f1773068/AndroidManifest.xml:24:5-68
+MERGED from [com.google.android.gms:play-services-measurement:17.2.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/b8a3712e408451ab5bf0f18fae432fcd/AndroidManifest.xml:25:5-68
+MERGED from [com.google.android.gms:play-services-measurement:17.2.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/b8a3712e408451ab5bf0f18fae432fcd/AndroidManifest.xml:25:5-68
+MERGED from [com.google.android.gms:play-services-measurement-impl:17.2.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/9073ec630f2e53cc347064878b6da359/AndroidManifest.xml:25:5-68
+MERGED from [com.google.android.gms:play-services-measurement-impl:17.2.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/9073ec630f2e53cc347064878b6da359/AndroidManifest.xml:25:5-68
+MERGED from [com.google.android.gms:play-services-measurement-sdk-api:17.2.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/b680143591b0d8971c282a40bd949b35/AndroidManifest.xml:25:5-68
+MERGED from [com.google.android.gms:play-services-measurement-sdk-api:17.2.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/b680143591b0d8971c282a40bd949b35/AndroidManifest.xml:25:5-68
+	android:name
+		ADDED from [com.google.android.gms:play-services-measurement-api:17.2.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/f9adb112e8e935c5622d3fb2b48e925b/AndroidManifest.xml:24:22-65
+meta-data#com.google.firebase.components:com.google.firebase.analytics.connector.internal.AnalyticsConnectorRegistrar
+ADDED from [com.google.android.gms:play-services-measurement-api:17.2.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/f9adb112e8e935c5622d3fb2b48e925b/AndroidManifest.xml:30:13-32:85
+	android:value
+		ADDED from [com.google.android.gms:play-services-measurement-api:17.2.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/f9adb112e8e935c5622d3fb2b48e925b/AndroidManifest.xml:32:17-82
+	android:name
+		ADDED from [com.google.android.gms:play-services-measurement-api:17.2.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/f9adb112e8e935c5622d3fb2b48e925b/AndroidManifest.xml:31:17-139
+meta-data#com.google.firebase.components:com.google.firebase.iid.Registrar
+ADDED from [com.google.firebase:firebase-iid:19.0.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/f636cbfbf7fbe1d933181a76f1773068/AndroidManifest.xml:32:13-34:85
+	android:value
+		ADDED from [com.google.firebase:firebase-iid:19.0.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/f636cbfbf7fbe1d933181a76f1773068/AndroidManifest.xml:34:17-82
+	android:name
+		ADDED from [com.google.firebase:firebase-iid:19.0.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/f636cbfbf7fbe1d933181a76f1773068/AndroidManifest.xml:33:17-96
+receiver#com.google.firebase.iid.FirebaseInstanceIdReceiver
+ADDED from [com.google.firebase:firebase-iid:19.0.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/f636cbfbf7fbe1d933181a76f1773068/AndroidManifest.xml:37:9-44:20
+	android:exported
+		ADDED from [com.google.firebase:firebase-iid:19.0.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/f636cbfbf7fbe1d933181a76f1773068/AndroidManifest.xml:39:13-36
+	android:permission
+		ADDED from [com.google.firebase:firebase-iid:19.0.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/f636cbfbf7fbe1d933181a76f1773068/AndroidManifest.xml:40:13-73
+	android:name
+		ADDED from [com.google.firebase:firebase-iid:19.0.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/f636cbfbf7fbe1d933181a76f1773068/AndroidManifest.xml:38:13-78
+intent-filter#action:name:com.google.android.c2dm.intent.RECEIVE
+ADDED from [com.google.firebase:firebase-iid:19.0.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/f636cbfbf7fbe1d933181a76f1773068/AndroidManifest.xml:41:13-43:29
+action#com.google.android.c2dm.intent.RECEIVE
+ADDED from [com.google.firebase:firebase-iid:19.0.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/f636cbfbf7fbe1d933181a76f1773068/AndroidManifest.xml:42:17-81
+	android:name
+		ADDED from [com.google.firebase:firebase-iid:19.0.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/f636cbfbf7fbe1d933181a76f1773068/AndroidManifest.xml:42:25-78
+activity#com.google.android.gms.common.api.GoogleApiActivity
+ADDED from [com.google.android.gms:play-services-base:17.1.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/1bea578868a0f2c55b50085b1a7b94ae/AndroidManifest.xml:23:9-26:75
+	android:exported
+		ADDED from [com.google.android.gms:play-services-base:17.1.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/1bea578868a0f2c55b50085b1a7b94ae/AndroidManifest.xml:25:13-37
+	android:theme
+		ADDED from [com.google.android.gms:play-services-base:17.1.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/1bea578868a0f2c55b50085b1a7b94ae/AndroidManifest.xml:26:13-72
+	android:name
+		ADDED from [com.google.android.gms:play-services-base:17.1.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/1bea578868a0f2c55b50085b1a7b94ae/AndroidManifest.xml:24:13-79
+activity#com.google.android.gms.ads.AdActivity
+ADDED from [com.google.android.gms:play-services-ads:8.4.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/0d832eb4beea453d0f31b85260abef1d/AndroidManifest.xml:26:9-29:64
+	android:configChanges
+		ADDED from [com.google.android.gms:play-services-ads:8.4.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/0d832eb4beea453d0f31b85260abef1d/AndroidManifest.xml:28:13-122
+	android:theme
+		ADDED from [com.google.android.gms:play-services-ads:8.4.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/0d832eb4beea453d0f31b85260abef1d/AndroidManifest.xml:29:13-61
+	android:name
+		ADDED from [com.google.android.gms:play-services-ads:8.4.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/0d832eb4beea453d0f31b85260abef1d/AndroidManifest.xml:27:13-65
+activity#com.google.android.gms.ads.purchase.InAppPurchaseActivity
+ADDED from [com.google.android.gms:play-services-ads:8.4.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/0d832eb4beea453d0f31b85260abef1d/AndroidManifest.xml:30:9-31:52
+	android:theme
+		ADDED from [com.google.android.gms:play-services-ads:8.4.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/0d832eb4beea453d0f31b85260abef1d/AndroidManifest.xml:31:13-50
+	android:name
+		ADDED from [com.google.android.gms:play-services-ads:8.4.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/0d832eb4beea453d0f31b85260abef1d/AndroidManifest.xml:30:19-91
+provider#com.google.firebase.provider.FirebaseInitProvider
+ADDED from [com.google.firebase:firebase-common:19.0.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/23034e89a96c74a70d2114886539cb2d/AndroidManifest.xml:12:9-16:39
+	android:authorities
+		ADDED from [com.google.firebase:firebase-common:19.0.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/23034e89a96c74a70d2114886539cb2d/AndroidManifest.xml:14:13-72
+	android:exported
+		ADDED from [com.google.firebase:firebase-common:19.0.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/23034e89a96c74a70d2114886539cb2d/AndroidManifest.xml:15:13-37
+	android:initOrder
+		ADDED from [com.google.firebase:firebase-common:19.0.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/23034e89a96c74a70d2114886539cb2d/AndroidManifest.xml:16:13-36
+	android:name
+		ADDED from [com.google.firebase:firebase-common:19.0.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/23034e89a96c74a70d2114886539cb2d/AndroidManifest.xml:13:13-77
+uses-permission#com.google.android.finsky.permission.BIND_GET_INSTALL_REFERRER_SERVICE
+ADDED from [com.google.android.gms:play-services-measurement:17.2.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/b8a3712e408451ab5bf0f18fae432fcd/AndroidManifest.xml:26:5-110
+MERGED from [com.google.android.gms:play-services-measurement-impl:17.2.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/9073ec630f2e53cc347064878b6da359/AndroidManifest.xml:26:5-110
+MERGED from [com.google.android.gms:play-services-measurement-impl:17.2.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/9073ec630f2e53cc347064878b6da359/AndroidManifest.xml:26:5-110
+	android:name
+		ADDED from [com.google.android.gms:play-services-measurement:17.2.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/b8a3712e408451ab5bf0f18fae432fcd/AndroidManifest.xml:26:22-107
+receiver#com.google.android.gms.measurement.AppMeasurementReceiver
+ADDED from [com.google.android.gms:play-services-measurement:17.2.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/b8a3712e408451ab5bf0f18fae432fcd/AndroidManifest.xml:29:9-33:20
+	android:enabled
+		ADDED from [com.google.android.gms:play-services-measurement:17.2.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/b8a3712e408451ab5bf0f18fae432fcd/AndroidManifest.xml:31:13-35
+	android:exported
+		ADDED from [com.google.android.gms:play-services-measurement:17.2.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/b8a3712e408451ab5bf0f18fae432fcd/AndroidManifest.xml:32:13-37
+	android:name
+		ADDED from [com.google.android.gms:play-services-measurement:17.2.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/b8a3712e408451ab5bf0f18fae432fcd/AndroidManifest.xml:30:13-85
+receiver#com.google.android.gms.measurement.AppMeasurementInstallReferrerReceiver
+ADDED from [com.google.android.gms:play-services-measurement:17.2.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/b8a3712e408451ab5bf0f18fae432fcd/AndroidManifest.xml:34:9-42:20
+MERGED from [com.google.android.gms:play-services-measurement-impl:17.2.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/9073ec630f2e53cc347064878b6da359/AndroidManifest.xml:29:9-37:20
+MERGED from [com.google.android.gms:play-services-measurement-impl:17.2.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/9073ec630f2e53cc347064878b6da359/AndroidManifest.xml:29:9-37:20
+	android:enabled
+		ADDED from [com.google.android.gms:play-services-measurement:17.2.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/b8a3712e408451ab5bf0f18fae432fcd/AndroidManifest.xml:36:13-35
+	android:exported
+		ADDED from [com.google.android.gms:play-services-measurement:17.2.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/b8a3712e408451ab5bf0f18fae432fcd/AndroidManifest.xml:37:13-36
+	android:permission
+		ADDED from [com.google.android.gms:play-services-measurement:17.2.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/b8a3712e408451ab5bf0f18fae432fcd/AndroidManifest.xml:38:13-69
+	android:name
+		ADDED from [com.google.android.gms:play-services-measurement:17.2.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/b8a3712e408451ab5bf0f18fae432fcd/AndroidManifest.xml:35:13-100
+intent-filter#action:name:com.android.vending.INSTALL_REFERRER
+ADDED from [com.google.android.gms:play-services-measurement:17.2.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/b8a3712e408451ab5bf0f18fae432fcd/AndroidManifest.xml:39:13-41:29
+action#com.android.vending.INSTALL_REFERRER
+ADDED from [com.google.android.gms:play-services-measurement:17.2.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/b8a3712e408451ab5bf0f18fae432fcd/AndroidManifest.xml:40:17-79
+	android:name
+		ADDED from [com.google.android.gms:play-services-measurement:17.2.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/b8a3712e408451ab5bf0f18fae432fcd/AndroidManifest.xml:40:25-76
+service#com.google.android.gms.measurement.AppMeasurementService
+ADDED from [com.google.android.gms:play-services-measurement:17.2.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/b8a3712e408451ab5bf0f18fae432fcd/AndroidManifest.xml:44:9-47:40
+	android:enabled
+		ADDED from [com.google.android.gms:play-services-measurement:17.2.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/b8a3712e408451ab5bf0f18fae432fcd/AndroidManifest.xml:46:13-35
+	android:exported
+		ADDED from [com.google.android.gms:play-services-measurement:17.2.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/b8a3712e408451ab5bf0f18fae432fcd/AndroidManifest.xml:47:13-37
+	android:name
+		ADDED from [com.google.android.gms:play-services-measurement:17.2.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/b8a3712e408451ab5bf0f18fae432fcd/AndroidManifest.xml:45:13-84
+service#com.google.android.gms.measurement.AppMeasurementJobService
+ADDED from [com.google.android.gms:play-services-measurement:17.2.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/b8a3712e408451ab5bf0f18fae432fcd/AndroidManifest.xml:48:9-52:72
+	android:enabled
+		ADDED from [com.google.android.gms:play-services-measurement:17.2.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/b8a3712e408451ab5bf0f18fae432fcd/AndroidManifest.xml:50:13-35
+	android:exported
+		ADDED from [com.google.android.gms:play-services-measurement:17.2.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/b8a3712e408451ab5bf0f18fae432fcd/AndroidManifest.xml:51:13-37
+	android:permission
+		ADDED from [com.google.android.gms:play-services-measurement:17.2.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/b8a3712e408451ab5bf0f18fae432fcd/AndroidManifest.xml:52:13-69
+	android:name
+		ADDED from [com.google.android.gms:play-services-measurement:17.2.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/b8a3712e408451ab5bf0f18fae432fcd/AndroidManifest.xml:49:13-87
+meta-data#com.google.android.gms.version
+ADDED from [com.google.android.gms:play-services-basement:17.0.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/b16c5f868a2f52d22b9ef4dca64403e6/AndroidManifest.xml:23:9-25:69
+	android:value
+		ADDED from [com.google.android.gms:play-services-basement:17.0.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/b16c5f868a2f52d22b9ef4dca64403e6/AndroidManifest.xml:25:13-66
+	android:name
+		ADDED from [com.google.android.gms:play-services-basement:17.0.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/b16c5f868a2f52d22b9ef4dca64403e6/AndroidManifest.xml:24:13-58
+provider#com.facebook.internal.FacebookInitProvider
+ADDED from [com.facebook.android:facebook-core:5.13.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/8d31e9671e4eb0ec8576ac8f2038a6da/AndroidManifest.xml:39:9-42:40
+	android:authorities
+		ADDED from [com.facebook.android:facebook-core:5.13.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/8d31e9671e4eb0ec8576ac8f2038a6da/AndroidManifest.xml:41:13-72
+	android:exported
+		ADDED from [com.facebook.android:facebook-core:5.13.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/8d31e9671e4eb0ec8576ac8f2038a6da/AndroidManifest.xml:42:13-37
+	android:name
+		ADDED from [com.facebook.android:facebook-core:5.13.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/8d31e9671e4eb0ec8576ac8f2038a6da/AndroidManifest.xml:40:13-70
+receiver#com.facebook.CurrentAccessTokenExpirationBroadcastReceiver
+ADDED from [com.facebook.android:facebook-core:5.13.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/8d31e9671e4eb0ec8576ac8f2038a6da/AndroidManifest.xml:44:9-50:20
+	android:exported
+		ADDED from [com.facebook.android:facebook-core:5.13.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/8d31e9671e4eb0ec8576ac8f2038a6da/AndroidManifest.xml:46:13-37
+	android:name
+		ADDED from [com.facebook.android:facebook-core:5.13.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/8d31e9671e4eb0ec8576ac8f2038a6da/AndroidManifest.xml:45:13-86
+intent-filter#action:name:com.facebook.sdk.ACTION_CURRENT_ACCESS_TOKEN_CHANGED
+ADDED from [com.facebook.android:facebook-core:5.13.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/8d31e9671e4eb0ec8576ac8f2038a6da/AndroidManifest.xml:47:13-49:29
+action#com.facebook.sdk.ACTION_CURRENT_ACCESS_TOKEN_CHANGED
+ADDED from [com.facebook.android:facebook-core:5.13.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/8d31e9671e4eb0ec8576ac8f2038a6da/AndroidManifest.xml:48:17-95
+	android:name
+		ADDED from [com.facebook.android:facebook-core:5.13.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/8d31e9671e4eb0ec8576ac8f2038a6da/AndroidManifest.xml:48:25-92
+receiver#com.facebook.CampaignTrackingReceiver
+ADDED from [com.facebook.android:facebook-core:5.13.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/8d31e9671e4eb0ec8576ac8f2038a6da/AndroidManifest.xml:51:9-58:20
+	android:exported
+		ADDED from [com.facebook.android:facebook-core:5.13.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/8d31e9671e4eb0ec8576ac8f2038a6da/AndroidManifest.xml:53:13-36
+	android:permission
+		ADDED from [com.facebook.android:facebook-core:5.13.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/8d31e9671e4eb0ec8576ac8f2038a6da/AndroidManifest.xml:54:13-69
+	android:name
+		ADDED from [com.facebook.android:facebook-core:5.13.0] /Users/trandinhtonhieu/.gradle/caches/transforms-2/files-2.1/8d31e9671e4eb0ec8576ac8f2038a6da/AndroidManifest.xml:52:13-65

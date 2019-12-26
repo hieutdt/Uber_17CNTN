@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/action_home"
+        android:title="Trang chủ"
+        android:icon="@drawable/home_active"
+        android:iconTint="@android:color/holo_green_dark"/>
+    <item
+        android:id="@+id/action_profile"
+        android:title="Tài khoản"
+        android:icon="@drawable/profile_not_active"
+        android:iconTint="@android:color/holo_green_dark"/>
+
+</menu>

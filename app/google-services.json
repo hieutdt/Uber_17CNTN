@@ -1,0 +1,69 @@
+{
+  "project_info": {
+    "project_number": "1068156595811",
+    "firebase_url": "https://grab-group09-cntn.firebaseio.com",
+    "project_id": "grab-group09-cntn",
+    "storage_bucket": "grab-group09-cntn.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1068156595811:android:21d08a7dcbc1f99806d256",
+        "android_client_info": {
+          "package_name": "com.example.cntn_grab"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1068156595811-t4scfsr8hrb72e6mq4jc0b4gcotnr2tm.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB3gIiTBUiKhrllT8-6DSdIE9kickQTKG8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1068156595811-t4scfsr8hrb72e6mq4jc0b4gcotnr2tm.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1068156595811:android:c3b9f39302a6baac06d256",
+        "android_client_info": {
+          "package_name": "com.example.grab"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1068156595811-t4scfsr8hrb72e6mq4jc0b4gcotnr2tm.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB3gIiTBUiKhrllT8-6DSdIE9kickQTKG8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1068156595811-t4scfsr8hrb72e6mq4jc0b4gcotnr2tm.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
