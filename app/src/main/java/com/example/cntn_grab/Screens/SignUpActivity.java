@@ -10,13 +10,15 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.cntn_grab.Business.UserBusiness.SignUpWithEmailPasswordListener;
 import com.example.cntn_grab.Business.UserBusiness.UserBusiness;
+import com.example.cntn_grab.Data.Type;
+import com.example.cntn_grab.Data.User;
+import com.example.cntn_grab.Helpers.DialogHelper;
+import com.example.cntn_grab.Helpers.DialogHelperListener;
 import com.example.cntn_grab.Helpers.LoadingHelper;
 import com.example.cntn_grab.R;
 import com.google.firebase.auth.FirebaseUser;
-import com.shreyaspatil.MaterialDialog.MaterialDialog;
-import com.shreyaspatil.MaterialDialog.interfaces.DialogInterface;
 
-public class SignUpActivity extends AppCompatActivity {
+public class SignUpActivity extends AppCompatActivity implements DialogHelperListener {
     private EditText mEmailEditText;
     private EditText mPasswordEditText;
     private EditText mRetypePasswordEditText;
@@ -50,7 +52,7 @@ public class SignUpActivity extends AppCompatActivity {
         });
     }
 
-    void signUp(String email, String password, String rePassword, String phoneNumber) {
+    void signUp(String email, String password, String rePassword, final String phoneNumber) {
         UserBusiness.getInstance().setSignUpWithEmailPasswordListener(new SignUpWithEmailPasswordListener() {
             @Override
             public void signUpWithEmailPasswordDidStart() {
@@ -60,32 +62,40 @@ public class SignUpActivity extends AppCompatActivity {
             @Override
             public void signUpWithEmailPasswordDidEnd(Boolean isOk, FirebaseUser user) {
                 LoadingHelper.getInstance().hideLoading(SignUpActivity.this);
+                DialogHelper.getInstance().setListener(SignUpActivity.this);
 
                 if (isOk) {
-                    MaterialDialog mDialog = new MaterialDialog.Builder(SignUpActivity.this)
-                            .setTitle("Delete?")
-                            .setMessage("Are you sure want to delete this file?")
-                            .setCancelable(false)
-                            .setPositiveButton("Delete", R.drawable.ic_dialog_close_light, new MaterialDialog.OnClickListener() {
-                                @Override
-                                public void onClick(DialogInterface dialogInterface, int which) {
-                                    // Delete Operation
-                                }
-                            })
-                            .setNegativeButton("Cancel", R.drawable.ic_mr_button_connected_26_light, new MaterialDialog.OnClickListener() {
-                                @Override
-                                public void onClick(DialogInterface dialogInterface, int which) {
-                                    dialogInterface.dismiss();
-                                }
-                            })
-                            .build();
+                    String uid = user.getUid();
+                    String name = "Hieu";
+                    String email = user.getEmail();
+                    String phone = phoneNumber;
+                    Type type = Type.PASSENGER;
 
-                    // Show Dialog
-                    mDialog.show();
+                    User newUser = new User(uid, email, name, phone, true, type);
+
+                    UserBusiness.getInstance().setUser(newUser);
+
+                    DialogHelper.getInstance().showSuccessDialog(SignUpActivity.this);
+
+                } else {
+                    DialogHelper.getInstance().showFailedDialog(SignUpActivity.this);
                 }
             }
         });
 
         UserBusiness.getInstance().signUpWithEmailPassword(SignUpActivity.this, email, password, phoneNumber);
+    }
+
+    // DialogHelperListener
+    public  void successDialogOnClick() {
+        this.finish();
+    }
+
+    public void failedDialogOnClick() {
+
+    }
+
+    public void customDialogOnClick() {
+        this.finish();
     }
 }

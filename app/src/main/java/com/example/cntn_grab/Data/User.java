@@ -2,11 +2,20 @@ package com.example.cntn_grab.Data;
 
 public class User {
     protected String id;
+    protected String email;
     protected String name;
     protected String phoneNumber;
     protected boolean isVerified;
     protected Type type;
 
+    public User(String id, String email, String name, String phoneNumber, Boolean isVerified, Type type) {
+        this.id = id;
+        this.email;
+        this.name = name;
+        this.phoneNumber = phoneNumber;
+        this.isVerified = isVerified;
+        this.type = type;
+    }
 
     public String getId() {
         return id;
@@ -46,5 +55,13 @@ public class User {
 
     public void setType(Type type) {
         this.type = type;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getEmail() {
+        return this.email;
     }
 }

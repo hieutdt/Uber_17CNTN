@@ -95,5 +95,13 @@ public class UserBusiness {
     public void setSignUpWithEmailPasswordListener(SignUpWithEmailPasswordListener listener) {
         mSignUpWithEmailPasswordListener = listener;
     }
+
+    public void setUser(User user) {
+        mUser = user;
+    }
+
+    public User getCurrentUser() {
+        return mUser;
+    }
 }
 
