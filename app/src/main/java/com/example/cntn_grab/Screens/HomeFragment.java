@@ -1,6 +1,10 @@
 package com.example.cntn_grab.Screens;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.location.LocationListener;
+import android.location.LocationManager;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -10,9 +14,17 @@ import android.widget.EditText;
 import android.widget.FrameLayout;
 import android.widget.Toast;
 
+import com.example.cntn_grab.Business.PassengerBusiness.PassengerBusiness;
+import com.example.cntn_grab.Data.Location;
+import com.example.cntn_grab.Helpers.AppConst;
 import com.example.cntn_grab.R;
 import com.google.android.gms.common.api.Status;
+import com.google.android.gms.maps.CameraUpdateFactory;
+import com.google.android.gms.maps.GoogleMap;
+import com.google.android.gms.maps.OnMapReadyCallback;
+import com.google.android.gms.maps.model.CameraPosition;
 import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.libraries.places.api.Places;
 import com.google.android.libraries.places.api.model.Place;
 import com.google.android.libraries.places.widget.Autocomplete;
@@ -22,30 +34,40 @@ import com.google.android.libraries.places.widget.model.AutocompleteActivityMode
 import java.util.Arrays;
 import java.util.List;
 
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
-import com.example.cntn_grab.Services.GetDirectionService;
 
 import static android.app.Activity.RESULT_CANCELED;
 import static android.app.Activity.RESULT_OK;
 import static com.facebook.FacebookSdk.getApplicationContext;
 
-public class HomeFragment extends Fragment implements View.OnClickListener {
+public class HomeFragment extends Fragment implements View.OnClickListener, LocationListener {
     public static final int AUTOCOMPLETE_REQUEST_CODE = 1412;
 
     private MapFragment map;
-    private LatLng mOrigin;
-    private LatLng mDestination;
+
+    protected LocationManager mLocationManager;
+
+    private Location mOriginLocation;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        mOrigin = new LatLng(10.8230897, 106.6296851);
-        mDestination = new LatLng(10.7827701, 106.6648905);
-
         Places.initialize(getApplicationContext(), getString(R.string.map_direction_key));
+
+        if (ContextCompat.checkSelfPermission( getActivity(),android.Manifest.permission.ACCESS_COARSE_LOCATION ) != PackageManager.PERMISSION_GRANTED ) {
+            ActivityCompat.requestPermissions(
+                    getActivity(), new String [] { android.Manifest.permission.ACCESS_COARSE_LOCATION }, AppConst.MY_PERMISSION_ACCESS_FINE_LOCATION);
+        }
+
+        mOriginLocation = new Location();
+
+        mLocationManager = (LocationManager)getActivity().getSystemService(Context.LOCATION_SERVICE);
+        mLocationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 0, 0, this);
     }
 
     @Override
@@ -146,13 +168,40 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
     }
 
     private void drawDirection() {
-        Intent intent = new Intent(getContext(), GetDirectionService.class);
+//        Intent intent = new Intent(getContext(), GetDirectionService.class);
+//
+//        intent.putExtra("oLat", mOrigin.latitude);
+//        intent.putExtra("oLng", mOrigin.longitude);
+//        intent.putExtra("dLat", mDestination.latitude);
+//        intent.putExtra("dLng", mDestination.longitude);
+//
+//        getActivity().startService(intent);
+    }
 
-        intent.putExtra("oLat", mOrigin.latitude);
-        intent.putExtra("oLng", mOrigin.longitude);
-        intent.putExtra("dLat", mDestination.latitude);
-        intent.putExtra("dLng", mDestination.longitude);
+    /** Location Listener Protocol */
 
-        getActivity().startService(intent);
+    @Override
+    public void onLocationChanged(android.location.Location location) {
+        Log.i("TON HIEU", "On location changed");
+
+        mOriginLocation.lat = location.getLatitude();
+        mOriginLocation.lng = location.getLongitude();
+
+        PassengerBusiness.getInstance().setPassengerLocation(mOriginLocation.lat, mOriginLocation.lng);
+    }
+
+    @Override
+    public void onProviderEnabled(String provider) {
+
+    }
+
+    @Override
+    public void onProviderDisabled(String provider) {
+
+    }
+
+    @Override
+    public void onStatusChanged(String provider, int status, Bundle extras) {
+
     }
 }

@@ -1,6 +1,11 @@
 package com.example.cntn_grab.Data;
 
 public class Location {
-    public float lat;
-    public float lng;
+    public double lat;
+    public double lng;
+
+    public Location() {
+        lat = 0;
+        lng = 0;
+    }
 }

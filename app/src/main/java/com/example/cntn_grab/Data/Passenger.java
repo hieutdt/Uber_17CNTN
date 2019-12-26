@@ -5,6 +5,9 @@ public class Passenger extends User {
     private String tripId;
     private Location location;
 
+    public Passenger() {
+        location = new Location();
+    }
 
     public String getState() {
         return state;

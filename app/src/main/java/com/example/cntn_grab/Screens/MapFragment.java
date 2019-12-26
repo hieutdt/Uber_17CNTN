@@ -13,6 +13,10 @@ import android.os.Bundle;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
+
+import com.example.cntn_grab.Business.PassengerBusiness.PassengerBusiness;
+import com.example.cntn_grab.Data.Location;
+import com.example.cntn_grab.Data.Passenger;
 import com.example.cntn_grab.Helpers.DirectionsJSONParser;
 import com.example.cntn_grab.R;
 import com.example.cntn_grab.Services.GetDirectionService;
@@ -27,7 +31,9 @@ import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.CameraPosition;
 import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.gms.maps.model.Polyline;
 import com.google.android.gms.maps.model.PolylineOptions;
 
@@ -43,7 +49,7 @@ import static com.facebook.FacebookSdk.getApplicationContext;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class MapFragment extends Fragment implements OnMapReadyCallback{
+public class MapFragment extends Fragment implements OnMapReadyCallback {
     private final float zoom = 15;
     private final int LOCATION_REQUEST_CODE = 1119;
 
@@ -123,15 +129,31 @@ public class MapFragment extends Fragment implements OnMapReadyCallback{
 
     @Override
     public void onMapReady(GoogleMap mMap) {
+        Log.i("TON HIEU", "OnMapReadyCallback");
+
         this.mMap = mMap;
 
         mMap.clear(); //clear old markers
 
-        this.moveCamera(10.8231, 106.6297);
-//        this.moveCamera(34.1424369, -117.922066);
+        Location currentLocation = PassengerBusiness.getInstance().getPassengerLocation();
+
+        mMap.addMarker(new MarkerOptions()
+                .position(new LatLng(currentLocation.lat, currentLocation.lng))
+                .title("Vị trí của bạn"));
+
+        LatLng markerLatLng = new LatLng(currentLocation.lat, currentLocation.lng);
+
+        CameraPosition cameraPosition = new CameraPosition.Builder()
+                .target(markerLatLng)
+                .zoom(17)
+                .bearing(90)
+                .tilt(30)
+                .build();
+
+        mMap.animateCamera(CameraUpdateFactory.newCameraPosition(cameraPosition));
 
         if (hasPermission(Manifest.permission.ACCESS_FINE_LOCATION)) {
-            this.showMyLocationButton();
+//            this.showMyLocationButton();
         } else {
             requestPermission(Manifest.permission.ACCESS_FINE_LOCATION, LOCATION_REQUEST_CODE);
         }
@@ -145,22 +167,9 @@ public class MapFragment extends Fragment implements OnMapReadyCallback{
                     Toast.makeText(getContext(), "Unable to show location - permission required", Toast.LENGTH_LONG).show();
                     requestPermission(Manifest.permission.ACCESS_FINE_LOCATION, LOCATION_REQUEST_CODE);
                 } else {
-                    this.showMyLocationButton();
+//                    this.showMyLocationButton();
                 }
         }
-    }
-
-    private void showMyLocationButton() {
-        mMap.setMyLocationEnabled(true);
-        mMap.getUiSettings().setMyLocationButtonEnabled(true);
-//        View locationButton = ((View) this.getView().findViewById(Integer.parseInt("1")).getParent()).findViewById(Integer.parseInt("2"));
-//        if (locationButton != null) {
-//            RelativeLayout.LayoutParams rlp = (RelativeLayout.LayoutParams) locationButton.getLayoutParams();
-//            // position on right bottom
-//            rlp.addRule(RelativeLayout.ALIGN_PARENT_TOP, 0);
-//            rlp.addRule(RelativeLayout.ALIGN_PARENT_BOTTOM, RelativeLayout.TRUE);
-//            rlp.setMargins(0, 0, 30, 370);
-//        }
     }
 
     /** A class to parse the Google Directions in JSON format */
