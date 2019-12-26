@@ -27,6 +27,10 @@ public class PassengerBusiness {
         mPassenger.getLocation().lng = lng;
     }
 
+    public void setPassengerLocationName(String name) {
+        mPassenger.getLocation().name = name;
+    }
+
     public void setPassenger(Passenger passenger) {
         mPassenger = passenger;
     }

@@ -3,6 +3,8 @@ package com.example.cntn_grab.Screens;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.location.Address;
+import android.location.Geocoder;
 import android.location.LocationListener;
 import android.location.LocationManager;
 import android.os.Bundle;
@@ -16,15 +18,10 @@ import android.widget.Toast;
 
 import com.example.cntn_grab.Business.PassengerBusiness.PassengerBusiness;
 import com.example.cntn_grab.Data.Location;
+import com.example.cntn_grab.Data.Passenger;
 import com.example.cntn_grab.Helpers.AppConst;
 import com.example.cntn_grab.R;
 import com.google.android.gms.common.api.Status;
-import com.google.android.gms.maps.CameraUpdateFactory;
-import com.google.android.gms.maps.GoogleMap;
-import com.google.android.gms.maps.OnMapReadyCallback;
-import com.google.android.gms.maps.model.CameraPosition;
-import com.google.android.gms.maps.model.LatLng;
-import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.libraries.places.api.Places;
 import com.google.android.libraries.places.api.model.Place;
 import com.google.android.libraries.places.widget.Autocomplete;
@@ -33,6 +30,7 @@ import com.google.android.libraries.places.widget.model.AutocompleteActivityMode
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Locale;
 
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
@@ -44,14 +42,19 @@ import static android.app.Activity.RESULT_CANCELED;
 import static android.app.Activity.RESULT_OK;
 import static com.facebook.FacebookSdk.getApplicationContext;
 
-public class HomeFragment extends Fragment implements View.OnClickListener, LocationListener {
+public class HomeFragment extends Fragment implements View.OnClickListener {
     public static final int AUTOCOMPLETE_REQUEST_CODE = 1412;
 
     private MapFragment map;
 
     protected LocationManager mLocationManager;
+    protected LocationListener mLocationListener;
 
     private Location mOriginLocation;
+    Boolean hasLocation;
+
+    private EditText mPickUpEditText;
+    private EditText mDestinationEditText;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -66,8 +69,59 @@ public class HomeFragment extends Fragment implements View.OnClickListener, Loca
 
         mOriginLocation = new Location();
 
+        hasLocation = false;
+
+        mLocationListener = new LocationListener() {
+            @Override
+            public void onLocationChanged(android.location.Location location) {
+                Log.i("TON HIEU", "On location changed");
+
+                mOriginLocation.lat = location.getLatitude();
+                mOriginLocation.lng = location.getLongitude();
+
+                PassengerBusiness.getInstance().setPassengerLocation(mOriginLocation.lat, mOriginLocation.lng);
+
+                /** Update current location name once */
+                if (hasLocation == false) {
+                    hasLocation = true;
+
+                    try {
+                        Geocoder geo = new Geocoder(getActivity(), Locale.getDefault());
+                        List<Address> addresses = geo.getFromLocation(mOriginLocation.lat, mOriginLocation.lng, 1);
+                        if (addresses.isEmpty()) {
+                            mPickUpEditText.setText("Đang tìm kiếm vị trí của bạn...");
+                        } else {
+                            if (addresses.size() > 0) {
+                                mPickUpEditText.setText(addresses.get(0).getAddressLine(0) + addresses.get(0).getLocality());
+                                PassengerBusiness.getInstance().setPassengerLocationName(addresses.get(0).getAddressLine(0));
+                            }
+                        }
+                    } catch (Exception e) {
+                        mPickUpEditText.setText("Tìm kiếm vị trí thất bại! Vui lòng chọn vị trí của bạn.");
+                        Log.i("TON HIEU", "Get current location name error: " + e.toString());
+                    }
+                }
+            }
+
+            @Override
+            public void onStatusChanged(String provider, int status, Bundle extras) {
+
+            }
+
+            @Override
+            public void onProviderEnabled(String provider) {
+
+            }
+
+            @Override
+            public void onProviderDisabled(String provider) {
+
+            }
+        };
+
         mLocationManager = (LocationManager)getActivity().getSystemService(Context.LOCATION_SERVICE);
-        mLocationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 0, 0, this);
+        mLocationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 0, 0, mLocationListener);
+        mLocationManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, 0, 0, mLocationListener);
     }
 
     @Override
@@ -81,8 +135,10 @@ public class HomeFragment extends Fragment implements View.OnClickListener, Loca
 
 //        this.addPlaceSelectionListener();
 
-        EditText destination = fl.findViewById(R.id.destination);
-        destination.setOnClickListener(this);
+        mDestinationEditText = fl.findViewById(R.id.destination);
+        mDestinationEditText.setOnClickListener(this);
+
+        mPickUpEditText = fl.findViewById(R.id.pickup_point);
 
         return fl;
     }
@@ -176,32 +232,5 @@ public class HomeFragment extends Fragment implements View.OnClickListener, Loca
 //        intent.putExtra("dLng", mDestination.longitude);
 //
 //        getActivity().startService(intent);
-    }
-
-    /** Location Listener Protocol */
-
-    @Override
-    public void onLocationChanged(android.location.Location location) {
-        Log.i("TON HIEU", "On location changed");
-
-        mOriginLocation.lat = location.getLatitude();
-        mOriginLocation.lng = location.getLongitude();
-
-        PassengerBusiness.getInstance().setPassengerLocation(mOriginLocation.lat, mOriginLocation.lng);
-    }
-
-    @Override
-    public void onProviderEnabled(String provider) {
-
-    }
-
-    @Override
-    public void onProviderDisabled(String provider) {
-
-    }
-
-    @Override
-    public void onStatusChanged(String provider, int status, Bundle extras) {
-
     }
 }

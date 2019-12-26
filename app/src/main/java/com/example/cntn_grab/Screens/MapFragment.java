@@ -152,6 +152,7 @@ public class MapFragment extends Fragment implements OnMapReadyCallback {
 
         mMap.animateCamera(CameraUpdateFactory.newCameraPosition(cameraPosition));
 
+
         if (hasPermission(Manifest.permission.ACCESS_FINE_LOCATION)) {
 //            this.showMyLocationButton();
         } else {
@@ -240,5 +241,9 @@ public class MapFragment extends Fragment implements OnMapReadyCallback {
                 Toast.makeText(getApplicationContext(),"No route is found", Toast.LENGTH_LONG).show();
             }
         }
+    }
+
+    public GoogleMap getGoogleMap() {
+        return this.mMap;
     }
 }
