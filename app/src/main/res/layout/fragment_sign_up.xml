@@ -1,64 +1,107 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#4CB944"
+    android:gravity="center_horizontal">
+
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Địa chỉ email"
-        android:textSize="25dp"
-        android:layout_marginTop="15dp"/>
+        android:layout_marginTop="80dp"
+        android:text="Đăng ký"
+        android:textSize="40dp"
+        android:textStyle="bold"
+        android:fontFamily="@font/segoe_ui_regular"
+        android:textColor="@color/white_transparent"
+        android:textAlignment="center" />
+
     <EditText
         android:id="@+id/sign_up_email"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textSize="30dp"
-        android:layout_marginTop="5dp"/>
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Mật khẩu"
-        android:textSize="25dp"
-        android:layout_marginTop="15dp"/>
-    <EditText
-        android:id="@+id/sign_up_password"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textSize="30dp"
-        android:layout_marginTop="5dp"/>
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Nhập lại mật khẩu"
-        android:textSize="25dp"
-        android:layout_marginTop="15dp"/>
-    <EditText
-        android:id="@+id/sign_up_password_retype"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textSize="30dp"
-        android:layout_marginTop="5dp"/>
+        android:layout_width="280dp"
+        android:layout_height="45dp"
+        android:textSize="14dp"
+        android:textColor="@android:color/white"
+        android:textAlignment="center"
+        android:layout_marginTop="40dp"
+        android:fontFamily="@font/segoe_ui_regular"
+        android:background="@drawable/edit_text_shape"
+        android:alpha="0.34"
+        android:textColorHint="#4CB944"
+        android:hint="Email"
+        android:layout_marginBottom="13dp" />
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Số điện thoại"
-        android:textSize="25dp"
-        android:layout_marginTop="15dp"/>
     <EditText
         android:id="@+id/sign_up_phone"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textSize="30dp"
-        android:layout_marginTop="5dp"/>
+        android:layout_width="280dp"
+        android:layout_height="45dp"
+        android:textSize="14dp"
+        android:textColor="@android:color/white"
+        android:textAlignment="center"
+        android:fontFamily="@font/segoe_ui_regular"
+        android:background="@drawable/edit_text_shape"
+        android:alpha="0.34"
+        android:textColorHint="#4CB944"
+        android:hint="Số điện thoại"
+        android:layout_marginBottom="13dp" />
+
+    <EditText
+        android:id="@+id/sign_up_name"
+        android:layout_width="280dp"
+        android:layout_height="45dp"
+        android:textSize="14dp"
+        android:textColor="@android:color/white"
+        android:textAlignment="center"
+        android:fontFamily="@font/segoe_ui_regular"
+        android:background="@drawable/edit_text_shape"
+        android:alpha="0.34"
+        android:textColorHint="#4CB944"
+        android:hint="Name"
+        android:layout_marginBottom="13dp" />
+
+    <EditText
+        android:id="@+id/sign_up_password"
+        android:layout_width="280dp"
+        android:layout_height="45dp"
+        android:textSize="14dp"
+        android:textColor="@android:color/white"
+        android:textAlignment="center"
+        android:fontFamily="@font/segoe_ui_regular"
+        android:background="@drawable/edit_text_shape"
+        android:alpha="0.34"
+        android:textColorHint="#4CB944"
+        android:hint="Mật khẩu"
+        android:layout_marginBottom="13dp"
+        android:inputType="textPassword"/>
+
+    <EditText
+        android:id="@+id/sign_up_password_retype"
+        android:layout_width="280dp"
+        android:layout_height="45dp"
+        android:textSize="14dp"
+        android:textColor="@android:color/white"
+        android:textAlignment="center"
+        android:fontFamily="@font/segoe_ui_regular"
+        android:background="@drawable/edit_text_shape"
+        android:alpha="0.34"
+        android:textColorHint="#4CB944"
+        android:hint="Nhập lại mật khẩu"
+        android:layout_marginBottom="25dp"
+        android:inputType="textPassword"/>
 
     <Button
         android:id="@+id/sign_up_button"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:text="ĐĂNG KÝ TÀI KHOẢN" />
-
+        android:layout_width="146dp"
+        android:layout_height="36dp"
+        android:background="@drawable/edit_text_shape"
+        android:alpha="0.7"
+        android:fontFamily="@font/segoe_ui_regular"
+        android:text="Đăng ký"
+        android:textAllCaps="false"
+        android:textColor="@color/green"
+        android:layout_marginBottom="25dp"/>
 
 </LinearLayout>

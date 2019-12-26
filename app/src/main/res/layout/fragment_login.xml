@@ -20,7 +20,7 @@
         android:textAlignment="center" />
 
     <EditText
-        android:id="@+id/login_phone_number"
+        android:id="@+id/login_email"
         android:layout_width="280dp"
         android:layout_height="45dp"
         android:textSize="14dp"
@@ -31,8 +31,23 @@
         android:background="@drawable/edit_text_shape"
         android:alpha="0.34"
         android:textColorHint="#4CB944"
-        android:hint="Số điện thoại"
+        android:hint="Email"
         android:layout_marginBottom="13dp" />
+
+    <EditText
+        android:id="@+id/login_password"
+        android:layout_width="280dp"
+        android:layout_height="45dp"
+        android:textSize="14dp"
+        android:textColor="@android:color/black"
+        android:textAlignment="center"
+        android:fontFamily="@font/segoe_ui_regular"
+        android:background="@drawable/edit_text_shape"
+        android:alpha="0.34"
+        android:textColorHint="#4CB944"
+        android:hint="Password"
+        android:layout_marginBottom="20dp"
+        android:inputType="textPassword"/>
 
     <Button
         android:id="@+id/login_button_login"
@@ -46,5 +61,12 @@
         android:textAllCaps="false"
         android:textColor="@color/green"
         android:layout_marginBottom="25dp"/>
+
+    <ImageView
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:src="@drawable/routing"
+        android:layout_marginTop="90dp"
+        android:layout_marginBottom="35dp"/>
 
 </LinearLayout>
