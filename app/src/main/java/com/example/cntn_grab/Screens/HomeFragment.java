@@ -22,6 +22,11 @@ import com.example.cntn_grab.Data.Passenger;
 import com.example.cntn_grab.Helpers.AppConst;
 import com.example.cntn_grab.R;
 import com.google.android.gms.common.api.Status;
+import com.google.android.gms.maps.CameraUpdateFactory;
+import com.google.android.gms.maps.GoogleMap;
+import com.google.android.gms.maps.model.CameraPosition;
+import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.libraries.places.api.Places;
 import com.google.android.libraries.places.api.model.Place;
 import com.google.android.libraries.places.widget.Autocomplete;
@@ -46,12 +51,14 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
     public static final int AUTOCOMPLETE_REQUEST_CODE = 1412;
 
     private MapFragment map;
+    private GoogleMap mGoogleMap;
 
     protected LocationManager mLocationManager;
     protected LocationListener mLocationListener;
 
     private Location mOriginLocation;
     Boolean hasLocation;
+    Boolean updatedMap;
 
     private EditText mPickUpEditText;
     private EditText mDestinationEditText;
@@ -70,6 +77,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
         mOriginLocation = new Location();
 
         hasLocation = false;
+        updatedMap = false;
 
         mLocationListener = new LocationListener() {
             @Override
@@ -80,6 +88,11 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
                 mOriginLocation.lng = location.getLongitude();
 
                 PassengerBusiness.getInstance().setPassengerLocation(mOriginLocation.lat, mOriginLocation.lng);
+
+                /** Update Google Map */
+                if (updatedMap == false) {
+                    updateMap(); // updatedMap will be changed to true in this function if success
+                }
 
                 /** Update current location name once */
                 if (hasLocation == false) {
@@ -122,6 +135,34 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
         mLocationManager = (LocationManager)getActivity().getSystemService(Context.LOCATION_SERVICE);
         mLocationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 0, 0, mLocationListener);
         mLocationManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, 0, 0, mLocationListener);
+    }
+
+    private void updateMap() {
+        mGoogleMap = this.map.getGoogleMap();
+
+        if (mGoogleMap == null)
+            return;
+
+        updatedMap = true;
+
+        mGoogleMap.clear(); //clear old markers
+
+        Location currentLocation = PassengerBusiness.getInstance().getPassengerLocation();
+
+        mGoogleMap.addMarker(new MarkerOptions()
+                .position(new LatLng(currentLocation.lat, currentLocation.lng))
+                .title("Vị trí của bạn"));
+
+        LatLng markerLatLng = new LatLng(currentLocation.lat, currentLocation.lng);
+
+        CameraPosition cameraPosition = new CameraPosition.Builder()
+                .target(markerLatLng)
+                .zoom(17)
+                .bearing(90)
+                .tilt(30)
+                .build();
+
+        mGoogleMap.animateCamera(CameraUpdateFactory.newCameraPosition(cameraPosition));
     }
 
     @Override
