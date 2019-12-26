@@ -45,7 +45,10 @@ public class MainActivity extends AppCompatActivity {
                     case R.id.action_home:
                         AppContext.getInstance().setCurrentFragmentIndex(AppConst.HOME_FRAGMENT_INDEX);
                         setUpNavigationItems(menuItem.getItemId());
-                        loadFragment(AppContext.getInstance().getHomeFragment());
+                        if (UserBusiness.getInstance().getCurrentUser().getType() == "PASSENGER")
+                            loadFragment(AppContext.getInstance().getHomeFragment());
+                        else
+                            loadFragment(AppContext.getInstance().getDriverStartFragment());
                         break;
 
                     case R.id.action_profile:

@@ -3,6 +3,7 @@ package com.example.cntn_grab.Helpers;
 import androidx.fragment.app.Fragment;
 
 import com.example.cntn_grab.Data.User;
+import com.example.cntn_grab.Screens.DriverStartFragment;
 import com.example.cntn_grab.Screens.HomeFragment;
 import com.example.cntn_grab.Screens.ProfileFragment;
 
@@ -12,12 +13,14 @@ public class AppContext {
     private int currentFragmentIndex;
     private Fragment homeFragment;
     private Fragment profileFragment;
+    private Fragment driverStartFragment;
 
     private AppContext() {
         //TODO: init variables here
         currentFragmentIndex = 0;
         homeFragment = new HomeFragment();
         profileFragment = new ProfileFragment();
+        driverStartFragment = new DriverStartFragment();
     }
 
     public static AppContext getInstance() {
@@ -49,5 +52,9 @@ public class AppContext {
 
     public void setProfileFragment(Fragment profileFragment) {
         this.profileFragment = profileFragment;
+    }
+
+    public Fragment getDriverStartFragment() {
+        return driverStartFragment;
     }
 }

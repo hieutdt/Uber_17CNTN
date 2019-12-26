@@ -135,7 +135,7 @@ public class LogInFragment extends Fragment {
         // Change fragment
         FragmentTransaction transaction = getActivity().getSupportFragmentManager().beginTransaction();
         if (currentUser.getType().equals("DRIVER"))
-            transaction.replace(R.id.frame_container, new DriverStartFragment());
+            transaction.replace(R.id.frame_container, AppContext.getInstance().getDriverStartFragment());
         else
             transaction.replace(R.id.frame_container, AppContext.getInstance().getHomeFragment());
         transaction.addToBackStack(null);

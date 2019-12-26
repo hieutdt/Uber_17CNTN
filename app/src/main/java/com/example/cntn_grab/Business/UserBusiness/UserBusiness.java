@@ -42,7 +42,9 @@ public class UserBusiness {
     public boolean hasLoggedInUser() {
         if (mUser == null)
             return false;
-        if (mUser.getId() != "")
+        if (mUser.getId() == null)
+            return false;
+        if (mUser.getId().equals(""))
             return false;
 
         return true;
