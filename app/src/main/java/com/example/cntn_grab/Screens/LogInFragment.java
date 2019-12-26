@@ -69,6 +69,7 @@ public class LogInFragment extends Fragment {
 
                 String email = mEmailEditText.getText().toString();
                 String password = mPasswordEditText.getText().toString();
+                Log.i("TON HIEU", password);
 
                 UserBusiness.getInstance().setLogInWithEmailListener(new LogInWithEmailListener() {
                     @Override

@@ -56,7 +56,7 @@ public class SignUpActivity extends AppCompatActivity implements DialogHelperLis
             public void onClick(View v) {
                 mEmail = mEmailEditText.getText().toString();
                 mName = mNameEditText.getText().toString();
-                mPassword = mEmailEditText.getText().toString();
+                mPassword = mPasswordEditText.getText().toString();
                 mRetypePassword = mRetypePasswordEditText.getText().toString();
                 mPhoneNumber = mPhoneNumberEditText.getText().toString();
 
@@ -96,6 +96,10 @@ public class SignUpActivity extends AppCompatActivity implements DialogHelperLis
                 }
             }
         });
+
+        if (password != rePassword) {
+            
+        }
 
         UserBusiness.getInstance().signUpWithEmailPassword(SignUpActivity.this, email, password, phoneNumber);
     }

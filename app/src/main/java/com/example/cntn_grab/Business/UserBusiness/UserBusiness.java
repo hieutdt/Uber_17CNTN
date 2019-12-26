@@ -100,7 +100,8 @@ public class UserBusiness {
         mLogInWithEmailListener.logInWithEmailDidStart();
 
         final FirebaseAuth mAuth = FirebaseAuth.getInstance();
-        mAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener(activity, new OnCompleteListener<AuthResult>() {
+        mAuth.signInWithEmailAndPassword(email, password)
+                .addOnCompleteListener(activity, new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if (task.isSuccessful()) {
@@ -109,6 +110,12 @@ public class UserBusiness {
                 } else {
                     mLogInWithEmailListener.logInWithEmailDidEnd(false, null);
                 }
+            }
+        })
+                .addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception e) {
+                Log.i("TON HIEU", e.toString());
             }
         });
     }
