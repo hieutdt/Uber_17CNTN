@@ -21,6 +21,7 @@ import com.example.cntn_grab.Data.Location;
 import com.example.cntn_grab.Data.Passenger;
 import com.example.cntn_grab.Helpers.AppConst;
 import com.example.cntn_grab.R;
+import com.example.cntn_grab.Services.GetDirectionService;
 import com.google.android.gms.common.api.Status;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
@@ -31,6 +32,7 @@ import com.google.android.libraries.places.api.Places;
 import com.google.android.libraries.places.api.model.Place;
 import com.google.android.libraries.places.widget.Autocomplete;
 import com.google.android.libraries.places.widget.AutocompleteActivity;
+import com.google.android.libraries.places.widget.listener.PlaceSelectionListener;
 import com.google.android.libraries.places.widget.model.AutocompleteActivityMode;
 
 import java.util.Arrays;
@@ -57,6 +59,8 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
     protected LocationListener mLocationListener;
 
     private Location mOriginLocation;
+    private Location mDestinationLocation;
+
     Boolean hasLocation;
     Boolean updatedMap;
 
@@ -105,7 +109,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
                             mPickUpEditText.setText("Đang tìm kiếm vị trí của bạn...");
                         } else {
                             if (addresses.size() > 0) {
-                                mPickUpEditText.setText(addresses.get(0).getAddressLine(0) + addresses.get(0).getLocality());
+                                mPickUpEditText.setText(addresses.get(0).getAddressLine(0));
                                 PassengerBusiness.getInstance().setPassengerLocationName(addresses.get(0).getAddressLine(0));
                             }
                         }
@@ -170,7 +174,6 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
         super.onCreateView(inflater, container, savedInstanceState);
 
         this.addMap();
-        this.drawDirection();
 
         FrameLayout fl = (FrameLayout) inflater.inflate(R.layout.fragment_home, container, false);
 
@@ -178,8 +181,10 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
 
         mDestinationEditText = fl.findViewById(R.id.destination);
         mDestinationEditText.setOnClickListener(this);
+        mDestinationEditText.setKeyListener(null);
 
         mPickUpEditText = fl.findViewById(R.id.pickup_point);
+        mPickUpEditText.setKeyListener(null);
 
         return fl;
     }
@@ -198,7 +203,15 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
         if (requestCode == AUTOCOMPLETE_REQUEST_CODE) {
             if (resultCode == RESULT_OK) {
                 Place place = Autocomplete.getPlaceFromIntent(data);
-                Toast.makeText(getContext(), "Place: " + place.getName() + ", " + place.getId(), Toast.LENGTH_LONG).show();
+
+                mDestinationEditText.setText(place.getName());
+                mDestinationLocation = new Location();
+                mDestinationLocation.lat = place.getLatLng().latitude;
+                mDestinationLocation.lng = place.getLatLng().longitude;
+                mDestinationLocation.name = place.getName();
+
+                drawDirection();
+
             } else if (resultCode == AutocompleteActivity.RESULT_ERROR) {
                 Status status = Autocomplete.getStatusFromIntent(data);
                 Toast.makeText(getContext(), "An error occurred: " + status.getStatusMessage(), Toast.LENGTH_LONG).show();
@@ -211,7 +224,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
     private void openPlacesAutoComplete() {
         // Set the fields to specify which types of place data to
         // return after the user has made a selection.
-        List<Place.Field> fields = Arrays.asList(Place.Field.ID, Place.Field.NAME);
+        List<Place.Field> fields = Arrays.asList(Place.Field.ID, Place.Field.NAME, Place.Field.LAT_LNG);
 
         // Start the autocomplete intent.
         Intent intent = new Autocomplete.IntentBuilder(
@@ -221,33 +234,6 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
 
         startActivityForResult(intent, AUTOCOMPLETE_REQUEST_CODE);
     }
-
-//    private void addPlaceSelectionListener() {
-//        // Initialize the AutocompleteSupportFragment.
-//        AutocompleteSupportFragment autocompleteFragment = (AutocompleteSupportFragment)
-//                getChildFragmentManager().findFragmentById(R.id.autocomplete_fragment);
-//
-//        // Specify the types of place data to return.
-//        if (autocompleteFragment != null) {
-//            autocompleteFragment.setPlaceFields(Arrays.asList(Place.Field.ID, Place.Field.NAME));
-//            autocompleteFragment.setCountry("VN");
-//
-//            // Set up a PlaceSelectionListener to handle the response.
-//            autocompleteFragment.setOnPlaceSelectedListener(new PlaceSelectionListener() {
-//                @Override
-//                public void onPlaceSelected(Place place) {
-//                    // TODO: Get info about the selected place.
-//                    Toast.makeText(getContext(), "Place: " + place.getName() + ", " + place.getId(), Toast.LENGTH_LONG).show();
-//                }
-//
-//                @Override
-//                public void onError(Status status) {
-//                    // TODO: Handle the error.
-//                    Toast.makeText(getContext(), "An error occurred: " + status, Toast.LENGTH_LONG).show();
-//                }
-//            });
-//        }
-//    }
 
     private void addMap() {
         this.map = new MapFragment();
@@ -265,13 +251,13 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
     }
 
     private void drawDirection() {
-//        Intent intent = new Intent(getContext(), GetDirectionService.class);
-//
-//        intent.putExtra("oLat", mOrigin.latitude);
-//        intent.putExtra("oLng", mOrigin.longitude);
-//        intent.putExtra("dLat", mDestination.latitude);
-//        intent.putExtra("dLng", mDestination.longitude);
-//
-//        getActivity().startService(intent);
+        Intent intent = new Intent(getContext(), GetDirectionService.class);
+
+        intent.putExtra("oLat", mOriginLocation.lat);
+        intent.putExtra("oLng", mOriginLocation.lng);
+        intent.putExtra("dLat", mDestinationLocation.lat);
+        intent.putExtra("dLng", mDestinationLocation.lng);
+
+        getActivity().startService(intent);
     }
 }
