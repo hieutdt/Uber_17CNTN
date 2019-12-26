@@ -1,11 +1,13 @@
 package com.example.cntn_grab.Business.UserBusiness;
 
 import android.app.Activity;
+import android.util.Log;
 
 import androidx.annotation.NonNull;
 
 import com.example.cntn_grab.Data.User;
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.gms.tasks.TaskExecutors;
 import com.google.firebase.FirebaseException;
@@ -59,6 +61,11 @@ public class UserBusiness {
                 } else {
                     mSignUpWithEmailPasswordListener.signUpWithEmailPasswordDidEnd(false, null);
                 }
+            }
+        }).addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception e) {
+                Log.i("TON HIEU", e.toString());
             }
         });
 

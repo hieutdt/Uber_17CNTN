@@ -32,12 +32,18 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 public class LogInFragment extends Fragment {
     private EditText mEmailEditText;
     private EditText mPasswordEditText;
     private FirebaseAuth mAuth;
     private FirebaseUser mUser;
+    private DatabaseReference mDatabaseRef;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -50,6 +56,7 @@ public class LogInFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_login, container, false);
 
         mAuth = FirebaseAuth.getInstance();
+        mDatabaseRef = FirebaseDatabase.getInstance().getReference();
 
         mEmailEditText = view.findViewById(R.id.login_email);
         mPasswordEditText = view.findViewById(R.id.login_password);
@@ -62,6 +69,7 @@ public class LogInFragment extends Fragment {
 
                 String email = mEmailEditText.getText().toString();
                 String password = mPasswordEditText.getText().toString();
+
                 UserBusiness.getInstance().setLogInWithEmailListener(new LogInWithEmailListener() {
                     @Override
                     public void logInWithEmailDidStart() {
@@ -72,12 +80,32 @@ public class LogInFragment extends Fragment {
                     public void logInWithEmailDidEnd(Boolean isOk, FirebaseUser firebaseUser) {
                         LoadingHelper.getInstance().hideLoading(getActivity());
 
-                        String uid = firebaseUser.getUid();
+                        if (isOk == false) {
+                            AlertDialog.Builder builder = new AlertDialog.Builder(getActivity(), R.style.AppCompatAlertDialogStyle);
+                            builder.setTitle("Đăng nhập thất bại");
+                            builder.setNegativeButton("OK", null);
+                            builder.show();
+                            return;
+                        }
+
+                        final String uid = firebaseUser.getUid();
                         // Fetch data by UID
 
+                        ValueEventListener postListener = new ValueEventListener() {
+                            @Override
+                            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                                User user = dataSnapshot.child("users").child(uid).getValue(User.class);
 
+                                // Update current user in UserBusiness
+                                UserBusiness.getInstance().setUser(user);
+                            }
 
-//                        UserBusiness.getInstance().setUser(newUser);
+                            @Override
+                            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                            }
+                        };
+                        mDatabaseRef.addValueEventListener(postListener);
                     }
                 });
 
