@@ -99,6 +99,8 @@ public class LogInFragment extends Fragment {
 
                                 // Update current user in UserBusiness
                                 UserBusiness.getInstance().setUser(user);
+
+                                loadHomeFragment();
                             }
 
                             @Override
@@ -126,51 +128,16 @@ public class LogInFragment extends Fragment {
         return view;
     }
 
-    private void logInHanlde(String email, String password) {
-        Log.i("TON HIEU", "Start login with email: " + email + " password: " + password);
-
-        mAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener(getActivity(), new OnCompleteListener<AuthResult>() {
-            @Override
-            public void onComplete(@NonNull Task<AuthResult> task) {
-                if (task.isSuccessful()) {
-                    Log.i("TON HIEU", "Login successful");
-
-                    mUser = mAuth.getCurrentUser();
-
-                    AlertDialog.Builder builder = new AlertDialog.Builder(getActivity(), R.style.AppCompatAlertDialogStyle);
-                    builder.setTitle("Đăng nhập thành công");
-                    builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
-                        @Override
-                        public void onClick(DialogInterface dialogInterface, int i) {
-                            //TODO: Fetch UserData from Firebase -> check type of user is Driver or not -> Show homePage
-
-                            // Show HomePage
-                            loadHomeFragment();
-                        }
-                    });
-
-                    builder.show();
-                }
-                else {
-                    Log.i("TON HIEU", "Login failed");
-
-                    AlertDialog.Builder builder = new AlertDialog.Builder(getActivity(), R.style.AppCompatAlertDialogStyle);
-                    builder.setTitle("Đăng nhập thất bại");
-                    builder.setNegativeButton("OK", null);
-                    builder.show();
-                    return;
-                }
-
-            }
-        });
-    }
-
     private void loadHomeFragment() {
         AppContext.getInstance().setCurrentFragmentIndex(AppConst.HOME_FRAGMENT_INDEX);
+        User currentUser = UserBusiness.getInstance().getCurrentUser();
 
         // Change fragment
         FragmentTransaction transaction = getActivity().getSupportFragmentManager().beginTransaction();
-        transaction.replace(R.id.frame_container, AppContext.getInstance().getHomeFragment());
+        if (currentUser.getType().equals("DRIVER"))
+            transaction.replace(R.id.frame_container, new DriverStartFragment());
+        else
+            transaction.replace(R.id.frame_container, AppContext.getInstance().getHomeFragment());
         transaction.addToBackStack(null);
         transaction.commit();
 

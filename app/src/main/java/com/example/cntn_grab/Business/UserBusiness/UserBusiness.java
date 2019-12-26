@@ -97,6 +97,10 @@ public class UserBusiness {
     }
 
     public void logInWithEmail(Activity activity, String email, String password) {
+        if (email == "" || password == "") {
+            return;
+        }
+
         mLogInWithEmailListener.logInWithEmailDidStart();
 
         final FirebaseAuth mAuth = FirebaseAuth.getInstance();

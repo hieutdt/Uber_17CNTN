@@ -83,6 +83,9 @@ public class MainActivity extends AppCompatActivity {
             // Open login fragment
             LogInFragment logInFragment = new LogInFragment();
             loadFragment = logInFragment;
+        } else if (fragment == AppContext.getInstance().getProfileFragment()) {
+            ProfileFragment profileFragment = new ProfileFragment();
+            loadFragment = profileFragment;
         }
 
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();

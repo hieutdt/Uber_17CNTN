@@ -6,13 +6,13 @@ public class User {
     protected String name;
     protected String phoneNumber;
     protected boolean isVerified;
-    protected Type type;
+    protected String type;
 
     public User() {
-        this.type = Type.PASSENGER;
+        this.type = "PASSENGER";
     }
 
-    public User(String id, String email, String name, String phoneNumber, Boolean isVerified, Type type) {
+    public User(String id, String email, String name, String phoneNumber, Boolean isVerified, String type) {
         this.id = id;
         this.email = email;
         this.name = name;
@@ -53,11 +53,11 @@ public class User {
         isVerified = verified;
     }
 
-    public Type getType() {
+    public String getType() {
         return type;
     }
 
-    public void setType(Type type) {
+    public void setType(String type) {
         this.type = type;
     }
 
