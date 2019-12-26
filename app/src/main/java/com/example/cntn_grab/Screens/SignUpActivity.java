@@ -102,7 +102,7 @@ public class SignUpActivity extends AppCompatActivity implements DialogHelperLis
 
     private void updateToDatabase(User newUser) {
         mDatabaseRef = FirebaseDatabase.getInstance().getReference("users");
-        mDatabaseRef.setValue(newUser)
+        mDatabaseRef.child(newUser.getId()).setValue(newUser)
                 .addOnSuccessListener(new OnSuccessListener<Void>() {
             @Override
             public void onSuccess(Void aVoid) {
