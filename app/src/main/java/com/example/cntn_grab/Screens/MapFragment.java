@@ -6,6 +6,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.pm.PackageManager;
+import android.graphics.Camera;
 import android.graphics.Color;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -33,6 +34,7 @@ import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.CameraPosition;
 import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.LatLngBounds;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.gms.maps.model.Polyline;
 import com.google.android.gms.maps.model.PolylineOptions;
@@ -202,6 +204,7 @@ public class MapFragment extends Fragment implements OnMapReadyCallback {
         protected void onPostExecute(List<List<HashMap<String, String>>> result) {
             ArrayList<LatLng> points;
             PolylineOptions lineOptions = null;
+            LatLngBounds.Builder boundsBuilder = new LatLngBounds.Builder();
 
             // Traversing through all the routes
             for(int i = 0; i < result.size(); ++i){
@@ -221,21 +224,27 @@ public class MapFragment extends Fragment implements OnMapReadyCallback {
                         LatLng position = new LatLng(lat, lng);
 
                         points.add(position);
+                        boundsBuilder.include(position);
                     }
 
                 // Adding all the points in the route to LineOptions
                 lineOptions.addAll(points);
-                lineOptions.width(8);
+                lineOptions.width(10);
                 lineOptions.color(Color.BLUE);
+
+                // Update camera
+                mMap.setPadding(5, 5, 600, 15);
+                mMap.moveCamera(CameraUpdateFactory.newLatLngBounds(boundsBuilder.build(), 0));
             }
 
             // Drawing polyline in the Google Map for the i-th route
             if(lineOptions != null) {
-                if(mPolyline != null){
-                    mPolyline.remove();
-                }
+//                if(mPolyline != null)
+//                    mPolyline.remove();
+
                 mPolyline = mMap.addPolyline(lineOptions);
                 Toast.makeText(getApplicationContext(),"Distance: " + MapFragment.this.distance + "m", Toast.LENGTH_LONG).show();
+
             } else {
                 Toast.makeText(getApplicationContext(),"No route is found", Toast.LENGTH_LONG).show();
             }
