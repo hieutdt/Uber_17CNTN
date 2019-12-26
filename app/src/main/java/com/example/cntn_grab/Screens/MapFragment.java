@@ -113,12 +113,8 @@ public class MapFragment extends Fragment implements OnMapReadyCallback{
         this.mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(lat ,lon), this.zoom));
     }
 
-    protected void requestPermission(String permissionType,
-                                     int requestCode) {
-
-        ActivityCompat.requestPermissions(getActivity(),
-                new String[]{permissionType}, requestCode
-        );
+    protected void requestPermission(String permissionType, int requestCode) {
+        requestPermissions(new String[]{permissionType}, requestCode);
     }
 
     private boolean hasPermission(String permissionType) {
@@ -131,38 +127,33 @@ public class MapFragment extends Fragment implements OnMapReadyCallback{
 
         mMap.clear(); //clear old markers
 
-        this.showMyLocationButton();
         this.moveCamera(10.8231, 106.6297);
 //        this.moveCamera(34.1424369, -117.922066);
 
         if (hasPermission(Manifest.permission.ACCESS_FINE_LOCATION)) {
-            mMap.setMyLocationEnabled(true);
-            mMap.getUiSettings().setMyLocationButtonEnabled(true);
+            this.showMyLocationButton();
         } else {
             requestPermission(Manifest.permission.ACCESS_FINE_LOCATION, LOCATION_REQUEST_CODE);
         }
     }
 
     @Override
-    public void onRequestPermissionsResult(int requestCode,
-                                           String[] permissions, int[] grantResults) {
-
+    public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
         switch (requestCode) {
             case LOCATION_REQUEST_CODE:
                 if (grantResults.length == 0 || grantResults[0] != PackageManager.PERMISSION_GRANTED) {
                     Toast.makeText(getContext(), "Unable to show location - permission required", Toast.LENGTH_LONG).show();
+                    requestPermission(Manifest.permission.ACCESS_FINE_LOCATION, LOCATION_REQUEST_CODE);
                 } else {
-                    SupportMapFragment mapFragment =
-                            (SupportMapFragment) getChildFragmentManager()
-                                    .findFragmentById(R.id.frg);
-                    mapFragment.getMapAsync(this);
+                    this.showMyLocationButton();
                 }
         }
     }
 
     private void showMyLocationButton() {
         mMap.setMyLocationEnabled(true);
-        View locationButton = ((View) this.getView().findViewById(Integer.parseInt("1")).getParent()).findViewById(Integer.parseInt("2"));
+        mMap.getUiSettings().setMyLocationButtonEnabled(true);
+//        View locationButton = ((View) this.getView().findViewById(Integer.parseInt("1")).getParent()).findViewById(Integer.parseInt("2"));
 //        if (locationButton != null) {
 //            RelativeLayout.LayoutParams rlp = (RelativeLayout.LayoutParams) locationButton.getLayoutParams();
 //            // position on right bottom
