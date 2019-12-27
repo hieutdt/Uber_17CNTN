@@ -296,7 +296,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
                 mBookRow.setVisibility(View.VISIBLE);
                 mDistance = distance;
                 mPrice = mDistance * 5; // 5K/km
-                mAmountLabel.setText(mPrice + ",000đ");
+                mAmountLabel.setText(mPrice + "000đ");
             }
         });
 
