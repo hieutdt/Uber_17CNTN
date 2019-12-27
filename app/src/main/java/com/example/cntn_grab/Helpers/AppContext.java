@@ -5,6 +5,8 @@ import androidx.fragment.app.FragmentActivity;
 import androidx.fragment.app.FragmentTransaction;
 
 import com.example.cntn_grab.R;
+import com.example.cntn_grab.Data.Location;
+import com.example.cntn_grab.Data.User;
 import com.example.cntn_grab.Screens.DriverStartFragment;
 import com.example.cntn_grab.Screens.HomeFragment;
 import com.example.cntn_grab.Screens.LogInFragment;
@@ -21,6 +23,9 @@ public class AppContext {
     private Fragment driverStartFragment;
     private Fragment registerDriverFragment;
 
+    private Location mOriginLocation;
+    private Location mDestinationLocation;
+
     private AppContext() {
         //TODO: init variables here
         currentFragmentIndex = 0;
@@ -29,6 +34,8 @@ public class AppContext {
         profileFragment = new ProfileFragment();
         driverStartFragment = new DriverStartFragment();
         registerDriverFragment = new RegisterDriverFragment();
+        mOriginLocation = new Location();
+        mDestinationLocation = new Location();
     }
 
     public static AppContext getInstance() {
@@ -91,5 +98,21 @@ public class AppContext {
 
     public void backToPrevFragment(FragmentActivity fragmentActivity) {
         fragmentActivity.getSupportFragmentManager().popBackStack();
+    }
+
+    public void setOriginLocation(Location location) {
+        mOriginLocation = location;
+    }
+
+    public Location getOriginLocation() {
+        return mOriginLocation;
+    }
+
+    public void setDestinationLocation(Location location) {
+        mDestinationLocation = location;
+    }
+
+    public Location getDestinationLocation() {
+        return mDestinationLocation;
     }
 }

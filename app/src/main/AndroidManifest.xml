@@ -31,6 +31,8 @@
 
         <activity android:name=".Screens.SignUpActivity"></activity>
 
+        <activity android:name=".Screens.PassengerFindTripActivity"></activity>
+
         <service
             android:name="com.example.cntn_grab.Services.GetDirectionService"
             android:enabled="true"

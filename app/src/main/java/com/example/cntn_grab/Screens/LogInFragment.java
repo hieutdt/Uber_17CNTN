@@ -17,9 +17,11 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
+import com.example.cntn_grab.Business.PassengerBusiness.PassengerBusiness;
 import com.example.cntn_grab.Business.UserBusiness.LogInWithEmailListener;
 import com.example.cntn_grab.Business.UserBusiness.SignUpWithPhoneListener;
 import com.example.cntn_grab.Business.UserBusiness.UserBusiness;
+import com.example.cntn_grab.Data.Passenger;
 import com.example.cntn_grab.Data.Type;
 import com.example.cntn_grab.Data.User;
 import com.example.cntn_grab.Helpers.AppConst;
@@ -98,10 +100,17 @@ public class LogInFragment extends Fragment {
                             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                                 Log.d("ValueEventListener", "onDataChange: " + dataSnapshot.child("users").child(uid).toString());
                                 User user = dataSnapshot.child("users").child(uid).getValue(User.class);
+                                Passenger passenger = new Passenger();
+                                passenger.setId(user.getId());
+                                passenger.setName(user.getName());
+                                passenger.setEmail(user.getEmail());
+                                passenger.setPhoneNumber(user.getPhoneNumber());
+                                passenger.setState("WAITING");
 
                                 Log.d("ValueEventListener", "onDataChange: " + user.getEmail());
                                 // Update current user in UserBusiness
                                 UserBusiness.getInstance().setUser(user);
+                                PassengerBusiness.getInstance().setPassenger(passenger);
 
                                 loadHomeFragment();
                             }
