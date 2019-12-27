@@ -4,4 +4,7 @@
     <string name="fb_login_protocol_scheme">fb2231670873610106</string>
     <string name="pickup_point">Gặp tôi ở...</string>
     <string name="destination">Tôi muốn đến...</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

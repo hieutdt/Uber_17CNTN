@@ -4,7 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Screens.TripDetailActivity"
     android:paddingLeft="40dp"
     android:paddingRight="40dp"
     android:paddingTop="50dp"
@@ -22,6 +21,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Đã tìm thấy khách hàng"
+            android:fontFamily="@font/segoe_ui_regular"
             android:textSize="25dp"
             android:textStyle="bold"
             android:textColor="#495867"/>
@@ -56,12 +56,15 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textColor="#FFFFFF"
+                    android:fontFamily="@font/segoe_ui_regular"
                     android:text="Khách hàng: "/>
                 <TextView
                     android:id="@+id/detail_name"
                     android:layout_marginLeft="15dp"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
+                    android:fontFamily="@font/segoe_ui_regular"
+                    android:textColor="#FFFFFF"
                     android:text=""/>
             </LinearLayout>
 
@@ -71,6 +74,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:fontFamily="@font/segoe_ui_regular"
                     android:textColor="#FFFFFF"
                     android:text="Số điện thoại: "/>
                 <TextView
@@ -78,6 +82,8 @@
                     android:layout_marginLeft="15dp"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
+                    android:fontFamily="@font/segoe_ui_regular"
+                    android:textColor="#FFFFFF"
                     android:text=""/>
             </LinearLayout>
 
@@ -87,6 +93,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:fontFamily="@font/segoe_ui_regular"
                     android:textColor="#FFFFFF"
                     android:text="Địa chỉ đón: "/>
                 <TextView
@@ -94,6 +101,8 @@
                     android:layout_marginLeft="15dp"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
+                    android:fontFamily="@font/segoe_ui_regular"
+                    android:textColor="#FFFFFF"
                     android:text=""/>
             </LinearLayout>
 
@@ -103,6 +112,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:fontFamily="@font/segoe_ui_regular"
                     android:textColor="#FFFFFF"
                     android:text="Địa chỉ cần đến: "/>
                 <TextView
@@ -110,6 +120,8 @@
                     android:layout_marginLeft="15dp"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
+                    android:fontFamily="@font/segoe_ui_regular"
+                    android:textColor="#FFFFFF"
                     android:text=""/>
             </LinearLayout>
 
@@ -119,6 +131,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:fontFamily="@font/segoe_ui_regular"
                     android:textColor="#FFFFFF"
                     android:text="Khoảng cách: "/>
                 <TextView
@@ -126,6 +139,8 @@
                     android:layout_marginLeft="15dp"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
+                    android:fontFamily="@font/segoe_ui_regular"
+                    android:textColor="#FFFFFF"
                     android:text=""/>
             </LinearLayout>
 
@@ -135,6 +150,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:fontFamily="@font/segoe_ui_regular"
                     android:textColor="#FFFFFF"
                     android:text="Số tiền: "/>
                 <TextView
@@ -142,6 +158,8 @@
                     android:layout_marginLeft="15dp"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
+                    android:fontFamily="@font/segoe_ui_regular"
+                    android:textColor="#FFFFFF"
                     android:text=""/>
             </LinearLayout>
 
@@ -151,8 +169,8 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="horizontal"
-            android:paddingTop="90dp"
-            android:paddingBottom="30dp">
+            android:paddingTop="60dp"
+            android:paddingBottom="50dp">
             <LinearLayout
                 android:id="@+id/trip_accept_button"
                 android:layout_width="match_parent"

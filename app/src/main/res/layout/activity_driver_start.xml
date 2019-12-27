@@ -10,37 +10,47 @@
         android:layout_height="match_parent"
         android:orientation="vertical"
         android:gravity="center_horizontal"
-        android:paddingTop="70dp"
+        android:paddingTop="30dp"
         android:paddingBottom="100dp">
 
         <LinearLayout
-            android:layout_width="300dp"
-            android:layout_height="300dp">
+            android:layout_width="250dp"
+            android:layout_height="250dp">
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:src="@drawable/driver_avatar"
+                android:src="@drawable/scooter"
                 android:scaleType="fitCenter"/>
         </LinearLayout>
 
-        <com.github.ybq.android.spinkit.SpinKitView
-            android:id="@+id/spin_kit"
-            style="@style/SpinKitView.Large.DoubleBounce"
-            android:layout_gravity="center"
-            app:SpinKit_Color="#4CB944"
+        <LinearLayout
+            android:id="@+id/driver_support_area"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="30dp" />
+            android:orientation="vertical"
+            android:gravity="center"
+            android:layout_marginTop="40dp">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Đang tìm chuyến..."
-            android:textSize="30dp"
-            android:fontFamily="@font/segoe_ui_regular"
-            android:textColor="#4CB944"
-            android:textStyle="bold"
-            android:layout_marginTop="15dp"/>
+            <LinearLayout
+                android:layout_width="200dp"
+                android:layout_height="40dp"
+                android:background="@drawable/register_with_fb_button_shape"
+                android:gravity="center"
+                android:id="@+id/find_trip_button">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Bắt đầu nhận chuyến"
+                    android:fontFamily="@font/segoe_ui_regular"
+                    android:textColor="#FFFFFF"
+                    android:textSize="15dp"
+                    android:textStyle="bold"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
 
     </LinearLayout>
+
 </LinearLayout>
