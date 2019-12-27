@@ -35,6 +35,14 @@ public class PassengerBusiness {
         mPassenger = passenger;
     }
 
+    public void setPassengerTripID(String tripID) {
+        mPassenger.setTripId(tripID);
+    }
+
+    public void setPassengerState(String state) {
+        mPassenger.setState(state);
+    }
+
     public Passenger getPassenger() {
         return mPassenger;
     }

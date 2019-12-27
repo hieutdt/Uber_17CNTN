@@ -232,6 +232,10 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
             @Override
             public void createNewTripDidEnd(Boolean isOk, String tripID) {
                 LoadingHelper.getInstance().hideLoading(getActivity());
+                PassengerBusiness.getInstance().setPassengerTripID(tripID);
+
+                Intent intent = new Intent(getActivity(), PassengerFindTripActivity.class);
+                startActivityForResult(intent, AppConst.FIND_TRIP_REQUEST_CODE);
             }
         });
 

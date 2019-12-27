@@ -19,13 +19,12 @@ import java.util.ArrayList;
 
 public class TripBusiness {
     private static TripBusiness mInstance;
-    private ArrayList<Trip> mTrips;
+    private Trip mTrip;
 
     private CreateNewTripListener mCreateNewTripListener;
     private DatabaseReference mDatabaseRef;
 
     private TripBusiness() {
-        mTrips = new ArrayList<>();
     }
 
     public static TripBusiness getInstance() {
@@ -39,7 +38,6 @@ public class TripBusiness {
         mCreateNewTripListener.createNewTripDidStart();
 
         final Trip trip = new Trip(passenger.getId(), "", origin, destination, distance, amount);
-        mTrips.add(trip);
 
         mDatabaseRef = FirebaseDatabase.getInstance().getReference("trips");
         mDatabaseRef.child(trip.getTripID()).setValue(trip)
@@ -60,5 +58,9 @@ public class TripBusiness {
 
     public void setCreateNewTripListener(CreateNewTripListener listener) {
         mCreateNewTripListener = listener;
+    }
+
+    public void updateTripDriver(String driverID) {
+        mTrip.setDriverID(driverID);
     }
 }

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center_vertical">
+
+    <com.example.cntn_grab.Helpers.GIFImageView
+        android:id="@+id/find_trip_gif_image_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"/>
+
+    <TextView
+        android:id="@+id/find_trip_label"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:fontFamily="@font/segoe_ui_regular"
+        android:gravity="center"
+        android:text="Đang tìm tài xế cho bạn..."
+        android:textColor="@android:color/black"
+        android:textSize="20dp" />
+
+</LinearLayout>
