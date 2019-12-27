@@ -13,13 +13,14 @@ import androidx.fragment.app.Fragment;
 import com.example.cntn_grab.Business.UserBusiness.UserBusiness;
 import com.example.cntn_grab.Data.Type;
 import com.example.cntn_grab.Data.User;
+import com.example.cntn_grab.Helpers.AppContext;
 import com.example.cntn_grab.R;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
-public class RegisterDriver extends Fragment {
+public class RegisterDriverFragment extends Fragment {
     private FirebaseAuth mAuth;
     private FirebaseUser mUser;
     private DatabaseReference mDatabaseRef;
@@ -46,6 +47,15 @@ public class RegisterDriver extends Fragment {
 //                curUser.setType(Type.DRIVER);
                 curUser.setType("DRIVER");
                 UserBusiness.getInstance().setUser(curUser);
+                AppContext.getInstance().backToPrevFragment(getActivity());
+            }
+        });
+
+        Button cancelButton = view.findViewById(R.id.cancel_button);
+        cancelButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                AppContext.getInstance().backToPrevFragment(getActivity());
             }
         });
 

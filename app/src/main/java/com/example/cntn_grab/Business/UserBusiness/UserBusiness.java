@@ -25,6 +25,7 @@ public class UserBusiness {
     private SignUpWithPhoneListener mSignUpWithPhoneListener;
     private SignUpWithEmailPasswordListener mSignUpWithEmailPasswordListener;
     private LogInWithEmailListener mLogInWithEmailListener;
+    private UserUpdatedListener mUserUpdatedListener;
 
     private User mUser;
     private String verificationId;
@@ -128,6 +129,12 @@ public class UserBusiness {
         });
     }
 
+    public void logOut() {
+        final FirebaseAuth mAuth = FirebaseAuth.getInstance();
+        mAuth.signOut();
+        setUser(null);
+    }
+
     public void setSignUpWithPhoneListener(SignUpWithPhoneListener listener) {
         mSignUpWithPhoneListener = listener;
     }
@@ -140,8 +147,15 @@ public class UserBusiness {
         mLogInWithEmailListener = listener;
     }
 
+    public void setUserUpdatedListener(UserUpdatedListener listener) {
+        mUserUpdatedListener = listener;
+    }
+
     public void setUser(User user) {
         mUser = user;
+        if (mUserUpdatedListener != null) {
+            mUserUpdatedListener.onUserUpdated(user);
+        }
     }
 
     public User getCurrentUser() {
