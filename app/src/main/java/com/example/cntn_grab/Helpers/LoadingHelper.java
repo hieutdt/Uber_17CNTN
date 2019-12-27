@@ -50,6 +50,7 @@ public class LoadingHelper {
 
     public void hideLoading(Activity activity) {
         layout.removeAllViews();
+        layout.setAlpha(0);
 
         // Enable user interaction
         activity.getWindow().clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE);

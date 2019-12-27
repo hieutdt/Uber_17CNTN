@@ -43,8 +43,10 @@ public class UserBusiness {
     public boolean hasLoggedInUser() {
         if (mUser == null)
             return false;
-//        if (mUser.getId() != "")
-//            return false;
+        if (mUser.getId() == null)
+            return false;
+        if (mUser.getId().equals(""))
+            return false;
 
         return true;
     }
@@ -98,6 +100,10 @@ public class UserBusiness {
     }
 
     public void logInWithEmail(Activity activity, String email, String password) {
+        if (email == "" || password == "") {
+            return;
+        }
+
         mLogInWithEmailListener.logInWithEmailDidStart();
 
         final FirebaseAuth mAuth = FirebaseAuth.getInstance();

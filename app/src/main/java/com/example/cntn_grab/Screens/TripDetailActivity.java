@@ -6,11 +6,13 @@ import android.os.Bundle;
 
 import com.example.cntn_grab.R;
 
-public class DriverStartActivity extends AppCompatActivity {
+public class TripDetailActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_driver_start);
+        setContentView(R.layout.activity_trip_detail);
     }
+
+
 }

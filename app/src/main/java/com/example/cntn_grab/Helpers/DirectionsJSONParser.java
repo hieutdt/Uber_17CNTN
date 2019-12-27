@@ -50,7 +50,6 @@ public class DirectionsJSONParser {
         JSONArray jRoutes = null;
         JSONArray jLegs = null;
         JSONArray jSteps = null;
-
         try {
 
             jRoutes = jObject.getJSONArray("routes");

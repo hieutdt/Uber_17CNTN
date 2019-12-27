@@ -43,7 +43,8 @@ public class RegisterDriver extends Fragment {
             @Override
             public void onClick(View view) {
                 User curUser = UserBusiness.getInstance().getCurrentUser();
-                curUser.setType(Type.DRIVER);
+//                curUser.setType(Type.DRIVER);
+                curUser.setType("DRIVER");
                 UserBusiness.getInstance().setUser(curUser);
             }
         });

@@ -6,6 +6,7 @@ import androidx.fragment.app.FragmentTransaction;
 
 import com.example.cntn_grab.Data.User;
 import com.example.cntn_grab.R;
+import com.example.cntn_grab.Screens.DriverStartFragment;
 import com.example.cntn_grab.Screens.HomeFragment;
 import com.example.cntn_grab.Screens.ProfileFragment;
 
@@ -15,12 +16,14 @@ public class AppContext {
     private int currentFragmentIndex;
     private Fragment homeFragment;
     private Fragment profileFragment;
+    private Fragment driverStartFragment;
 
     private AppContext() {
         //TODO: init variables here
         currentFragmentIndex = 0;
         homeFragment = new HomeFragment();
         profileFragment = new ProfileFragment();
+        driverStartFragment = new DriverStartFragment();
     }
 
     public static AppContext getInstance() {
@@ -59,5 +62,9 @@ public class AppContext {
         transaction.replace(R.id.frame_container, fragment);
         transaction.addToBackStack(null);
         transaction.commit();
+    }
+
+    public Fragment getDriverStartFragment() {
+        return driverStartFragment;
     }
 }

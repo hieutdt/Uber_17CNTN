@@ -82,7 +82,7 @@ public class SignUpActivity extends AppCompatActivity implements DialogHelperLis
                     String name = mName;
                     String email = user.getEmail();
                     String phone = mPhoneNumber;
-                    Type type = Type.PASSENGER;
+                    String type = "PASSENGER";
 
                     // Set current user is this User
                     User newUser = new User(uid, email, name, phone, true, type);
@@ -98,9 +98,10 @@ public class SignUpActivity extends AppCompatActivity implements DialogHelperLis
             }
         });
 
-        if (password != rePassword) {
-            
-        }
+//        if (password.equals(rePassword)) {
+//            DialogHelper.getInstance().showCustomDialog("Đăng ký thất bại", "Nhập lại mật khẩu không trùng khớp", SignUpActivity.this);
+//            return;
+//        }
 
         UserBusiness.getInstance().signUpWithEmailPassword(SignUpActivity.this, email, password, phoneNumber);
     }
@@ -134,6 +135,5 @@ public class SignUpActivity extends AppCompatActivity implements DialogHelperLis
     }
 
     public void customDialogOnClick() {
-        this.finish();
     }
 }
