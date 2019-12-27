@@ -26,6 +26,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
@@ -48,9 +49,6 @@ import java.util.List;
 import static com.facebook.FacebookSdk.getApplicationContext;
 
 
-/**
- * A simple {@link Fragment} subclass.
- */
 public class MapFragment extends Fragment implements OnMapReadyCallback {
     private final float zoom = 15;
     private final int LOCATION_REQUEST_CODE = 1119;
@@ -60,6 +58,8 @@ public class MapFragment extends Fragment implements OnMapReadyCallback {
     private ReceiveJSON receiveJSON;
     private int distance = 0;
     private int duration = 0;
+
+    private MapFragmentListener listener;
 
     public MapFragment() {
         // Required empty public constructor
@@ -233,17 +233,18 @@ public class MapFragment extends Fragment implements OnMapReadyCallback {
                 lineOptions.color(Color.BLUE);
 
                 // Update camera
-                mMap.setPadding(5, 5, 600, 15);
+                mMap.setPadding(5, 5, 700, 50);
                 mMap.moveCamera(CameraUpdateFactory.newLatLngBounds(boundsBuilder.build(), 0));
             }
 
             // Drawing polyline in the Google Map for the i-th route
             if(lineOptions != null) {
-//                if(mPolyline != null)
-//                    mPolyline.remove();
+                if(mPolyline != null)
+                    mPolyline.remove();
 
                 mPolyline = mMap.addPolyline(lineOptions);
-                Toast.makeText(getApplicationContext(),"Distance: " + MapFragment.this.distance + "m", Toast.LENGTH_LONG).show();
+
+                listener.drawRouteDidEnd(MapFragment.this.distance);
 
             } else {
                 Toast.makeText(getApplicationContext(),"No route is found", Toast.LENGTH_LONG).show();
@@ -253,5 +254,9 @@ public class MapFragment extends Fragment implements OnMapReadyCallback {
 
     public GoogleMap getGoogleMap() {
         return this.mMap;
+    }
+
+    public void setListener(MapFragmentListener listener) {
+        this.listener = listener;
     }
 }

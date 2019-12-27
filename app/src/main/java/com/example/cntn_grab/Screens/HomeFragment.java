@@ -1,5 +1,6 @@
 package com.example.cntn_grab.Screens;
 
+import android.app.AlertDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
@@ -12,14 +13,22 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.FrameLayout;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.cntn_grab.Business.PassengerBusiness.PassengerBusiness;
+import com.example.cntn_grab.Business.TripBusiness.CreateNewTripListener;
+import com.example.cntn_grab.Business.TripBusiness.TripBusiness;
+import com.example.cntn_grab.Business.UserBusiness.UserBusiness;
 import com.example.cntn_grab.Data.Location;
 import com.example.cntn_grab.Data.Passenger;
 import com.example.cntn_grab.Helpers.AppConst;
+import com.example.cntn_grab.Helpers.AppContext;
+import com.example.cntn_grab.Helpers.LoadingHelper;
 import com.example.cntn_grab.R;
 import com.example.cntn_grab.Services.GetDirectionService;
 import com.google.android.gms.common.api.Status;
@@ -58,14 +67,17 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
     protected LocationManager mLocationManager;
     protected LocationListener mLocationListener;
 
-    private Location mOriginLocation;
-    private Location mDestinationLocation;
-
     Boolean hasLocation;
     Boolean updatedMap;
 
     private EditText mPickUpEditText;
     private EditText mDestinationEditText;
+    private TextView mAmountLabel;
+    private Button mBookButton;
+    private LinearLayout mBookRow;
+
+    private int mPrice;
+    private int mDistance;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -78,8 +90,6 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
                     getActivity(), new String [] { android.Manifest.permission.ACCESS_COARSE_LOCATION }, AppConst.MY_PERMISSION_ACCESS_FINE_LOCATION);
         }
 
-        mOriginLocation = new Location();
-
         hasLocation = false;
         updatedMap = false;
 
@@ -88,10 +98,10 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
             public void onLocationChanged(android.location.Location location) {
                 Log.i("TON HIEU", "On location changed");
 
-                mOriginLocation.lat = location.getLatitude();
-                mOriginLocation.lng = location.getLongitude();
+                AppContext.getInstance().getOriginLocation().lat = location.getLatitude();
+                AppContext.getInstance().getOriginLocation().lng = location.getLongitude();
 
-                PassengerBusiness.getInstance().setPassengerLocation(mOriginLocation.lat, mOriginLocation.lng);
+                PassengerBusiness.getInstance().setPassengerLocation(AppContext.getInstance().getOriginLocation().lat, AppContext.getInstance().getOriginLocation().lng);
 
                 /** Update Google Map */
                 if (updatedMap == false) {
@@ -104,13 +114,14 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
 
                     try {
                         Geocoder geo = new Geocoder(getActivity(), Locale.getDefault());
-                        List<Address> addresses = geo.getFromLocation(mOriginLocation.lat, mOriginLocation.lng, 1);
+                        List<Address> addresses = geo.getFromLocation(AppContext.getInstance().getOriginLocation().lat, AppContext.getInstance().getOriginLocation().lng, 1);
                         if (addresses.isEmpty()) {
                             mPickUpEditText.setText("Đang tìm kiếm vị trí của bạn...");
                         } else {
                             if (addresses.size() > 0) {
                                 mPickUpEditText.setText(addresses.get(0).getAddressLine(0));
                                 PassengerBusiness.getInstance().setPassengerLocationName(addresses.get(0).getAddressLine(0));
+                                AppContext.getInstance().getOriginLocation().name = addresses.get(0).getAddressLine(0);
                             }
                         }
                     } catch (Exception e) {
@@ -186,7 +197,45 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
         mPickUpEditText = fl.findViewById(R.id.pickup_point);
         mPickUpEditText.setKeyListener(null);
 
+        mAmountLabel = fl.findViewById(R.id.amount_label);
+        mBookButton = fl.findViewById(R.id.find_driver_button);
+        mBookButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                bookTripButtonTapped();
+            }
+        });
+
+        mBookRow = fl.findViewById(R.id.book_trip_row);
+        mBookRow.setVisibility(View.GONE);
+
         return fl;
+    }
+
+    private void bookTripButtonTapped() {
+        if (UserBusiness.getInstance().hasLoggedInUser() == false) {
+            AlertDialog.Builder builder = new AlertDialog.Builder(getActivity(), R.style.AppCompatAlertDialogStyle);
+            builder.setTitle("LỖI");
+            builder.setMessage("Bạn cần phải đăng nhập trước mới có thể đặt xe");
+            builder.setNegativeButton("OK", null);
+            builder.show();
+
+            return;
+        }
+
+        TripBusiness.getInstance().setCreateNewTripListener(new CreateNewTripListener() {
+            @Override
+            public void createNewTripDidStart() {
+                LoadingHelper.getInstance().showLoading(getActivity());
+            }
+
+            @Override
+            public void createNewTripDidEnd(Boolean isOk, String tripID) {
+                LoadingHelper.getInstance().hideLoading(getActivity());
+            }
+        });
+
+        TripBusiness.getInstance().createNewTrip(PassengerBusiness.getInstance().getPassenger(), AppContext.getInstance().getOriginLocation(), AppContext.getInstance().getDestinationLocation(), mDistance, mPrice);
     }
 
     @Override
@@ -205,10 +254,9 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
                 Place place = Autocomplete.getPlaceFromIntent(data);
 
                 mDestinationEditText.setText(place.getName());
-                mDestinationLocation = new Location();
-                mDestinationLocation.lat = place.getLatLng().latitude;
-                mDestinationLocation.lng = place.getLatLng().longitude;
-                mDestinationLocation.name = place.getName();
+                AppContext.getInstance().getDestinationLocation().lat = place.getLatLng().latitude;
+                AppContext.getInstance().getDestinationLocation().lng = place.getLatLng().longitude;
+                AppContext.getInstance().getDestinationLocation().name = place.getName();
 
                 drawDirection();
 
@@ -238,6 +286,19 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
     private void addMap() {
         this.map = new MapFragment();
         this.addFragment(this.map, false, "map", R.id.map_container);
+        this.map.setListener(new MapFragmentListener() {
+            @Override
+            public void drawRouteDidEnd(int distance) {
+                mBookRow.setVisibility(View.VISIBLE);
+                mDistance = distance;
+                mPrice = mDistance * 5; // 5K/km
+                mAmountLabel.setText(mPrice + ",000đ");
+            }
+        });
+
+        if (AppContext.getInstance().getOriginLocation().lat > 0 && AppContext.getInstance().getDestinationLocation().lat > 0) {
+            drawDirection();
+        }
     }
 
     private void addFragment(Fragment fragment, boolean addToBackStack, String tag, int container) {
@@ -253,10 +314,10 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
     private void drawDirection() {
         Intent intent = new Intent(getContext(), GetDirectionService.class);
 
-        intent.putExtra("oLat", mOriginLocation.lat);
-        intent.putExtra("oLng", mOriginLocation.lng);
-        intent.putExtra("dLat", mDestinationLocation.lat);
-        intent.putExtra("dLng", mDestinationLocation.lng);
+        intent.putExtra("oLat", AppContext.getInstance().getOriginLocation().lat);
+        intent.putExtra("oLng", AppContext.getInstance().getOriginLocation().lng);
+        intent.putExtra("dLat", AppContext.getInstance().getDestinationLocation().lat);
+        intent.putExtra("dLng", AppContext.getInstance().getDestinationLocation().lng);
 
         getActivity().startService(intent);
     }
