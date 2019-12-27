@@ -86,6 +86,7 @@ public class LogInFragment extends Fragment {
                             builder.setTitle("Đăng nhập thất bại");
                             builder.setNegativeButton("OK", null);
                             builder.show();
+                            UserBusiness.getInstance().setUser(null);
                             return;
                         }
 
@@ -95,8 +96,10 @@ public class LogInFragment extends Fragment {
                         ValueEventListener postListener = new ValueEventListener() {
                             @Override
                             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                                Log.d("ValueEventListener", "onDataChange: " + dataSnapshot.child("users").child(uid).toString());
                                 User user = dataSnapshot.child("users").child(uid).getValue(User.class);
 
+                                Log.d("ValueEventListener", "onDataChange: " + user.getEmail());
                                 // Update current user in UserBusiness
                                 UserBusiness.getInstance().setUser(user);
                             }
@@ -107,6 +110,7 @@ public class LogInFragment extends Fragment {
                             }
                         };
                         mDatabaseRef.addValueEventListener(postListener);
+                        AppContext.getInstance().changeFragment(getActivity(), AppContext.getInstance().getProfileFragment());
                     }
                 });
 
@@ -124,6 +128,14 @@ public class LogInFragment extends Fragment {
         });
 
         return view;
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        if (UserBusiness.getInstance().hasLoggedInUser()) {
+            AppContext.getInstance().changeFragment(getActivity(), AppContext.getInstance().getProfileFragment());
+        }
     }
 
     private void logInHanlde(String email, String password) {

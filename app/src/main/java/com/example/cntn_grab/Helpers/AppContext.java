@@ -1,8 +1,11 @@
 package com.example.cntn_grab.Helpers;
 
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentActivity;
+import androidx.fragment.app.FragmentTransaction;
 
 import com.example.cntn_grab.Data.User;
+import com.example.cntn_grab.R;
 import com.example.cntn_grab.Screens.HomeFragment;
 import com.example.cntn_grab.Screens.ProfileFragment;
 
@@ -49,5 +52,12 @@ public class AppContext {
 
     public void setProfileFragment(Fragment profileFragment) {
         this.profileFragment = profileFragment;
+    }
+
+    public void changeFragment(FragmentActivity fragmentActivity, Fragment fragment) {
+        FragmentTransaction transaction = fragmentActivity.getSupportFragmentManager().beginTransaction();
+        transaction.replace(R.id.frame_container, fragment);
+        transaction.addToBackStack(null);
+        transaction.commit();
     }
 }

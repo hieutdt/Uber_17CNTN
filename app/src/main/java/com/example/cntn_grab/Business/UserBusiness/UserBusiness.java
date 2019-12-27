@@ -30,7 +30,8 @@ public class UserBusiness {
     private String verificationId;
 
     private UserBusiness() {
-        mUser = new User();
+//        mUser = new User();
+        mUser = null;
     }
 
     public static UserBusiness getInstance() {
@@ -42,8 +43,8 @@ public class UserBusiness {
     public boolean hasLoggedInUser() {
         if (mUser == null)
             return false;
-        if (mUser.getId() != "")
-            return false;
+//        if (mUser.getId() != "")
+//            return false;
 
         return true;
     }
@@ -109,6 +110,7 @@ public class UserBusiness {
                     mLogInWithEmailListener.logInWithEmailDidEnd(true, user);
                 } else {
                     mLogInWithEmailListener.logInWithEmailDidEnd(false, null);
+                    Log.d("signInEmailPassword", "onComplete: " + task.getException());
                 }
             }
         })

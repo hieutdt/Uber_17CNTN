@@ -1,5 +1,10 @@
 package com.example.cntn_grab.Data;
 
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.IgnoreExtraProperties;
+
+@IgnoreExtraProperties
 public class User {
     protected String id;
     protected String email;
@@ -8,12 +13,15 @@ public class User {
     protected boolean isVerified;
     protected Type type;
 
+    private DatabaseReference mDatabaseRef;
+
     public User() {
         this.type = Type.PASSENGER;
     }
 
     public User(String id, String email, String name, String phoneNumber, Boolean isVerified, Type type) {
         this.id = id;
+        mDatabaseRef = FirebaseDatabase.getInstance().getReference("users").child(id);
         this.email = email;
         this.name = name;
         this.phoneNumber = phoneNumber;
@@ -27,6 +35,7 @@ public class User {
 
     public void setId(String id) {
         this.id = id;
+        mDatabaseRef = FirebaseDatabase.getInstance().getReference("users").child(id);
     }
 
     public String getName() {
@@ -59,6 +68,7 @@ public class User {
 
     public void setType(Type type) {
         this.type = type;
+        mDatabaseRef.child("type").setValue(type);
     }
 
     public void setEmail(String email) {

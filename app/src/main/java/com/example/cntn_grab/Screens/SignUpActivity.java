@@ -93,6 +93,7 @@ public class SignUpActivity extends AppCompatActivity implements DialogHelperLis
 
                 } else {
                     DialogHelper.getInstance().showFailedDialog(SignUpActivity.this);
+                    UserBusiness.getInstance().setUser(null);
                 }
             }
         });
