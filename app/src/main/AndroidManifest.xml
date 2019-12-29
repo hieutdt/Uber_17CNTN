@@ -33,6 +33,8 @@
 
         <activity android:name=".Screens.PassengerFindTripActivity"></activity>
 
+        <activity android:name=".Screens.DriverInTripActivity"/>
+
         <service
             android:name="com.example.cntn_grab.Services.GetDirectionService"
             android:enabled="true"

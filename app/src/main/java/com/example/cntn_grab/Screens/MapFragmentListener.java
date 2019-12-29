@@ -7,5 +7,6 @@ import androidx.fragment.app.Fragment;
  */
 
 public interface MapFragmentListener {
+    void onMapReady();
     void drawRouteDidEnd(int distance);
 }

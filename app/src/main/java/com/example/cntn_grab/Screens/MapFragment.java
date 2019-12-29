@@ -132,27 +132,9 @@ public class MapFragment extends Fragment implements OnMapReadyCallback {
     @Override
     public void onMapReady(GoogleMap mMap) {
         Log.i("TON HIEU", "OnMapReadyCallback");
+        listener.onMapReady();
 
         this.mMap = mMap;
-
-        mMap.clear(); //clear old markers
-
-        Location currentLocation = PassengerBusiness.getInstance().getPassengerLocation();
-
-        mMap.addMarker(new MarkerOptions()
-                .position(new LatLng(currentLocation.lat, currentLocation.lng))
-                .title("Vị trí của bạn"));
-
-        LatLng markerLatLng = new LatLng(currentLocation.lat, currentLocation.lng);
-
-        CameraPosition cameraPosition = new CameraPosition.Builder()
-                .target(markerLatLng)
-                .zoom(17)
-                .bearing(90)
-                .tilt(30)
-                .build();
-
-        mMap.animateCamera(CameraUpdateFactory.newCameraPosition(cameraPosition));
 
         if (hasPermission(Manifest.permission.ACCESS_FINE_LOCATION)) {
 //            this.showMyLocationButton();

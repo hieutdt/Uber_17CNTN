@@ -8,8 +8,12 @@ public class Trip {
     private String tripID;
     private String passengerID;
     private String driverID;
-    private Location origin;
-    private Location destination;
+    private double originLat;
+    private double originLng;
+    private String originName;
+    private double destinationLat;
+    private double destinationLng;
+    private String destinationName;
     private int distance;
     private int amount;
 
@@ -22,8 +26,12 @@ public class Trip {
         tripID = StringHelper.randomString(10);
         this.passengerID = passengerID;
         this.driverID = driverID;
-        this.destination = destination;
-        this.origin = origin;
+        this.destinationLat = destination.lat;
+        this.destinationLng = destination.lng;
+        this.destinationName = destination.name;
+        this.originLat = origin.lat;
+        this.originLng = origin.lng;
+        this.originName = origin.name;
         this.distance = distance;
         this.amount = amount;
     }
@@ -52,22 +60,6 @@ public class Trip {
         this.driverID = driverID;
     }
 
-    public Location getOrigin() {
-        return origin;
-    }
-
-    public void setOrigin(Location origin) {
-        this.origin = origin;
-    }
-
-    public Location getDestination() {
-        return destination;
-    }
-
-    public void setDestination(Location destination) {
-        this.destination = destination;
-    }
-
     public int getDistance() {
         return distance;
     }
@@ -82,5 +74,53 @@ public class Trip {
 
     public void setAmount(int amount) {
         this.amount = amount;
+    }
+
+    public double getOriginLat() {
+        return originLat;
+    }
+
+    public void setOriginLat(double originLat) {
+        this.originLat = originLat;
+    }
+
+    public double getOriginLng() {
+        return originLng;
+    }
+
+    public void setOriginLng(double originLng) {
+        this.originLng = originLng;
+    }
+
+    public String getOriginName() {
+        return originName;
+    }
+
+    public void setOriginName(String originName) {
+        this.originName = originName;
+    }
+
+    public double getDestinationLat() {
+        return destinationLat;
+    }
+
+    public void setDestinationLat(double destinationLat) {
+        this.destinationLat = destinationLat;
+    }
+
+    public double getDestinationLng() {
+        return destinationLng;
+    }
+
+    public void setDestinationLng(double destinationLng) {
+        this.destinationLng = destinationLng;
+    }
+
+    public String getDestinationName() {
+        return destinationName;
+    }
+
+    public void setDestinationName(String destinationName) {
+        this.destinationName = destinationName;
     }
 }

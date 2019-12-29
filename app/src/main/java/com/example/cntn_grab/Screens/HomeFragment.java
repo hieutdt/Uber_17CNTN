@@ -298,6 +298,28 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
                 mPrice = mDistance * 5; // 5K/km
                 mAmountLabel.setText(mPrice + "000đ");
             }
+
+            @Override
+            public void onMapReady() {
+                mGoogleMap.clear(); //clear old markers
+
+                Location currentLocation = PassengerBusiness.getInstance().getPassengerLocation();
+
+                mGoogleMap.addMarker(new MarkerOptions()
+                        .position(new LatLng(currentLocation.lat, currentLocation.lng))
+                        .title("Vị trí của bạn"));
+
+                LatLng markerLatLng = new LatLng(currentLocation.lat, currentLocation.lng);
+
+                CameraPosition cameraPosition = new CameraPosition.Builder()
+                        .target(markerLatLng)
+                        .zoom(17)
+                        .bearing(90)
+                        .tilt(30)
+                        .build();
+
+                mGoogleMap.animateCamera(CameraUpdateFactory.newCameraPosition(cameraPosition));
+            }
         });
 
         if (AppContext.getInstance().getOriginLocation().lat > 0 && AppContext.getInstance().getDestinationLocation().lat > 0) {
