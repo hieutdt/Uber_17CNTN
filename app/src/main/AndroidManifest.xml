@@ -2,26 +2,14 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.cntn_grab">
 
-    <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-    <uses-permission android:name="android.permission. ACCESS_COARSE_LOCATION" />
-
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/scooter"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-
-        <meta-data
-            android:name="com.google.android.geo.API_KEY"
-            android:value="@string/google_maps_key" />
-        <meta-data
-            android:name="com.facebook.sdk.ApplicationId"
-            android:value="@string/facebook_app_id" />
-
-        <activity android:name=".Screens.MainActivity">
+        <activity android:name=".Screens.SplashScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -29,17 +17,28 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".Screens.SignUpActivity"></activity>
+        <activity android:name=".Screens.MainActivity">
 
-        <activity android:name=".Screens.PassengerFindTripActivity"></activity>
+        </activity>
+        <activity android:name=".Screens.SignUpActivity" />
 
-        <activity android:name=".Screens.DriverInTripActivity"/>
+        <activity android:name=".Screens.PassengerFindTripActivity" />
+        <activity android:name=".Screens.DriverInTripActivity" />
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="@string/google_maps_key" />
+        <meta-data
+            android:name="com.facebook.sdk.ApplicationId"
+            android:value="@string/facebook_app_id" />
 
         <service
-            android:name="com.example.cntn_grab.Services.GetDirectionService"
+            android:name=".Services.GetDirectionService"
             android:enabled="true"
-            android:exported="false"/>
-
+            android:exported="false" />
     </application>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission. ACCESS_COARSE_LOCATION" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
 
 </manifest>
