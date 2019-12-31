@@ -132,9 +132,8 @@ public class MapFragment extends Fragment implements OnMapReadyCallback {
     @Override
     public void onMapReady(GoogleMap mMap) {
         Log.i("TON HIEU", "OnMapReadyCallback");
-        listener.onMapReady();
-
         this.mMap = mMap;
+        listener.onMapReady();
 
         if (hasPermission(Manifest.permission.ACCESS_FINE_LOCATION)) {
 //            this.showMyLocationButton();

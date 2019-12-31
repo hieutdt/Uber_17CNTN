@@ -7,7 +7,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
 import com.example.cntn_grab.R;
 import com.google.android.gms.maps.GoogleMap;
@@ -15,7 +18,7 @@ import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.firebase.database.DatabaseReference;
 
-public class DriverInTripActivity extends Activity implements OnMapReadyCallback {
+public class DriverInTripActivity extends Activity {
     private String mPassengerID;
     private DatabaseReference mDatabaseRef;
     private MapFragment mMap;
@@ -26,22 +29,24 @@ public class DriverInTripActivity extends Activity implements OnMapReadyCallback
         setContentView(R.layout.activity_driver_in_trip);
 
         mPassengerID = getIntent().getStringExtra("passengerID");
-    }
 
-    @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        View rootView = inflater.inflate(R.layout.fragment_map, container, false);
-
-        SupportMapFragment mapFragment = findFragmentById(R.id.frg);  //use SuppoprtMapFragment for using in fragment instead of activity  MapFragment = activity   SupportMapFragment = fragment
-        mapFragment.getMapAsync(this);
-
-        return rootView;
-    }
-
-    @Override
-    public void onMapReady(GoogleMap googleMap) {
 
     }
+
+//    private void addMap() {
+//        mMap = new MapFragment();
+//        this.addFragment(this.map, false, "map", R.id.map_container);
+//        this.map.setListener(new MapFragmentListener() {
+//        }
+//    }
+
+//    private void addFragment(Fragment fragment, boolean addToBackStack, String tag, int container) {
+//        FragmentManager manager = getChildFragmentManager();
+//        FragmentTransaction ft = manager.beginTransaction();
+//        if (addToBackStack) {
+//            ft.addToBackStack(tag);
+//        }
+//        ft.replace(container, fragment, tag);
+//        ft.commitAllowingStateLoss();
+//    }
 }

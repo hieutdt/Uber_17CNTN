@@ -301,6 +301,8 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
 
             @Override
             public void onMapReady() {
+                mGoogleMap = HomeFragment.this.map.getGoogleMap();
+
                 mGoogleMap.clear(); //clear old markers
 
                 Location currentLocation = PassengerBusiness.getInstance().getPassengerLocation();
