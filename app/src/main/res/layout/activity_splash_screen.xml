@@ -5,28 +5,21 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:gravity="center_horizontal"
-    android:background="#FFFFFF"
+    android:gravity="center"
+    android:background="#ffa502"
     tools:context=".Screens.SplashScreen">
     <ImageView
-        android:layout_width="350dp"
-        android:layout_height="350dp"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
         android:src="@drawable/logo"
-        android:layout_marginTop="100dp"/>
+        android:layout_marginTop="20dp"/>
 
-    <com.example.cntn_grab.Helpers.GIFImageView
-        android:id="@+id/splash_screen_gif_image_view"
-        android:layout_width="400dp"
-        android:layout_height="150dp"
-        android:layout_marginTop="60dp"
-        android:layout_gravity="center"/>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
-        android:text="Đang khởi động..."
-        android:textSize="16dp"
-        android:textColor="#4CB944" />
+    <com.github.ybq.android.spinkit.SpinKitView
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        style="@style/SpinKitView.Large.ThreeBounce"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_gravity="center"
+        app:SpinKit_Color="#232020" />
 
 </LinearLayout>

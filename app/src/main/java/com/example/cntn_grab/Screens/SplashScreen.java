@@ -10,16 +10,11 @@ import com.example.cntn_grab.Helpers.GIFImageView;
 import com.example.cntn_grab.R;
 
 public class SplashScreen extends AppCompatActivity {
-    private static int SPLASH_TIME_OUT = 6000;
-    private GIFImageView mGifImageView;
-
+    private static int SPLASH_TIME_OUT = 5000;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash_screen);
-
-        mGifImageView = findViewById(R.id.splash_screen_gif_image_view);
-        mGifImageView.setGifImageResource(R.drawable.scooter_driving);
 
         new Handler().postDelayed(new Runnable() {
             @Override
