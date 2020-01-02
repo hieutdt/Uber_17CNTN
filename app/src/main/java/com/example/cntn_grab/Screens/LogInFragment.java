@@ -17,10 +17,12 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
+import com.example.cntn_grab.Business.DriverBusiness.DriverBusiness;
 import com.example.cntn_grab.Business.PassengerBusiness.PassengerBusiness;
 import com.example.cntn_grab.Business.UserBusiness.LogInWithEmailListener;
 import com.example.cntn_grab.Business.UserBusiness.SignUpWithPhoneListener;
 import com.example.cntn_grab.Business.UserBusiness.UserBusiness;
+import com.example.cntn_grab.Data.Driver;
 import com.example.cntn_grab.Data.Passenger;
 import com.example.cntn_grab.Data.Type;
 import com.example.cntn_grab.Data.User;
@@ -100,17 +102,41 @@ public class LogInFragment extends Fragment {
                             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                                 Log.d("ValueEventListener", "onDataChange: " + dataSnapshot.child("users").child(uid).toString());
                                 User user = dataSnapshot.child("users").child(uid).getValue(User.class);
-                                Passenger passenger = new Passenger();
-                                passenger.setId(user.getId());
-                                passenger.setName(user.getName());
-                                passenger.setEmail(user.getEmail());
-                                passenger.setPhoneNumber(user.getPhoneNumber());
-                                passenger.setState("WAITING");
+
+                                if (user == null) {
+                                    AlertDialog.Builder builder = new AlertDialog.Builder(getActivity(), R.style.AppCompatAlertDialogStyle);
+                                    builder.setTitle("Đăng nhập thất bại");
+                                    builder.setNegativeButton("OK", null);
+                                    builder.show();
+                                    UserBusiness.getInstance().setUser(null);
+                                    return;
+                                }
 
                                 Log.d("ValueEventListener", "onDataChange: " + user.getEmail());
+                                Log.i("TonHieu", user.toString());
+
+                                if (user.getType().equals("PASSENGER")) {
+                                    Passenger passenger = new Passenger();
+                                    passenger.setId(user.getId());
+                                    passenger.setName(user.getName());
+                                    passenger.setEmail(user.getEmail());
+                                    passenger.setPhoneNumber(user.getPhoneNumber());
+                                    passenger.setState("WAITING");
+
+                                    PassengerBusiness.getInstance().setPassenger(passenger);
+                                } else {
+                                    Driver driver = new Driver();
+                                    driver.setId(user.getId());
+                                    driver.setName(user.getName());
+                                    driver.setEmail(user.getEmail());
+                                    driver.setPhoneNumber(user.getPhoneNumber());
+                                    driver.setState("ONLINE");
+
+                                    DriverBusiness.getInstance().setDriver(driver);
+                                }
+
                                 // Update current user in UserBusiness
                                 UserBusiness.getInstance().setUser(user);
-                                PassengerBusiness.getInstance().setPassenger(passenger);
 
                                 loadHomeFragment();
                             }

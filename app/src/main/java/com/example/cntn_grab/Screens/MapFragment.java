@@ -136,7 +136,7 @@ public class MapFragment extends Fragment implements OnMapReadyCallback {
         listener.onMapReady();
 
         if (hasPermission(Manifest.permission.ACCESS_FINE_LOCATION)) {
-//            this.showMyLocationButton();
+
         } else {
             requestPermission(Manifest.permission.ACCESS_FINE_LOCATION, LOCATION_REQUEST_CODE);
         }

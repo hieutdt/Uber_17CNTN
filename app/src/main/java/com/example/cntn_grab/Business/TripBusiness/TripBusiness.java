@@ -37,7 +37,7 @@ public class TripBusiness {
     public void createNewTrip(Passenger passenger, Location origin, Location destination, int distance, int amount) {
         mCreateNewTripListener.createNewTripDidStart();
 
-        final Trip trip = new Trip(passenger.getId(), "", origin, destination, distance, amount);
+        final Trip trip = new Trip(passenger.getId(), "", origin, destination, Long.valueOf(distance), Long.valueOf(amount));
 
         mDatabaseRef = FirebaseDatabase.getInstance().getReference("trips");
         mDatabaseRef.child(trip.getTripID()).setValue(trip)

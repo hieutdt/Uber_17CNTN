@@ -20,7 +20,7 @@ public class DriverBusiness {
     private Driver driver;
 
     private DriverBusiness() {
-
+        driver = new Driver();
     }
 
     public static DriverBusiness getInstance() {

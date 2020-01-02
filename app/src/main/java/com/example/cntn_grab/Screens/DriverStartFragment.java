@@ -1,9 +1,14 @@
 package com.example.cntn_grab.Screens;
 
 import android.app.AlertDialog;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.location.LocationListener;
+import android.location.LocationManager;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,6 +16,8 @@ import android.widget.LinearLayout;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 
 import com.example.cntn_grab.Business.DriverBusiness.DriverBusiness;
@@ -24,16 +31,52 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 
 public class DriverStartFragment extends Fragment {
+
     LinearLayout suportLayout;
     LinearLayout findTripButton;
     ArrayList<Trip> mTrips;
     Trip nearestPickUpTrip;
+    LocationManager mLocationManager;
+    LocationListener mLocationListener;
+    DatabaseReference mDatabaseRef;
 
-    public void onCreate(Bundle savedInstanceState) { super.onCreate(savedInstanceState); }
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+
+        if (ContextCompat.checkSelfPermission( getActivity(),android.Manifest.permission.ACCESS_COARSE_LOCATION ) != PackageManager.PERMISSION_GRANTED ) {
+            ActivityCompat.requestPermissions(
+                    getActivity(), new String [] { android.Manifest.permission.ACCESS_COARSE_LOCATION }, AppConst.MY_PERMISSION_ACCESS_FINE_LOCATION);
+        }
+
+        mLocationListener = new LocationListener() {
+            @Override
+            public void onLocationChanged(android.location.Location location) {
+                DriverBusiness.getInstance().getDriver().setLat(location.getLatitude());
+                DriverBusiness.getInstance().getDriver().setLng(location.getLongitude());
+            }
+
+            @Override
+            public void onStatusChanged(String provider, int status, Bundle extras) {
+            }
+
+            @Override
+            public void onProviderEnabled(String provider) {
+            }
+
+            @Override
+            public void onProviderDisabled(String provider) {
+            }
+        };
+
+        mLocationManager = (LocationManager)getActivity().getSystemService(Context.LOCATION_SERVICE);
+        mLocationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 0, 0, mLocationListener);
+        mLocationManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, 0, 0, mLocationListener);
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -61,22 +104,23 @@ public class DriverStartFragment extends Fragment {
     }
 
     public void findTripForDriver(Driver driver) {
+        Log.i("TON HIEU", "Find trip for driver button tapped");
+
         final Location currentLocation = driver.getLocation();
-        DatabaseReference databaseRef = FirebaseDatabase.getInstance().getReference().child("trips");
 
-        ChildEventListener childEventListener = new ChildEventListener() {
+        ValueEventListener valueEventListener = new ValueEventListener() {
             @Override
-            public void onChildAdded(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
-
-            }
-
-            @Override
-            public void onChildChanged(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 ArrayList<Trip> trips = new ArrayList<>();
                 double minDistance = 0;
 
+                Log.i("DITMEMAY", dataSnapshot.toString());
+
                 for (DataSnapshot postSnapshot : dataSnapshot.getChildren()) {
                     Trip trip = postSnapshot.getValue(Trip.class);
+
+                    Log.i("TripData", trip.toString());
+
                     if (trip != null) {
                         trips.add(trip);
 
@@ -87,8 +131,7 @@ public class DriverStartFragment extends Fragment {
                         if (minDistance == 0) {
                             minDistance = distance;
                             nearestPickUpTrip = trip;
-                        }
-                        else if (distance < minDistance) {
+                        }  else if (distance < minDistance) {
                             minDistance = distance;
                             nearestPickUpTrip = trip;
                         }
@@ -110,17 +153,6 @@ public class DriverStartFragment extends Fragment {
                             }
                         });
                 builder.show();
-                return;
-            }
-
-            @Override
-            public void onChildRemoved(@NonNull DataSnapshot dataSnapshot) {
-
-            }
-
-            @Override
-            public void onChildMoved(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
-
             }
 
             @Override
@@ -128,6 +160,9 @@ public class DriverStartFragment extends Fragment {
 
             }
         };
+
+        mDatabaseRef = FirebaseDatabase.getInstance().getReference().child("trips");
+        mDatabaseRef.addValueEventListener(valueEventListener);
     }
 
     private double getDistance(double aLat, double aLng, double bLat, double bLng) {

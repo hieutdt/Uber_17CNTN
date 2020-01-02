@@ -14,15 +14,15 @@ public class Trip {
     private double destinationLat;
     private double destinationLng;
     private String destinationName;
-    private int distance;
-    private int amount;
+    private Long distance;
+    private Long amount;
 
 
     public Trip() {
-        tripID = StringHelper.randomString(10);
+        tripID = StringHelper.randomString(20);
     }
 
-    public Trip(String passengerID, String driverID, Location origin, Location destination, int distance, int amount) {
+    public Trip(String passengerID, String driverID, Location origin, Location destination, Long distance, Long amount) {
         tripID = StringHelper.randomString(10);
         this.passengerID = passengerID;
         this.driverID = driverID;
@@ -40,8 +40,8 @@ public class Trip {
         return tripID;
     }
 
-    public void setTripID(int tripID) {
-        tripID = tripID;
+    public void setTripID(String tripID) {
+        this.tripID = tripID;
     }
 
     public String getPassengerID() {
@@ -60,19 +60,19 @@ public class Trip {
         this.driverID = driverID;
     }
 
-    public int getDistance() {
+    public Long getDistance() {
         return distance;
     }
 
-    public void setDistance(int distance) {
+    public void setDistance(Long distance) {
         this.distance = distance;
     }
 
-    public int getAmount() {
+    public Long getAmount() {
         return amount;
     }
 
-    public void setAmount(int amount) {
+    public void setAmount(Long amount) {
         this.amount = amount;
     }
 
