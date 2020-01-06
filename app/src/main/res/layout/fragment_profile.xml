@@ -24,7 +24,7 @@
             <ImageView
                 android:layout_width="100dp"
                 android:layout_height="100dp"
-                android:src="@drawable/man"
+                android:src="@drawable/default_profile_image"
                 android:scaleType="fitCenter"/>
             <LinearLayout
                 android:layout_width="match_parent"
@@ -61,6 +61,23 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/profile_driver_register"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginBottom="10dp"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_height="match_parent"
+                    android:layout_width="match_parent"
+                    android:gravity="center_vertical"
+                    android:text="Lái xe cùng Grab"
+                    android:fontFamily="@font/segoe_ui_regular"
+                    android:textSize="20dp"
+                    android:textColor="@color/black"
+                    android:background="@drawable/border_bottom_list_item"/>
+            </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -108,39 +125,33 @@
             </LinearLayout>
 
             <LinearLayout
-                android:id="@+id/logout_button"
                 android:layout_width="match_parent"
-                android:layout_height="60dp"
-                android:layout_marginBottom="10dp"
-                android:orientation="horizontal">
-                <TextView
-                    android:layout_height="match_parent"
-                    android:layout_width="match_parent"
-                    android:gravity="center_vertical"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp">
+                <Button
+                    android:id="@+id/logout_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:background="@drawable/button_register"
+                    android:fontFamily="@font/segoe_ui_regular"
                     android:text="Đăng xuất"
-                    android:fontFamily="@font/segoe_ui_regular"
-                    android:textSize="20dp"
-                    android:textColor="@color/black"
-                    android:background="@drawable/border_bottom_list_item"/>
-            </LinearLayout>
+                    android:textStyle="bold"
+                    android:textAllCaps="false"
+                    android:textColor="#FFFFFF"/>
 
-            <LinearLayout
-                android:id="@+id/register_driver_button"
-                android:layout_width="match_parent"
-                android:layout_height="60dp"
-                android:layout_marginBottom="10dp"
-                android:orientation="horizontal">
-                <TextView
-                    android:layout_height="match_parent"
-                    android:layout_width="match_parent"
-                    android:gravity="center_vertical"
-                    android:text="Đăng kí làm tài xế"
+                <Button
+                    android:id="@+id/register_driver_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:background="@drawable/button_register"
                     android:fontFamily="@font/segoe_ui_regular"
-                    android:textSize="20dp"
-                    android:textColor="@color/black"
-                    android:background="@drawable/border_bottom_list_item"/>
+                    android:text="Đăng ký tài xế"
+                    android:textStyle="bold"
+                    android:textAllCaps="false"
+                    android:textColor="#FFFFFF"/>
             </LinearLayout>
-
         </LinearLayout>
 
     </LinearLayout>

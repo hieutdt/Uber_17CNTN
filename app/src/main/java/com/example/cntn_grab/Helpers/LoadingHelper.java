@@ -33,7 +33,7 @@ public class LoadingHelper {
 
         progressBar = new ProgressBar(activity);
         Sprite doubleBounce = new DoubleBounce();
-        doubleBounce.setColor(activity.getColor(R.color.orange));
+        doubleBounce.setColor(activity.getColor(R.color.green));
         progressBar.setIndeterminateDrawable(doubleBounce);
 
         RelativeLayout.LayoutParams barParams = new RelativeLayout.LayoutParams(200, 200);

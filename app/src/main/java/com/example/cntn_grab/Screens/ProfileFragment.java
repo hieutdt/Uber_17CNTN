@@ -6,7 +6,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.fragment.app.Fragment;
@@ -34,8 +33,8 @@ public class ProfileFragment extends Fragment {
 
         mUserNameTxtView = view.findViewById(R.id.user_name_txt_view);
         mPhoneNumberTxtView = view.findViewById(R.id.phone_number_txt_view);
-        final LinearLayout mLogoutBtn = view.findViewById(R.id.logout_button);
-        final LinearLayout mRegisterDriverBtn = view.findViewById(R.id.register_driver_button);
+        final Button mLogoutBtn = view.findViewById(R.id.logout_button);
+        final Button mRegisterDriverBtn = view.findViewById(R.id.register_driver_button);
 
         UserBusiness.getInstance().setUserUpdatedListener(new UserUpdatedListener() {
             @Override

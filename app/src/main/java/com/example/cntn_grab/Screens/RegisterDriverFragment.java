@@ -5,7 +5,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.LinearLayout;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -40,7 +39,7 @@ public class RegisterDriverFragment extends Fragment {
         mAuth = FirebaseAuth.getInstance();
         mDatabaseRef = FirebaseDatabase.getInstance().getReference();
 
-        LinearLayout registerDriverButton = view.findViewById(R.id.register_driver_button);
+        Button registerDriverButton = view.findViewById(R.id.register_driver_button);
         registerDriverButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -52,7 +51,7 @@ public class RegisterDriverFragment extends Fragment {
             }
         });
 
-        LinearLayout cancelButton = view.findViewById(R.id.cancel_button);
+        Button cancelButton = view.findViewById(R.id.cancel_button);
         cancelButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

@@ -12,7 +12,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.LinearLayout;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
@@ -66,7 +65,7 @@ public class LogInFragment extends Fragment {
         mEmailEditText = view.findViewById(R.id.login_email);
         mPasswordEditText = view.findViewById(R.id.login_password);
 
-        LinearLayout logInButton = view.findViewById(R.id.login_button_login);
+        Button logInButton = view.findViewById(R.id.login_button_login);
         logInButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -156,7 +155,7 @@ public class LogInFragment extends Fragment {
             }
         });
 
-        LinearLayout signUpButton = view.findViewById(R.id.login_button_register);
+        Button signUpButton = view.findViewById(R.id.login_button_register);
         signUpButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
