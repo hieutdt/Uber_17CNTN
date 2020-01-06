@@ -10,7 +10,7 @@ import com.example.cntn_grab.Helpers.GIFImageView;
 import com.example.cntn_grab.R;
 
 public class SplashScreen extends AppCompatActivity {
-    private static int SPLASH_TIME_OUT = 5000;
+    private static int SPLASH_TIME_OUT = 0000;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
