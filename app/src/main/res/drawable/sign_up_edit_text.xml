@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-
 <layer-list xmlns:android="http://schemas.android.com/apk/res/android"
     android:shape="rectangle">
 
@@ -7,7 +6,7 @@
         <shape>
             <stroke
                 android:width="4dp"
-                android:color="#dddddd" />
+                android:color="#FF9102" />
             <padding
                 android:bottom="2dp"
                 android:top="0.5dp"
@@ -19,7 +18,7 @@
     </item>
     <item>
         <shape>
-            <solid android:color="#fff" />
+            <solid android:color="#f4f4f4" />
             <corners android:radius="35dp" />
         </shape>
     </item>

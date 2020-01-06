@@ -6,6 +6,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -30,7 +31,7 @@ public class SignUpActivity extends AppCompatActivity implements DialogHelperLis
     private EditText mNameEditText;
     private EditText mRetypePasswordEditText;
     private EditText mPhoneNumberEditText;
-    private Button mSignUpButton;
+    private LinearLayout mSignUpButton;
 
     private String mEmail;
     private String mName;

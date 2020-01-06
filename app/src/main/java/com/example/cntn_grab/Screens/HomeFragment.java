@@ -73,7 +73,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
     private EditText mPickUpEditText;
     private EditText mDestinationEditText;
     private TextView mAmountLabel;
-    private Button mBookButton;
+    private LinearLayout mBookButton;
     private LinearLayout mBookRow;
 
     private int mPrice;
