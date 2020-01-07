@@ -10,7 +10,7 @@
         android:id="@+id/spin_kit"
         style="@style/SpinKitView.Large.DoubleBounce"
         android:layout_gravity="center"
-        app:SpinKit_Color="#4CB944"
+        app:SpinKit_Color="#ffa502"
         android:layout_width="30dp"
         android:layout_height="30dp"
         android:layout_marginTop="30dp" />
@@ -21,7 +21,7 @@
         android:text="Đang tìm chuyến..."
         android:textSize="25dp"
         android:fontFamily="@font/segoe_ui_regular"
-        android:textColor="#4CB944"
+        android:textColor="#ffa502"
         android:textStyle="bold"
         android:layout_marginTop="15dp"/>
 </LinearLayout>
