@@ -7,15 +7,10 @@ import androidx.annotation.NonNull;
 import com.example.cntn_grab.Data.Location;
 import com.example.cntn_grab.Data.Passenger;
 import com.example.cntn_grab.Data.Trip;
-import com.example.cntn_grab.Data.User;
-import com.example.cntn_grab.Helpers.DialogHelper;
-import com.example.cntn_grab.Screens.SignUpActivity;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-
-import java.util.ArrayList;
 
 public class TripBusiness {
     private static TripBusiness mInstance;
@@ -32,6 +27,14 @@ public class TripBusiness {
             mInstance = new TripBusiness();
 
         return mInstance;
+    }
+
+    public Trip getTrip() {
+        return mTrip;
+    }
+
+    public void setTrip(Trip trip) {
+        mTrip = trip;
     }
 
     public void createNewTrip(Passenger passenger, Location origin, Location destination, int distance, int amount) {
@@ -54,6 +57,8 @@ public class TripBusiness {
                         mCreateNewTripListener.createNewTripDidEnd(false, "");
                     }
                 });
+
+        mTrip = trip;
     }
 
     public void setCreateNewTripListener(CreateNewTripListener listener) {

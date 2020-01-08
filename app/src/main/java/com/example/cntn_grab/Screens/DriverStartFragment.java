@@ -21,6 +21,7 @@ import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 
 import com.example.cntn_grab.Business.DriverBusiness.DriverBusiness;
+import com.example.cntn_grab.Business.TripBusiness.TripBusiness;
 import com.example.cntn_grab.Data.Driver;
 import com.example.cntn_grab.Data.Location;
 import com.example.cntn_grab.Data.Trip;
@@ -40,6 +41,7 @@ public class DriverStartFragment extends Fragment {
     LinearLayout suportLayout;
     LinearLayout findTripButton;
     ArrayList<Trip> mTrips;
+    ArrayList<Trip> mRejectedTrips;
     Trip nearestPickUpTrip;
     LocationManager mLocationManager;
     LocationListener mLocationListener;
@@ -103,7 +105,7 @@ public class DriverStartFragment extends Fragment {
         return view;
     }
 
-    public void findTripForDriver(Driver driver) {
+    public void findTripForDriver(final Driver driver) {
         Log.i("TON HIEU", "Find trip for driver button tapped");
 
         final Location currentLocation = driver.getLocation();
@@ -113,8 +115,6 @@ public class DriverStartFragment extends Fragment {
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 ArrayList<Trip> trips = new ArrayList<>();
                 double minDistance = 0;
-
-                Log.i("DITMEMAY", dataSnapshot.toString());
 
                 for (DataSnapshot postSnapshot : dataSnapshot.getChildren()) {
                     Trip trip = postSnapshot.getValue(Trip.class);
@@ -140,15 +140,23 @@ public class DriverStartFragment extends Fragment {
 
                 mTrips = trips;
 
+
                 AlertDialog.Builder builder = new AlertDialog.Builder(getActivity())
-                        .setMessage("ĐÃ TÌM THẤY CHUYẾN")
+                        .setTitle("ĐÃ TÌM THẤY CHUYẾN")
                         .setMessage("Lộ trình:\n" + nearestPickUpTrip.getOriginName() + " -> " + nearestPickUpTrip.getDestinationName() + "\nTổng quãng đường: " + nearestPickUpTrip.getDistance()/1000 + " km\nGiá cuốc: " + nearestPickUpTrip.getAmount()/1000 + "K")
                         .setNegativeButton("TỪ CHỐI", null)
                         .setPositiveButton("ĐỒNG Ý", new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
+                                /** Update trip value in Firebase */
+                                nearestPickUpTrip.setDriverID(driver.getId());
+                                mDatabaseRef.child(nearestPickUpTrip.getTripID()).setValue(nearestPickUpTrip);
+
+                                /** Set that trip to TripBusiness */
+                                TripBusiness.getInstance().setTrip(nearestPickUpTrip);
+
+                                /** Open DriverInTripActivity */
                                 Intent intent = new Intent(getActivity(), DriverInTripActivity.class);
-                                intent.putExtra("passengerId", nearestPickUpTrip.getPassengerID());
                                 startActivityForResult(intent, AppConst.DRIVER_IN_TRIP_REQUEST_CODE);
                             }
                         });
@@ -157,7 +165,6 @@ public class DriverStartFragment extends Fragment {
 
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
-
             }
         };
 

@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">CNTN_Grab</string>
+    <string name="app_name">Grab</string>
     <string name="facebook_app_id">2231670873610106</string>
     <string name="fb_login_protocol_scheme">fb2231670873610106</string>
     <string name="pickup_point">Gặp tôi ở...</string>

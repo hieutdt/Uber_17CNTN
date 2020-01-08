@@ -16,6 +16,8 @@ public class Trip {
     private String destinationName;
     private Long distance;
     private Long amount;
+    private double driverLat;
+    private double driverLng;
 
 
     public Trip() {
@@ -34,6 +36,8 @@ public class Trip {
         this.originName = origin.name;
         this.distance = distance;
         this.amount = amount;
+        this.driverLat = 0;
+        this.driverLng = 0;
     }
 
     public String getTripID() {
@@ -122,5 +126,21 @@ public class Trip {
 
     public void setDestinationName(String destinationName) {
         this.destinationName = destinationName;
+    }
+
+    public double getDriverLat() {
+        return driverLat;
+    }
+
+    public void setDriverLat(double driverLat) {
+        this.driverLat = driverLat;
+    }
+
+    public double getDriverLng() {
+        return driverLng;
+    }
+
+    public void setDriverLng(double driverLng) {
+        this.driverLng = driverLng;
     }
 }

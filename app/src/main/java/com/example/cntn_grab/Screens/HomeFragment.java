@@ -84,6 +84,11 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
         super.onCreate(savedInstanceState);
 
         Places.initialize(getApplicationContext(), getString(R.string.map_direction_key));
+    }
+
+    @Override
+    public void onStart() {
+        super.onStart();
 
         if (ContextCompat.checkSelfPermission( getActivity(),android.Manifest.permission.ACCESS_COARSE_LOCATION ) != PackageManager.PERMISSION_GRANTED ) {
             ActivityCompat.requestPermissions(
@@ -145,8 +150,8 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
         };
 
         mLocationManager = (LocationManager)getActivity().getSystemService(Context.LOCATION_SERVICE);
-        mLocationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 0, 0, mLocationListener);
-        mLocationManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, 0, 0, mLocationListener);
+        mLocationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 5000, 0, mLocationListener);
+        mLocationManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, 5000, 0, mLocationListener);
     }
 
     private void updateMap() {
@@ -171,7 +176,6 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
                 .target(markerLatLng)
                 .zoom(17)
                 .bearing(90)
-                .tilt(30)
                 .build();
 
         mGoogleMap.animateCamera(CameraUpdateFactory.newCameraPosition(cameraPosition));
