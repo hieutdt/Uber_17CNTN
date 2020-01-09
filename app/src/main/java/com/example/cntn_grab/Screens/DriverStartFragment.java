@@ -27,7 +27,6 @@ import com.example.cntn_grab.Data.Location;
 import com.example.cntn_grab.Data.Trip;
 import com.example.cntn_grab.Helpers.AppConst;
 import com.example.cntn_grab.R;
-import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -35,17 +34,23 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
+import java.util.Vector;
 
 public class DriverStartFragment extends Fragment {
 
     LinearLayout suportLayout;
     LinearLayout findTripButton;
     ArrayList<Trip> mTrips;
-    ArrayList<Trip> mRejectedTrips;
     Trip nearestPickUpTrip;
     LocationManager mLocationManager;
     LocationListener mLocationListener;
     DatabaseReference mDatabaseRef;
+    ValueEventListener valueEventListener;
+    View loadingView;
+
+    Boolean inTrip;
+
+    private Vector<AlertDialog> dialogs = new Vector<AlertDialog>();
 
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -54,6 +59,8 @@ public class DriverStartFragment extends Fragment {
             ActivityCompat.requestPermissions(
                     getActivity(), new String [] { android.Manifest.permission.ACCESS_COARSE_LOCATION }, AppConst.MY_PERMISSION_ACCESS_FINE_LOCATION);
         }
+
+        inTrip = false;
 
         mLocationListener = new LocationListener() {
             @Override
@@ -91,9 +98,9 @@ public class DriverStartFragment extends Fragment {
         findTripButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                suportLayout.removeAllViews();
-                View child = getLayoutInflater().inflate(R.layout.driver_support_layout, null);
-                suportLayout.addView(child);
+                findTripButton.setVisibility(View.GONE);
+                loadingView = getLayoutInflater().inflate(R.layout.driver_support_layout, null);
+                suportLayout.addView(loadingView);
 
                 findTripForDriver(DriverBusiness.getInstance().getDriver());
             }
@@ -105,12 +112,19 @@ public class DriverStartFragment extends Fragment {
         return view;
     }
 
+    @Override
+    public void onStart() {
+        super.onStart();
+
+        inTrip = false;
+    }
+
     public void findTripForDriver(final Driver driver) {
         Log.i("TON HIEU", "Find trip for driver button tapped");
 
         final Location currentLocation = driver.getLocation();
 
-        ValueEventListener valueEventListener = new ValueEventListener() {
+        valueEventListener = new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 ArrayList<Trip> trips = new ArrayList<>();
@@ -124,8 +138,12 @@ public class DriverStartFragment extends Fragment {
                     if (trip != null) {
                         trips.add(trip);
 
-                        if (!trip.getDriverID().equals(""))
+                        try {
+                            if (!trip.getDriverID().equals(""))
+                                continue;
+                        } catch (NullPointerException e) {
                             continue;
+                        }
 
                         double distance = getDistance(currentLocation.lat, currentLocation.lng, trip.getOriginLat(), trip.getOriginLng());
                         if (minDistance == 0) {
@@ -140,27 +158,41 @@ public class DriverStartFragment extends Fragment {
 
                 mTrips = trips;
 
+                if (mTrips.size() == 0)
+                    return;
 
-                AlertDialog.Builder builder = new AlertDialog.Builder(getActivity())
-                        .setTitle("ĐÃ TÌM THẤY CHUYẾN")
-                        .setMessage("Lộ trình:\n" + nearestPickUpTrip.getOriginName() + " -> " + nearestPickUpTrip.getDestinationName() + "\nTổng quãng đường: " + nearestPickUpTrip.getDistance()/1000 + " km\nGiá cuốc: " + nearestPickUpTrip.getAmount()/1000 + "K")
-                        .setNegativeButton("TỪ CHỐI", null)
-                        .setPositiveButton("ĐỒNG Ý", new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialog, int which) {
-                                /** Update trip value in Firebase */
-                                nearestPickUpTrip.setDriverID(driver.getId());
-                                mDatabaseRef.child(nearestPickUpTrip.getTripID()).setValue(nearestPickUpTrip);
+                try {
+                    if (inTrip == false) {
+                        AlertDialog.Builder builder = new AlertDialog.Builder(getActivity())
+                                .setTitle("ĐÃ TÌM THẤY CHUYẾN")
+                                .setMessage("Lộ trình:\n" + nearestPickUpTrip.getOriginName() + " -> " + nearestPickUpTrip.getDestinationName() + "\nTổng quãng đường: " + nearestPickUpTrip.getDistance() / 1000 + " km\nGiá cuốc: " + nearestPickUpTrip.getAmount() / 1000 + "K")
+                                .setNegativeButton("TỪ CHỐI", null)
+                                .setPositiveButton("ĐỒNG Ý", new DialogInterface.OnClickListener() {
+                                    @Override
+                                    public void onClick(DialogInterface dialog, int which) {
+                                        inTrip = true;
 
-                                /** Set that trip to TripBusiness */
-                                TripBusiness.getInstance().setTrip(nearestPickUpTrip);
+                                        /** Update trip value in Firebase */
+                                        nearestPickUpTrip.setDriverID(driver.getId());
+                                        mDatabaseRef.child(nearestPickUpTrip.getTripID()).setValue(nearestPickUpTrip);
 
-                                /** Open DriverInTripActivity */
-                                Intent intent = new Intent(getActivity(), DriverInTripActivity.class);
-                                startActivityForResult(intent, AppConst.DRIVER_IN_TRIP_REQUEST_CODE);
-                            }
-                        });
-                builder.show();
+                                        /** Set that trip to TripBusiness */
+                                        TripBusiness.getInstance().setTrip(nearestPickUpTrip);
+
+                                        /** Open DriverInTripActivity */
+                                        Intent intent = new Intent(getActivity(), DriverInTripActivity.class);
+                                        startActivityForResult(intent, AppConst.DRIVER_IN_TRIP_REQUEST_CODE);
+                                    }
+                                });
+
+                        AlertDialog dialog = builder.create();
+                        dialogs.add(dialog);
+
+                        dialog.show();
+                    }
+                } catch (NullPointerException e) {
+                    Log.i("TON HIEU", e.toString());
+                }
             }
 
             @Override
@@ -176,5 +208,19 @@ public class DriverStartFragment extends Fragment {
         double dentaLat = Math.abs(bLat - aLat);
         double dentaLng = Math.abs(bLng - aLng);
         return Math.sqrt(dentaLat*dentaLat + dentaLng*dentaLng);
+    }
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        if (requestCode == AppConst.DRIVER_IN_TRIP_REQUEST_CODE) {
+            findTripButton.setVisibility(View.VISIBLE);
+            loadingView.setVisibility(View.GONE);
+
+            for (AlertDialog dialog : dialogs)
+                if (dialog.isShowing())
+                    dialog.dismiss();
+
+            mDatabaseRef.removeEventListener(valueEventListener);
+        }
     }
 }

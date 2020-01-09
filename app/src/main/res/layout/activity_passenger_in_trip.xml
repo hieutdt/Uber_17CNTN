@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
-    tools:context=".Screens.DriverInTripActivity">
+    tools:context=".Screens.PassengerInTripActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -15,10 +15,10 @@
         android:id="@+id/driver_in_trip_map_container">
 
         <fragment
+            android:id="@+id/passenger_in_trip_map"
+            android:name="com.google.android.gms.maps.SupportMapFragment"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:id="@+id/driver_in_trip_map"
-            android:name="com.google.android.gms.maps.SupportMapFragment"/>
+            android:layout_height="match_parent" />
 
     </LinearLayout>
 
@@ -38,22 +38,7 @@
             android:layout_marginLeft="15dp"
             android:layout_marginTop="5dp">
 
-            <EditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/driver_in_trip_pick_up"
-                android:background="#fff"
-                android:padding="15dp"
-                android:hint="@string/pickup_point"/>
 
-            <EditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/driver_in_trip_destination"
-                android:background="#fff"
-                android:padding="15dp"
-                android:hint="@string/destination"
-                android:focusable="false"/>
 
             <LinearLayout
                 android:id="@+id/book_trip_row"
@@ -62,14 +47,6 @@
                 android:orientation="vertical"
                 android:background="@android:color/white">
 
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="1dp"
-                    android:background="@android:color/darker_gray"
-                    android:layout_marginLeft="15dp"
-                    android:layout_marginRight="15dp"
-                    android:layout_marginBottom="5dp"/>
-
                 <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
@@ -77,7 +54,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Thanh toán"
+                    android:text="Tài xế của bạn"
                     android:textSize="18dp"
                     android:textColor="@android:color/black"
                     android:layout_marginLeft="15dp"
@@ -86,30 +63,27 @@
                     android:fontFamily="@font/segoe_ui_regular"/>
 
                 <TextView
-                    android:id="@+id/driver_in_trip_amound"
+                    android:id="@+id/passenger_in_trip_driver_name"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textSize="18dp"
-                    android:text="50,000đ"
+                    android:text="Nguyễn Thị Bưởi"
                     android:layout_marginTop="5dp"
                     android:layout_marginBottom="5dp"
                     android:layout_marginRight="15dp"
                     android:textColor="@android:color/black"
                     android:gravity="end"
                     android:fontFamily="@font/segoe_ui_regular"/>
-
-
             </LinearLayout>
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="15dp">
+                    android:layout_height="wrap_content">
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Số điện thoại hành khách"
+                        android:text="Số điện thoại tài xế"
                         android:textSize="18dp"
                         android:textColor="@android:color/black"
                         android:layout_marginLeft="15dp"
@@ -118,7 +92,7 @@
                         android:fontFamily="@font/segoe_ui_regular"/>
 
                     <TextView
-                        android:id="@+id/driver_in_trip_phone"
+                        android:id="@+id/passenger_in_trip_driver_phone"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:textSize="18dp"
@@ -129,16 +103,54 @@
                         android:textColor="@android:color/black"
                         android:gravity="end"
                         android:fontFamily="@font/segoe_ui_regular"/>
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@android:color/darker_gray"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"
+                    android:layout_marginBottom="5dp"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Thanh toán"
+                        android:textSize="18dp"
+                        android:textColor="@android:color/black"
+                        android:layout_marginLeft="15dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="5dp"
+                        android:fontFamily="@font/segoe_ui_regular"/>
+
+                    <TextView
+                        android:id="@+id/passenger_in_trip_amount"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="18dp"
+                        android:text="50,000đ"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="5dp"
+                        android:layout_marginRight="15dp"
+                        android:textColor="@android:color/black"
+                        android:gravity="end"
+                        android:fontFamily="@font/segoe_ui_regular"/>
+
 
                 </LinearLayout>
 
                 <Button
-                    android:id="@+id/driver_in_trip_open_google_map"
+                    android:id="@+id/passenger_in_trip_call"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@drawable/button_shape"
                     android:fontFamily="@font/segoe_ui_regular"
-                    android:text="MỞ GOOGLE MAP"
+                    android:text="GỌI CHO TÀI XẾ"
                     android:textStyle="bold"
                     android:textAllCaps="false"
                     android:textColor="#FFFFFF"
@@ -147,12 +159,12 @@
                     />
 
                 <Button
-                    android:id="@+id/driver_in_trip_button"
+                    android:id="@+id/passenger_in_trip_cancel"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@drawable/button_register"
                     android:fontFamily="@font/segoe_ui_regular"
-                    android:text="ĐÃ ĐÓN KHÁCH"
+                    android:text="HUỶ CHUYẾN"
                     android:textStyle="bold"
                     android:textAllCaps="false"
                     android:textColor="#FFFFFF"

@@ -18,6 +18,7 @@ import androidx.fragment.app.Fragment;
 import com.example.cntn_grab.Business.PassengerBusiness.PassengerBusiness;
 import com.example.cntn_grab.Data.Location;
 import com.example.cntn_grab.Data.Passenger;
+import com.example.cntn_grab.Helpers.AppContext;
 import com.example.cntn_grab.Helpers.DirectionsJSONParser;
 import com.example.cntn_grab.R;
 import com.example.cntn_grab.Services.GetDirectionService;
@@ -33,6 +34,7 @@ import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.CameraPosition;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.LatLngBounds;
@@ -229,6 +231,17 @@ public class MapFragment extends Fragment implements OnMapReadyCallback {
 
             } else {
                 Toast.makeText(getApplicationContext(),"No route is found", Toast.LENGTH_LONG).show();
+            }
+
+            // Add marker to the map
+            try {
+                LatLng originLatLng = new LatLng(AppContext.getInstance().getOriginLocation().lat, AppContext.getInstance().getOriginLocation().lng);
+                LatLng destinationLatLng = new LatLng(AppContext.getInstance().getDestinationLocation().lat, AppContext.getInstance().getDestinationLocation().lng);
+
+                mMap.addMarker(new MarkerOptions().position(originLatLng));
+                mMap.addMarker(new MarkerOptions().position(destinationLatLng));
+            } catch (NullPointerException ex) {
+                Log.i("TON HIEU", "Add marker null pointer exception: " + ex.toString());
             }
         }
     }

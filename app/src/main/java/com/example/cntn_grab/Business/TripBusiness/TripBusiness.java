@@ -40,7 +40,7 @@ public class TripBusiness {
     public void createNewTrip(Passenger passenger, Location origin, Location destination, int distance, int amount) {
         mCreateNewTripListener.createNewTripDidStart();
 
-        final Trip trip = new Trip(passenger.getId(), "", origin, destination, Long.valueOf(distance), Long.valueOf(amount));
+        final Trip trip = new Trip(passenger.getId(), "", origin, destination, Long.valueOf(distance), Long.valueOf(amount), "FIND_DRIVER", passenger.getPhoneNumber());
 
         mDatabaseRef = FirebaseDatabase.getInstance().getReference("trips");
         mDatabaseRef.child(trip.getTripID()).setValue(trip)
@@ -67,5 +67,6 @@ public class TripBusiness {
 
     public void updateTripDriver(String driverID) {
         mTrip.setDriverID(driverID);
+        mTrip.setState("ON_TRIP");
     }
 }

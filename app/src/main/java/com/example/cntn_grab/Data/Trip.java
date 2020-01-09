@@ -18,13 +18,16 @@ public class Trip {
     private Long amount;
     private double driverLat;
     private double driverLng;
+    private String state;
+    private String passengerPhoneNumber;
 
 
     public Trip() {
         tripID = StringHelper.randomString(20);
+        this.state = "FIND_DRIVER";
     }
 
-    public Trip(String passengerID, String driverID, Location origin, Location destination, Long distance, Long amount) {
+    public Trip(String passengerID, String driverID, Location origin, Location destination, Long distance, Long amount, String state, String phoneNumber) {
         tripID = StringHelper.randomString(10);
         this.passengerID = passengerID;
         this.driverID = driverID;
@@ -38,6 +41,8 @@ public class Trip {
         this.amount = amount;
         this.driverLat = 0;
         this.driverLng = 0;
+        this.state = state;
+        this.passengerPhoneNumber = phoneNumber;
     }
 
     public String getTripID() {
@@ -142,5 +147,21 @@ public class Trip {
 
     public void setDriverLng(double driverLng) {
         this.driverLng = driverLng;
+    }
+
+    public String getState() {
+        return state;
+    }
+
+    public void setState(String state) {
+        this.state = state;
+    }
+
+    public String getPassengerPhoneNumber() {
+        return passengerPhoneNumber;
+    }
+
+    public void setPassengerPhoneNumber(String passengerPhoneNumber) {
+        this.passengerPhoneNumber = passengerPhoneNumber;
     }
 }

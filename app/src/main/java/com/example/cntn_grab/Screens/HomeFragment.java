@@ -13,7 +13,6 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.FrameLayout;
 import android.widget.LinearLayout;
@@ -25,7 +24,6 @@ import com.example.cntn_grab.Business.TripBusiness.CreateNewTripListener;
 import com.example.cntn_grab.Business.TripBusiness.TripBusiness;
 import com.example.cntn_grab.Business.UserBusiness.UserBusiness;
 import com.example.cntn_grab.Data.Location;
-import com.example.cntn_grab.Data.Passenger;
 import com.example.cntn_grab.Helpers.AppConst;
 import com.example.cntn_grab.Helpers.AppContext;
 import com.example.cntn_grab.Helpers.LoadingHelper;
@@ -48,6 +46,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Locale;
 
+import androidx.annotation.NonNull;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
@@ -150,8 +149,8 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
         };
 
         mLocationManager = (LocationManager)getActivity().getSystemService(Context.LOCATION_SERVICE);
-        mLocationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 5000, 0, mLocationListener);
-        mLocationManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, 5000, 0, mLocationListener);
+        mLocationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 5000, 100, mLocationListener);
+        mLocationManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, 5000, 100, mLocationListener);
     }
 
     private void updateMap() {
@@ -211,6 +210,10 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
         mBookRow.setVisibility(View.GONE);
 
         return fl;
+    }
+
+    @Override
+    public void onSaveInstanceState(@NonNull Bundle outState) {
     }
 
     private void bookTripButtonTapped() {
@@ -297,7 +300,9 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
                 mBookRow.setVisibility(View.VISIBLE);
                 mDistance = distance;
                 mPrice = mDistance * 5; // 5K/km
-                mAmountLabel.setText(mPrice + "000đ");
+                mPrice /= 1000;
+                mPrice *= 1000;
+                mAmountLabel.setText(mPrice + "đ");
             }
 
             @Override

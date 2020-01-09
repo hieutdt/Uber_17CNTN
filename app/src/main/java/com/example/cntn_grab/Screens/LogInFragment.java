@@ -187,7 +187,7 @@ public class LogInFragment extends Fragment {
         else
             transaction.replace(R.id.frame_container, AppContext.getInstance().getHomeFragment());
         transaction.addToBackStack(null);
-        transaction.commit();
+        transaction.commitAllowingStateLoss();
 
         // Set up navigation bar
         BottomNavigationView bottomMenu = getActivity().findViewById(R.id.bottom_navigation_bar);
